@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 30,
+ "done": 40,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -1212,15 +1212,41 @@
    "slug": "aks-multi-cluster",
    "title": "AKS baseline for multiregion clusters",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/containers/aks-multi-region/aks-multi-cluster",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 31,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Workload traffic in a multiregion deployment",
+    "Container Registry replicas (portal screenshot)"
+   ],
+   "substitutions": {
+    "Kubernetes services / fleet hub cluster": "kubernetes-services",
+    "Azure Kubernetes Fleet Manager": "kubernetes-fleet-manager",
+    "Log Analytics": "log-analytics-workspaces",
+    "Azure Front Door": "front-door-and-cdn-profiles"
+   },
+   "differences": [
+    "Incoming internet traffic to Front Door is drawn from a small 'Internet' shape; the original shows an unlabelled arrow.",
+    "Private endpoint and NSG badges on the cards are omitted.",
+    "The grey diagnostics lines in Region A are merged into two lines."
+   ],
+   "icons": [
+    "application-gateways",
+    "bastions",
+    "container-registries",
+    "firewalls",
+    "front-door-and-cdn-profiles",
+    "key-vaults",
+    "kubernetes-fleet-manager",
+    "kubernetes-services",
+    "load-balancers",
+    "log-analytics-workspaces"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "107 elements, 22 bound arrows, 21 images with files"
+   }
   },
   {
    "slug": "automate-document-classification-durable-functions",
@@ -1228,27 +1254,76 @@
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/automate-document-classification-durable-functions",
    "category": "AI + machine learning",
    "num": 32,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure web app": "app-services",
+    "Service Bus queue": "azure-service-bus",
+    "Durable Functions activities": "function-apps",
+    "Document Intelligence": "form-recognizers",
+    "Blob Storage": "storage-accounts",
+    "Azure AI Search": "cognitive-search",
+    "text-embedding-3-large": "azure-openai",
+    "Microsoft Foundry Agent Service": "foundry-agent-service"
+   },
+   "differences": [
+    "The OpenAI logo for text-embedding-3-large is replaced by the Azure OpenAI sketch icon."
+   ],
+   "icons": [
+    "app-services",
+    "azure-cosmos-db",
+    "azure-openai",
+    "azure-service-bus",
+    "cognitive-search",
+    "form-recognizers",
+    "foundry-agent-service",
+    "function-apps",
+    "storage-accounts"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "78 elements, 11 bound arrows, 11 images with files"
+   }
   },
   {
    "slug": "mainframe-midrange-data-replication-azure-qlik",
    "title": "Use Qlik to replicate mainframe and midrange data to Azure",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/mainframe/mainframe-midrange-data-replication-azure-qlik",
-   "category": "Mainframe + migration",
+   "category": "Mainframe",
    "num": 33,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Host agent": "gear",
+    "Replication server": "server-farm",
+    "Azure ExpressRoute": "expressroute-circuits",
+    "Azure SQL": "sql-database",
+    "Azure Database for MySQL": "azure-database-mysql-server",
+    "Azure Database for PostgreSQL": "azure-database-postgresql-server",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Azure Databricks": "azure-databricks"
+   },
+   "differences": [
+    "Db2, IMS, VSAM, change logs and Qlik Data Integration are labelled sketch shapes (non-Azure).",
+    "Eventstream, Eventhouse, OneLake and Microsoft Fabric are labelled shapes (no sketch icons for Fabric items).",
+    "The two ExpressRoute edge routers are small labelled boxes."
+   ],
+   "icons": [
+    "azure-cosmos-db",
+    "azure-database-mysql-server",
+    "azure-database-postgresql-server",
+    "azure-databricks",
+    "expressroute-circuits",
+    "gear",
+    "server-farm",
+    "sql-database"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "90 elements, 14 bound arrows, 8 images with files"
+   }
   },
   {
    "slug": "run-sap-hana-for-linux-virtual-machines",
@@ -1256,55 +1331,155 @@
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/sap/run-sap-hana-for-linux-virtual-machines",
    "category": "SAP",
    "num": 34,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Architecture with disaster recovery"
+   ],
+   "substitutions": {
+    "On-premises VMs": "virtual-machine",
+    "Gateway / zone-redundant gateway": "virtual-network-gateways",
+    "ExpressRoute": "expressroute-circuits",
+    "HANA VMs / SBD VMs": "virtual-machine"
+   },
+   "differences": [
+    "NSG shield badges on the subnets are omitted."
+   ],
+   "icons": [
+    "bastions",
+    "expressroute-circuits",
+    "load-balancers",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "74 elements, 5 bound arrows, 15 images with files"
+   }
   },
   {
    "slug": "sap-production",
    "title": "SAP deployment on Azure by using an Oracle database",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/apps/sap-production",
-   "category": "Web + apps",
+   "category": "SAP",
    "num": 35,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Production SAP system on Oracle with disaster recovery region"
+   ],
+   "substitutions": {
+    "On-premises VMs / SAP VMs / observer VMs": "virtual-machine",
+    "Gateway / zone-redundant gateway": "virtual-network-gateways",
+    "ExpressRoute": "expressroute-circuits",
+    "Internal load balancers": "load-balancers",
+    "Azure Files NFS ZRS": "storage-azure-files",
+    "Oracle database": "oracle-database"
+   },
+   "differences": [
+    "NSG shield badges are omitted.",
+    "The shared app-tier line linking the pools to the database subnet is drawn as two arrows."
+   ],
+   "icons": [
+    "bastions",
+    "expressroute-circuits",
+    "load-balancers",
+    "oracle-database",
+    "storage-azure-files",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "109 elements, 12 bound arrows, 22 images with files"
+   }
   },
   {
    "slug": "wordpress-app-service",
    "title": "WordPress on App Service",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/infrastructure/wordpress-app-service",
-   "category": "Infrastructure + storage",
+   "category": "Web",
    "num": 36,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Internet": "globe-success",
+    "Azure Front Door + WAF": "front-door-and-cdn-profiles",
+    "Azure Blob Storage": "storage-accounts",
+    "Private DNS zone": "dns-zones",
+    "Azure App Service plan": "app-service-plans",
+    "Azure App Service": "app-services",
+    "Private endpoint": "private-endpoints",
+    "Azure Database for MySQL flexible server": "azure-database-mysql-server",
+    "Premium storage": "disks"
+   },
+   "differences": [
+    "The Storage account wrapper is a titled group around the Blob Storage card."
+   ],
+   "icons": [
+    "app-service-plans",
+    "app-services",
+    "azure-database-mysql-server",
+    "disks",
+    "dns-zones",
+    "front-door-and-cdn-profiles",
+    "globe-success",
+    "private-endpoints",
+    "storage-accounts",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "63 elements, 10 bound arrows, 13 images with files"
+   }
   },
   {
    "slug": "wordpress-container",
    "title": "WordPress on Azure Kubernetes Service",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/infrastructure/wordpress-container",
-   "category": "Infrastructure + storage",
+   "category": "Containers",
    "num": 37,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Public internet": "globe-success",
+    "Azure Front Door + WAF": "front-door-and-cdn-profiles",
+    "Internal load balancer": "load-balancers",
+    "AKS": "kubernetes-services",
+    "WordPress pod": "worker-container-app",
+    "Private endpoint": "private-endpoints",
+    "Azure Container Registry": "container-registries",
+    "Azure Key Vault": "key-vaults",
+    "Azure Database for MySQL flexible server": "azure-database-mysql-server",
+    "Azure Managed Redis": "azure-managed-redis",
+    "Azure NetApp Files": "azure-netapp-files"
+   },
+   "differences": [
+    "Ingress and Secret store CSI have no sketch icon and are labelled shapes.",
+    "NSG shield icons on the subnets are omitted; subnet titles keep the label."
+   ],
+   "icons": [
+    "azure-database-mysql-server",
+    "azure-managed-redis",
+    "azure-netapp-files",
+    "container-registries",
+    "front-door-and-cdn-profiles",
+    "globe-success",
+    "key-vaults",
+    "kubernetes-services",
+    "load-balancers",
+    "private-endpoints",
+    "virtual-networks",
+    "worker-container-app"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "88 elements, 14 bound arrows, 16 images with files"
+   }
   },
   {
    "slug": "call-center-openai-analytics",
@@ -1312,41 +1487,134 @@
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/openai/architecture/call-center-openai-analytics",
    "category": "AI + machine learning",
    "num": 38,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Caller / call center agent": "users",
+    "Telephony server": "server-farm",
+    "Blob Storage": "storage-accounts",
+    "Azure Speech to text": "speech-services",
+    "Microsoft Foundry": "ai-foundry",
+    "Azure Content Understanding": "cognitive-services",
+    "Power BI": "power-bi-embedded",
+    "Web app": "app-services"
+   },
+   "differences": [
+    "CRM is a labelled shape (non-Azure).",
+    "Caller and agent both use the users sketch icon."
+   ],
+   "icons": [
+    "ai-foundry",
+    "app-services",
+    "cognitive-services",
+    "power-bi-embedded",
+    "server-farm",
+    "speech-services",
+    "storage-accounts",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "75 elements, 11 bound arrows, 11 images with files"
+   }
   },
   {
    "slug": "windows-vm",
    "title": "Run a Windows VM on Azure",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/n-tier/windows-vm",
-   "category": "Design guidance",
+   "category": "Compute",
    "num": 39,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Internet": "globe-success",
+    "Azure DNS": "dns-zones",
+    "Public IP address": "public-ip-addresses",
+    "Resource group": "resource-groups",
+    "NAT Gateway": "nat",
+    "Network security group": "network-security-groups",
+    "Virtual machine": "virtual-machine",
+    "NIC": "network-interfaces",
+    "Temporary disk (physical SSD)": "ssd",
+    "Managed disks": "disks",
+    "Diagnostic logs": "diagnostics-settings",
+    "Logs storage account": "storage-accounts",
+    "Azure Bastion": "bastions"
+   },
+   "differences": [
+    "The NIC strip on the VM is a separate small card."
+   ],
+   "icons": [
+    "bastions",
+    "diagnostics-settings",
+    "disks",
+    "dns-zones",
+    "globe-success",
+    "nat",
+    "network-interfaces",
+    "network-security-groups",
+    "public-ip-addresses",
+    "resource-groups",
+    "ssd",
+    "storage-accounts",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "68 elements, 7 bound arrows, 17 images with files"
+   }
   },
   {
    "slug": "linux-vm",
    "title": "Run a Linux VM on Azure",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/n-tier/linux-vm",
-   "category": "Design guidance",
+   "category": "Compute",
    "num": 40,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Internet": "globe-success",
+    "Azure DNS": "dns-zones",
+    "Public IP address": "public-ip-addresses",
+    "Resource group": "resource-groups",
+    "NAT Gateway": "nat",
+    "Network security group": "network-security-groups",
+    "Virtual machine": "virtual-machine",
+    "NIC": "network-interfaces",
+    "Temporary disk (physical SSD)": "ssd",
+    "Managed disks": "disks",
+    "Diagnostic logs": "diagnostics-settings",
+    "Logs storage account": "storage-accounts",
+    "Azure Bastion": "bastions"
+   },
+   "differences": [
+    "The official diagram is the same image as the Windows VM article.",
+    "The NIC strip on the VM is a separate small card."
+   ],
+   "icons": [
+    "bastions",
+    "diagnostics-settings",
+    "disks",
+    "dns-zones",
+    "globe-success",
+    "nat",
+    "network-interfaces",
+    "network-security-groups",
+    "public-ip-addresses",
+    "resource-groups",
+    "ssd",
+    "storage-accounts",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "68 elements, 7 bound arrows, 17 images with files"
+   }
   },
   {
    "slug": "split-brain-dns",
