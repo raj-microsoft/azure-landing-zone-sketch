@@ -1,8 +1,12 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Excalidraw, exportToBlob, exportToSvg, serializeAsJSON } from "@excalidraw/excalidraw";
+﻿import React, { useCallback, useEffect, useRef, useState } from "react";
+import { CaptureUpdateAction, Excalidraw, exportToBlob, exportToSvg, serializeAsJSON } from "@excalidraw/excalidraw";
 import "@excalidraw/excalidraw/index.css";
+import { LineMotion, isLinear } from "./line-motion.js";
 
 const BASE = import.meta.env.BASE_URL;
+const reducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+// Display-only copies with the lines hidden, so the overlay can draw them in. Never saved or exported.
+const withLinesHidden = (els) => els.map((e) => (isLinear(e) ? { ...e, opacity: 0 } : e));
 
 function save(name, blob) {
   const a = document.createElement("a");
@@ -23,8 +27,13 @@ export default function Viewer({ slug }) {
   const [editing, setEditing] = useState(false);
   const [edited, setEdited] = useState(false);
   const [error, setError] = useState(null);
+  const [flow, setFlow] = useState(false);
+  const [directed, setDirected] = useState(true); // Flow only means something when some arrow has a head
   const api = useRef(null);
   const ready = useRef(false);
+  const overlay = useRef(null);
+  const motion = useRef(null);
+  const real = useRef(null); // the scene's own elements while the canvas shows hidden-line copies
 
   useEffect(() => {
     fetch(BASE + "scenes/index.json").then((r) => r.json()).then((idx) => {
@@ -42,7 +51,10 @@ export default function Viewer({ slug }) {
         const saved = JSON.parse(localStorage.getItem(KEY) || "null");
         if (saved?.elements?.length) { elements = saved.elements; setEdited(true); }
       } catch {}
-      setInitial({ elements, files: scene.files, appState: { ...scene.appState, viewModeEnabled: true }, scrollToContent: true });
+      setDirected(elements.some((e) => e.type === "arrow" && !e.isDeleted && (e.startArrowhead || e.endArrowhead)));
+      const animate = !reducedMotion();
+      real.current = animate ? elements : null;
+      setInitial({ elements: animate ? withLinesHidden(elements) : elements, files: scene.files, appState: { ...scene.appState, viewModeEnabled: true }, scrollToContent: true, animate });
     }).catch((err) => setError(err.message === "unknown" ? "unknown" : "load"));
   }, [slug]);
 
@@ -58,11 +70,62 @@ export default function Viewer({ slug }) {
     a.updateScene({ appState: { zoom: { value: z }, scrollX: s.width / 2 / z - (x1 + x2) / 2, scrollY: s.height / 2 / z - (y1 + y2) / 2 } });
   }, []);
 
+  // Put the scene's own lines back on the canvas (no history entry, nothing persisted).
+  const restoreLines = useCallback(() => {
+    const els = real.current;
+    real.current = null;
+    if (els && api.current) api.current.updateScene({ elements: els, captureUpdate: CaptureUpdateAction.NEVER });
+  }, []);
+
+  const syncView = useCallback(() => {
+    const s = api.current?.getAppState();
+    if (s && motion.current) motion.current.setView(s.scrollX, s.scrollY, s.zoom.value);
+  }, []);
+
+  const drawIn = useCallback(() => {
+    const a = api.current, m = motion.current;
+    if (!a || !m) return;
+    m.finishDraw();
+    const els = real.current ?? a.getSceneElements();
+    m.build(els);
+    syncView();
+    if (!real.current) {
+      real.current = els;
+      a.updateScene({ elements: withLinesHidden(els), captureUpdate: CaptureUpdateAction.NEVER });
+    }
+    m.drawIn({ onReveal: restoreLines });
+  }, [restoreLines, syncView]);
+
   const onApi = useCallback((a) => {
     api.current = a;
-    window.__alz = { api: a, exportToSvg, exportToBlob };
-    requestAnimationFrame(() => { fit(); ready.current = true; });
-  }, [fit]);
+    window.__alz = { api: a, exportToSvg, exportToBlob, motion: () => motion.current };
+    requestAnimationFrame(() => {
+      fit();
+      ready.current = true;
+      // If the overlay is not mounted for any reason, never leave the lines hidden.
+      if (real.current) { if (motion.current) drawIn(); else restoreLines(); }
+    });
+  }, [fit, drawIn, restoreLines]);
+
+  useEffect(() => {
+    if (!initial || !overlay.current) return;
+    const m = new LineMotion(overlay.current, { background: initial.appState?.viewBackgroundColor ?? "#fdfdfb" });
+    motion.current = m;
+    return () => { m.destroy(); motion.current = null; };
+  }, [initial]);
+
+  const onScrollChange = useCallback((scrollX, scrollY, zoom) => {
+    motion.current?.setView(scrollX, scrollY, zoom.value);
+  }, []);
+
+  const toggleFlow = () => {
+    const next = !flow;
+    const m = motion.current;
+    if (!m || editing) return;
+    if (next) { if (!m.draw) m.build(real.current ?? api.current.getSceneElements()); syncView(); }
+    m.setFlow(next);
+    setFlow(next);
+  };
 
   useEffect(() => {
     const main = document.querySelector(".canvas");
@@ -79,7 +142,13 @@ export default function Viewer({ slug }) {
     try { localStorage.setItem(KEY, JSON.stringify({ elements })); setEdited(true); } catch {}
   }, [editing, KEY]);
 
+  const settle = () => {
+    motion.current?.finishDraw();
+    motion.current?.setFlow(false);
+    setFlow(false);
+  };
   const reset = () => {
+    settle();
     localStorage.removeItem(KEY);
     setEdited(false);
     setEditing(false);
@@ -88,10 +157,11 @@ export default function Viewer({ slug }) {
   };
   const toggleEdit = () => {
     const next = !editing;
+    settle();
     setEditing(next);
     api.current?.updateScene({ appState: { viewModeEnabled: !next } });
   };
-  const current = () => ({
+  const current = () => (motion.current?.finishDraw(), {
     elements: api.current.getSceneElements(),
     appState: { ...api.current.getAppState(), exportBackground: true, exportWithDarkMode: false, viewBackgroundColor: "#fdfdfb" },
     files: api.current.getFiles(),
@@ -118,6 +188,9 @@ export default function Viewer({ slug }) {
           <button type="button" aria-pressed={editing} onClick={toggleEdit} disabled={!initial}>{editing ? "Done editing" : "Edit"}</button>
           <button type="button" onClick={reset} disabled={!initial || (!edited && !editing)}>Reset</button>
           <span className="sep" aria-hidden="true" />
+          <button type="button" onClick={drawIn} disabled={!initial || editing} title="Draw the lines in again">Replay</button>
+          <button type="button" aria-pressed={flow} onClick={toggleFlow} disabled={!initial || editing || !directed} title={directed ? "Show direction of flow along the arrows" : "This sketch has no directed arrows"}>Flow</button>
+          <span className="sep" aria-hidden="true" />
           <button type="button" onClick={download} disabled={!initial}>Download .excalidraw</button>
           <button type="button" onClick={png} disabled={!initial}>PNG</button>
           <button type="button" onClick={svg} disabled={!initial}>SVG</button>
@@ -136,9 +209,11 @@ export default function Viewer({ slug }) {
             excalidrawAPI={onApi}
             viewModeEnabled={!editing}
             onChange={onChange}
+            onScrollChange={onScrollChange}
             UIOptions={{ canvasActions: { loadScene: false, saveToActiveFile: false, export: false, saveAsImage: false, toggleTheme: false, changeViewBackgroundColor: false } }}
           />
         )}
+        {initial && <svg ref={overlay} className="line-motion" aria-hidden="true" data-motion={initial.animate ? "draw" : "still"} data-flow="off" data-editing={editing ? "on" : "off"} />}
       </main>
     </div>
   );

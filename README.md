@@ -2,7 +2,11 @@
 
 Microsoft Azure Architecture Center reference architectures, each redrawn like for like as a hand-drawn Excalidraw scene using only the ChatGPT pencil-sketch Azure icons. The **Azure landing zone (ALZ) - Hub & Spoke** sketch is the featured first card.
 
-Live: https://raj-microsoft.github.io/azure-landing-zone-sketch/ (gallery) · `?a=<slug>` opens one scene in the viewer (Edit, Reset, Download .excalidraw, PNG, SVG, source link).
+Live: https://raj-microsoft.github.io/azure-landing-zone-sketch/ (gallery) · `?a=<slug>` opens one scene in the viewer (Edit, Reset, Replay, Flow, Download .excalidraw, PNG, SVG, source link).
+
+## Line motion
+
+On open the arrows draw themselves in once, like a pencil stroke, in reading order (about 2.5 s), then the sketch is still. **Replay** runs it again; **Flow** (off by default) sends one small dot slowly along each directed arrow. `src/line-motion.js` draws this in a temporary SVG overlay aligned to the canvas (scene coords x scrollX/scrollY x zoom); the canvas arrows are hidden only on display copies during the draw-in, so the settled view, exports and saved edits are Excalidraw's own. Reduced motion skips the draw-in; motion pauses when the tab is hidden and the overlay is hidden in Edit mode.
 
 ## Layout
 
