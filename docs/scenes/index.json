@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 129,
+ "done": 140,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -5388,57 +5388,150 @@
    "slug": "secure-hybrid-messaging-mobile",
    "title": "Enhanced-security hybrid messaging infrastructure for mobile access",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/hybrid/secure-hybrid-messaging-mobile",
-   "category": "Hybrid + multicloud",
+   "category": "Hybrid",
    "num": 134,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: alternative architecture (Exchange on-premises)"
+   ],
+   "substitutions": {
+    "Microsoft Entra Connect": "entra-connect-sync",
+    "Microsoft Entra ID": "entra-connect",
+    "AutoDetect": "location",
+    "Conditional Access policy": "conditional-access",
+    "Microsoft Endpoint Manager (Intune)": "intune",
+    "Multifactor authentication": "multi-factor-authentication",
+    "Exchange Online / Authentication policy": "exchange-access"
+   },
+   "differences": [
+    "Active Directory, AD FS, WAP, Outlook mobile access, Exchange Online user, Microsoft 365, Block access and On-premises drawn as labelled shapes.",
+    "Diagonal step 5 (AutoDetect to Outlook) drawn orthogonally; bundled arrows into Outlook spread on separate lanes."
+   ],
+   "icons": [
+    "conditional-access",
+    "entra-connect",
+    "entra-connect-sync",
+    "exchange-access",
+    "intune",
+    "location",
+    "multi-factor-authentication"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "96 elements, 22 bound arrows, 8 images with files"
+   }
   },
   {
    "slug": "secure-hybrid-messaging-web",
    "title": "Enhanced-security hybrid messaging infrastructure for web access",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/hybrid/secure-hybrid-messaging-web",
-   "category": "Hybrid + multicloud",
+   "category": "Hybrid",
    "num": 135,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1-img4: AD FS and Conditional Access configuration screenshots"
+   ],
+   "substitutions": {
+    "Microsoft Entra Connect": "entra-connect-sync",
+    "Microsoft Entra ID": "entra-connect",
+    "Exchange on-premises / Exchange Edge": "exchange-on-premises-access",
+    "Exchange Online": "exchange-access",
+    "Conditional Access policy": "conditional-access",
+    "Multifactor authentication": "multi-factor-authentication",
+    "Outlook on the web / ECP": "browser",
+    "Outlook mobile access": "mobile"
+   },
+   "differences": [
+    "Active Directory, AD FS, WAP, Outlook access, Exchange users, Edge subscription, Microsoft 365 and On-premises drawn as labelled shapes.",
+    "Diagonal step 6 (WAP to Exchange on-premises) drawn orthogonally."
+   ],
+   "icons": [
+    "browser",
+    "conditional-access",
+    "entra-connect",
+    "entra-connect-sync",
+    "exchange-access",
+    "exchange-on-premises-access",
+    "mobile",
+    "multi-factor-authentication"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "107 elements, 19 bound arrows, 11 images with files"
+   }
   },
   {
    "slug": "data-warehouse",
    "title": "Data warehousing and analytics",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/data/data-warehouse",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 136,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
+   "substitutions": {
+    "Microsoft SQL Server (on-premises)": "sql-server",
+    "Other relational databases": "sql-database",
+    "Azure SQL Database": "sql-database",
+    "Table Storage": "table",
+    "Azure Data Lake Storage": "data-lake-store-gen1",
+    "Azure Analysis Services": "analysis-services",
+    "Power BI": "power-bi-embedded",
+    "Microsoft Entra ID": "entra-connect"
+   },
    "differences": [],
-   "icons": [],
-   "checks": {}
+   "icons": [
+    "analysis-services",
+    "azure-cosmos-db",
+    "azure-synapse-analytics",
+    "data-factories",
+    "data-lake-store-gen1",
+    "entra-connect",
+    "power-bi-embedded",
+    "sql-database",
+    "sql-server",
+    "table"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "65 elements, 10 bound arrows, 11 images with files"
+   }
   },
   {
    "slug": "azure-file-share",
    "title": "Use Azure file shares in a hybrid environment",
    "url": "https://learn.microsoft.com/azure/architecture/hybrid/azure-file-share",
-   "category": "Hybrid + multicloud",
+   "category": "Hybrid",
    "num": 137,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Domain controller": "entra-domain-services",
+    "Microsoft Entra Connect": "entra-connect-sync",
+    "Microsoft Entra sync": "entra-connect-sync",
+    "Microsoft Entra tenant": "entra-connect",
+    "Recovery Services vault": "recovery-services-vaults",
+    "Virtual network gateway": "virtual-network-gateways",
+    "Azure file shares": "storage-azure-files"
+   },
+   "differences": [
+    "Clients drawn as labelled sketch shapes; Microsoft Entra sync shown as a card on the sync line; Microsoft Entra tenant given an icon card."
+   ],
+   "icons": [
+    "entra-connect",
+    "entra-connect-sync",
+    "entra-domain-services",
+    "recovery-services-vaults",
+    "storage-azure-files",
+    "virtual-network-gateways"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "41 elements, 7 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "secure-vnet-dmz",
@@ -5446,97 +5539,231 @@
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-dmz",
    "category": "Networking",
    "num": 138,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "VM": "virtual-machine",
+    "Local Network Gateway": "local-network-gateways",
+    "VPN Connection": "connections",
+    "Virtual Network Gateway": "virtual-network-gateways",
+    "Azure Bastion": "bastions",
+    "Azure Firewall": "firewalls",
+    "Load balancer": "load-balancers",
+    "VM Scale Sets": "vm-scale-sets",
+    "Azure Monitor": "monitor",
+    "NSG shield": "network-security-groups",
+    "Subnet connectors": "omitted"
+   },
+   "differences": [
+    "Blue subnet connector dots and NSG shields on Bastion and resource subnet are omitted.",
+    "Fan-out from load balancer to VM Scale Sets drawn as one arrow."
+   ],
+   "icons": [
+    "bastions",
+    "connections",
+    "firewalls",
+    "load-balancers",
+    "local-network-gateways",
+    "monitor",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "vm-scale-sets"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "66 elements, 11 bound arrows, 14 images with files"
+   }
   },
   {
    "slug": "gateway-routing",
    "title": "Gateway Routing pattern",
    "url": "https://learn.microsoft.com/azure/architecture/patterns/gateway-routing",
-   "category": "Design guidance",
+   "category": "Design patterns",
    "num": 139,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
+   "otherDiagrams": [
+    "img1: multi-region search routing",
+    "img2: versioned search routing"
+   ],
    "substitutions": {},
-   "differences": [],
+   "differences": [
+    "Conceptual diagram with no product icons; all nodes are labelled sketch shapes like the original."
+   ],
    "icons": [],
-   "checks": {}
+   "checks": {
+    "geometry": "PASS",
+    "summary": "21 elements, 6 bound arrows, 0 images with files"
+   }
   },
   {
    "slug": "hybrid-perf-monitoring",
    "title": "Hybrid availability and performance monitoring",
    "url": "https://learn.microsoft.com/azure/architecture/hybrid/hybrid-perf-monitoring",
-   "category": "Hybrid + multicloud",
+   "category": "Hybrid",
    "num": 140,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "VM 1-6 / Application server": "virtual-machine",
+    "Log Analytics gateway": "log-analytics-workspaces",
+    "Firewall (public IP)": "firewalls",
+    "Router": "virtual-router",
+    "Azure Monitor metrics": "metrics",
+    "Log Analytics workspace": "log-analytics-workspaces",
+    "Alerts": "alerts",
+    "Virtual machine scale sets and extension": "vm-scale-sets"
+   },
+   "differences": [
+    "Autoscale, Partner integrations, Insights/Analysis/Visualizations/Integrations/Actions drawn as labelled shapes (no sketch icon for Autoscale or partner integrations).",
+    "Line-style legend shown as a text box; TCP 443 labels, defender shields, VM extension glyphs and the third-party cloud glyph omitted.",
+    "The blue dashed bus between metrics/workspace and the function column is drawn as separate arrows; application server to metrics link omitted."
+   ],
+   "icons": [
+    "alerts",
+    "firewalls",
+    "log-analytics-workspaces",
+    "metrics",
+    "monitor",
+    "virtual-machine",
+    "virtual-router",
+    "vm-scale-sets"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "120 elements, 35 bound arrows, 17 images with files"
+   }
   },
   {
    "slug": "stream-processing-stream-analytics",
    "title": "Stream processing with Azure Stream Analytics",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/data/stream-processing-stream-analytics",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 141,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: Event Hubs detail",
+    "img2-img3: dashboard and autoscaling screenshots",
+    "img4: Stream Analytics jobs"
+   ],
+   "substitutions": {
+    "Azure Event Hubs": "event-hubs",
+    "Stream Analytics": "stream-analytics-jobs",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Power BI": "power-bi-embedded",
+    "Azure Monitor": "monitor",
+    "Dashboard": "dashboard"
+   },
+   "differences": [
+    "Data source 1 (fare data) and data source 2 (trip data) drawn as labelled shapes without the dollar and taxi glyphs."
+   ],
+   "icons": [
+    "azure-cosmos-db",
+    "dashboard",
+    "event-hubs",
+    "monitor",
+    "power-bi-embedded",
+    "stream-analytics-jobs"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "33 elements, 7 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "microservice-boundaries",
    "title": "Identify microservice boundaries",
    "url": "https://learn.microsoft.com/azure/architecture/microservices/model/microservice-boundaries",
-   "category": "Containers + microservices",
+   "category": "Microservices",
    "num": 142,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
+   "otherDiagrams": [
+    "img1: Drone Delivery microservices design"
+   ],
    "substitutions": {},
-   "differences": [],
+   "differences": [
+    "Conceptual diagram with no product icons; diagonal arrows from Scheduler drawn orthogonally."
+   ],
    "icons": [],
-   "checks": {}
+   "checks": {
+    "geometry": "PASS",
+    "summary": "23 elements, 6 bound arrows, 0 images with files"
+   }
   },
   {
    "slug": "azure-arc-sql-server",
    "title": "Optimize administration of SQL Server instances in on-premises and multicloud environments using Azure Arc",
    "url": "https://learn.microsoft.com/azure/architecture/hybrid/azure-arc-sql-server",
-   "category": "Hybrid + multicloud",
+   "category": "Hybrid",
    "num": 143,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Arc": "azure-arc",
+    "Virtual server": "virtual-machine",
+    "SQL Server": "sql-server",
+    "Kubernetes cluster": "arc-kubernetes",
+    "Azure Arc data controller": "arc-data-services",
+    "SQL Managed Instance": "arc-sql-managed-instance",
+    "Azure Local": "azure-local",
+    "Azure Kubernetes Service cluster": "kubernetes-services",
+    "SQL Virtual Machine": "azure-sql-vm",
+    "Azure Policy": "policy",
+    "Azure Security Center": "microsoft-defender-for-cloud",
+    "Azure Monitor": "monitor",
+    "Log Analytics workspace": "log-analytics-workspaces",
+    "Azure Sentinel": "azure-sentinel"
+   },
+   "differences": [
+    "Physical server drawn as a labelled shape; the 'Other cloud providers' cloud outline drawn as a rounded group."
+   ],
+   "icons": [
+    "arc-data-services",
+    "arc-kubernetes",
+    "arc-sql-managed-instance",
+    "azure-arc",
+    "azure-local",
+    "azure-sentinel",
+    "azure-sql-vm",
+    "kubernetes-services",
+    "log-analytics-workspaces",
+    "microsoft-defender-for-cloud",
+    "monitor",
+    "policy",
+    "sql-server",
+    "virtual-machine"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "109 elements, 19 bound arrows, 25 images with files"
+   }
   },
   {
    "slug": "interservice-communication",
    "title": "Design interservice communication for microservices",
    "url": "https://learn.microsoft.com/azure/architecture/microservices/design/interservice-communication",
-   "category": "Containers + microservices",
+   "category": "Microservices",
    "num": 144,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
+   "otherDiagrams": [
+    "img1: Supervisor microservice"
+   ],
    "substitutions": {},
-   "differences": [],
+   "differences": [
+    "Conceptual diagram with no product icons; all nodes are labelled sketch shapes like the original.",
+    "The single REST trunk from Scheduler is split into five offset lanes (overlapping arrows fail geometry)."
+   ],
    "icons": [],
-   "checks": {}
+   "checks": {
+    "geometry": "PASS",
+    "summary": "32 elements, 9 bound arrows, 0 images with files"
+   }
   },
   {
    "slug": "cdn",
