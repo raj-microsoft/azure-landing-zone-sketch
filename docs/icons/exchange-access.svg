@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>Exchange Access (sketch)</title>
+  
+
+  <g stroke="#203746" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Outer protective shield -->
+    <path d="M64 9              Q69 9 76 14              Q88 22 107 22              Q112 22 112 28              L112 62              Q112 96 65 119              Q62 120 59 118              Q16 96 16 62              L16 28              Q16 23 21 23              Q44 22 55 14              Q60 10 64 9 Z" fill="#0078D4" stroke-width="4"/>
+
+    <!-- Inner shield surface -->
+    <path d="M64 17              Q75 17 84 25              Q94 30 105 30              L105 62              Q105 89 64 111              Q24 89 23 62              L23 30              Q43 29 54 22              Q59 18 64 17 Z" fill="#398FE2" stroke-width="2.8"/>
+
+    <!-- Plain golden padlock shackle -->
+    <path d="M45 58              L45 45              Q45 25 64 25              Q83 25 83 45              L83 58              L73 58              L73 45              Q73 35 64 35              Q55 35 55 45              L55 58 Z" fill="#FFBD02" stroke-width="3.8"/>
+
+    <!-- Padlock body: deliberately plain, no keyhole -->
+    <path d="M43 56              Q43 53 47 53              L82 53              Q87 53 87 57              L87 86              Q87 91 82 91              L46 91              Q41 91 41 86              L41 59              Q41 56 43 56 Z" fill="#FFD400" stroke-width="4"/>
+
+    <!-- Flat yellow body facet -->
+    <path d="M44 60              L82 57              L46 87              Q44 87 44 84 Z" fill="#FFE452" stroke="none"/>
+
+    <!-- Dark marker outline retained around body -->
+    <path d="M43 56              Q43 53 47 53              L82 53              Q87 53 87 57              L87 86              Q87 91 82 91              L46 91              Q41 91 41 86              L41 59              Q41 56 43 56 Z" fill="none" stroke="#203746" stroke-width="3.5"/>
+
+  </g>
+</svg>

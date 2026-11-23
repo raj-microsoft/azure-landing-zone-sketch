@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Virtual WANs (sketch)</title>
+  
+
+  <!-- Hand-drawn cyan cloud -->
+  <path d="M17 76 C8 73 6 65 9 56 C12 47 20 43 31 43 C36 26 50 17 67 19 C83 20 94 31 97 45 C109 44 119 53 119 65 C120 75 111 82 100 82 L24 82 Q20 81 17 76Z" fill="#2BC6E8" stroke="#123E60" stroke-width="3.5"/>
+
+  <!-- Subtle uneven cloud retraces -->
+  <path d="M24 48 Q29 41 36 38 M64 25 Q81 25 88 39" stroke="#123E60" stroke-width="1.6" opacity=".5"/>
+
+  <!-- Curved network paths behind globe -->
+  <path d="M37 73 Q23 66 23 55 Q24 46 33 42" stroke="#E6E6E6" stroke-width="4"/>
+  <path d="M91 73 Q105 66 105 55 Q104 46 95 42" stroke="#E6E6E6" stroke-width="4"/>
+
+  <!-- Upper cloud-side connection endpoints -->
+  <path d="M33 37 C36 37 38 39 38 42 C38 45 36 47 33 47 C30 47 28 45 28 42 C28 39 30 37 33 37Z" fill="#F2F2F2" stroke="#123E60" stroke-width="2"/>
+  <path d="M95 37 C98 37 100 39 100 42 C100 45 98 47 95 47 C92 47 90 45 90 42 C90 39 92 37 95 37Z" fill="#F2F2F2" stroke="#123E60" stroke-width="2"/>
+
+  <!-- Pale globe body -->
+  <path d="M64 52 C83 52 98 67 98 86 C98 105 83 120 64 120 C45 120 30 105 30 86 C30 67 45 52 64 52Z" fill="#F2F2F2" stroke="#123E60" stroke-width="3.5"/>
+
+  <!-- Globe meridians -->
+  <path d="M64 53 C47 65 46 105 64 119 M64 53 C81 65 82 105 64 119 M64 54 L64 118" stroke="#0078D4" stroke-width="2.4"/>
+
+  <!-- Globe parallels -->
+  <path d="M39 72 Q64 65 89 72 M31 86 Q64 80 97 86 M39 100 Q64 107 89 100" stroke="#0078D4" stroke-width="2.4"/>
+
+  <!-- Globe inner sketch boundary -->
+  <path d="M64 57 C80 57 93 70 93 86 C93 102 80 115 64 115 C48 115 35 102 35 86 C35 70 48 57 64 57Z" stroke="#0078D4" stroke-width="1.5" opacity=".65"/>
+
+  <!-- Pink network endpoints at the globe intersections -->
+  <path d="M37 67 C40.5 67 43 69.5 43 73 C43 76.5 40.5 79 37 79 C33.5 79 31 76.5 31 73 C31 69.5 33.5 67 37 67Z" fill="#CE74B6" stroke="#123E60" stroke-width="2.3"/>
+  <path d="M91 67 C94.5 67 97 69.5 97 73 C97 76.5 94.5 79 91 79 C87.5 79 85 76.5 85 73 C85 69.5 87.5 67 91 67Z" fill="#CE74B6" stroke="#123E60" stroke-width="2.3"/>
+
+  <!-- Restrained yellow marker accents -->
+  <path d="M14 91 L9 95 M111 91 L117 95 M64 13 L64 8" stroke="#FFCA28" stroke-width="3"/>
+</svg>

@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 124,
+ "done": 129,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -5205,15 +5205,35 @@
    "slug": "wordpress-overview",
    "title": "WordPress on Azure",
    "url": "https://learn.microsoft.com/azure/architecture/guide/infrastructure/wordpress-overview",
-   "category": "Infrastructure + storage",
+   "category": "Web",
    "num": 129,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Front Door + WAF": "front-door-and-cdn-profiles",
+    "Subnet with NSG": "network-security-groups",
+    "Application Gateway + WAF": "application-gateways",
+    "Azure VPN Gateway": "virtual-network-gateways",
+    "Any WordPress hosting solution": "virtual-machine"
+   },
+   "differences": [
+    "Public internet and administrator drawn as labelled shapes.",
+    "Chip glyph for the hosting solution shown as a generic VM icon."
+   ],
+   "icons": [
+    "application-gateways",
+    "firewalls",
+    "front-door-and-cdn-profiles",
+    "network-security-groups",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "41 elements, 7 bound arrows, 8 images with files"
+   }
   },
   {
    "slug": "private-link-virtual-wan-dns-single-region-workload",
@@ -5221,13 +5241,43 @@
    "url": "https://learn.microsoft.com/azure/architecture/networking/guide/private-link-virtual-wan-dns-single-region-workload",
    "category": "Networking",
    "num": 130,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: single-region challenge",
+    "img2: working solution with a virtual hub extension for DNS",
+    "img3-10: portal screenshots"
+   ],
+   "substitutions": {
+    "Azure Virtual WAN": "virtual-wans",
+    "Virtual hub": "virtual-wan-hub",
+    "Azure Firewall (DNS server)": "firewalls",
+    "Azure DNS": "dns-zones",
+    "Client": "virtual-machine",
+    "Private Link endpoint": "private-link",
+    "stgworkload00": "storage-accounts",
+    "Subnet NSG": "network-security-groups"
+   },
+   "differences": [
+    "Region shown as a tinted frame with the label below.",
+    "NSG shields drawn as small icons in subnet corners."
+   ],
+   "icons": [
+    "dns-zones",
+    "firewalls",
+    "network-security-groups",
+    "private-link",
+    "storage-accounts",
+    "subnet",
+    "virtual-machine",
+    "virtual-networks",
+    "virtual-wan-hub",
+    "virtual-wans"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "41 elements, 3 bound arrows, 12 images with files"
+   }
   },
   {
    "slug": "private-link-virtual-wan-dns-virtual-hub-extension-pattern",
@@ -5235,13 +5285,36 @@
    "url": "https://learn.microsoft.com/azure/architecture/networking/guide/private-link-virtual-wan-dns-virtual-hub-extension-pattern",
    "category": "Networking",
    "num": 131,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Virtual WAN": "virtual-wans",
+    "Virtual hub": "virtual-wan-hub",
+    "Azure DNS / Private DNS zone": "dns-zones",
+    "DNS Private Resolver": "dns-private-resolver",
+    "Client": "virtual-machine",
+    "Subnet NSG": "network-security-groups"
+   },
+   "differences": [
+    "Hub-extension dotted outlines start below the virtual hub instead of overlapping it.",
+    "Peered asterisks kept in the labels."
+   ],
+   "icons": [
+    "bastions",
+    "dns-private-resolver",
+    "dns-zones",
+    "network-security-groups",
+    "subnet",
+    "virtual-machine",
+    "virtual-networks",
+    "virtual-wan-hub",
+    "virtual-wans"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "62 elements, 5 bound arrows, 15 images with files"
+   }
   },
   {
    "slug": "private-link-virtual-wan-dns-guide",
@@ -5249,27 +5322,67 @@
    "url": "https://learn.microsoft.com/azure/architecture/networking/guide/private-link-virtual-wan-dns-guide",
    "category": "Networking",
    "num": 132,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: virtual network connection security screenshot",
+    "img2-3: basic Private Link and DNS variants"
+   ],
+   "substitutions": {
+    "Azure Virtual WAN": "virtual-wans",
+    "Virtual WAN hub": "virtual-wan-hub",
+    "Azure Firewall": "firewalls",
+    "Virtual network": "virtual-networks"
+   },
+   "differences": [
+    "Dashed callouts from the hubs and firewalls to the settings boxes drawn orthogonally.",
+    "Dotted 'configured DNS server' links run from each firewall to its virtual networks."
+   ],
+   "icons": [
+    "firewalls",
+    "virtual-networks",
+    "virtual-wan-hub",
+    "virtual-wans"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "52 elements, 11 bound arrows, 9 images with files"
+   }
   },
   {
    "slug": "secure-hybrid-messaging-client",
    "title": "Enhanced-security hybrid messaging infrastructure for desktop-client access",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/hybrid/secure-hybrid-messaging-client",
-   "category": "Hybrid + multicloud",
+   "category": "Hybrid",
    "num": 133,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: alternative architecture (Exchange on-premises)",
+    "img2+: screenshots"
+   ],
+   "substitutions": {
+    "Microsoft Entra Connect": "entra-connect-sync",
+    "Microsoft Entra ID": "entra-connect",
+    "Conditional Access policy": "conditional-access",
+    "Multifactor authentication": "multi-factor-authentication",
+    "Exchange Online / Authentication policy": "exchange-access"
+   },
+   "differences": [
+    "Active Directory, AD FS, WAP, Outlook, Exchange Online user, Microsoft 365, Block access and On-premises drawn as labelled shapes.",
+    "Bundled parallel arrows into Outlook spread on separate lanes."
+   ],
+   "icons": [
+    "conditional-access",
+    "entra-connect",
+    "entra-connect-sync",
+    "exchange-access",
+    "multi-factor-authentication"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "78 elements, 17 bound arrows, 6 images with files"
+   }
   },
   {
    "slug": "secure-hybrid-messaging-mobile",
