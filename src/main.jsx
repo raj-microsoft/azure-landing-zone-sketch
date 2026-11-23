@@ -21,20 +21,22 @@ const viewerHref = (slug) => `${BASE}?a=${encodeURIComponent(slug)}`;
 
 function Card({ s }) {
   const done = s.status === "done";
+  const none = s.status === "no-diagram";
+  const placeholder = none ? "No architecture diagram in this article" : "Sketch coming";
   return (
-    <li className={`card${s.featured ? " featured" : ""}${done ? "" : " pending"}`}>
+    <li className={`card${s.featured ? " featured" : ""}${done ? "" : " pending"}${none ? " no-diagram" : ""}`}>
       {done ? (
         <a className="thumb" href={viewerHref(s.slug)} aria-label={`Open the sketch of ${s.title}`}>
           <img src={`${BASE}thumbs/${s.slug}.png`} alt="" loading="lazy" decoding="async" />
         </a>
       ) : (
-        <div className="thumb empty" aria-hidden="true"><span>Sketch coming</span></div>
+        <div className="thumb empty" aria-hidden="true"><span>{placeholder}</span></div>
       )}
       <div className="meta">
         <p className="cat">{s.category}{s.featured ? " · featured" : ""}</p>
         <h2>{done ? <a href={viewerHref(s.slug)}>{s.title}</a> : s.title}</h2>
         <p className="links">
-          {done ? <a href={viewerHref(s.slug)}>Open sketch</a> : <span className="soon">Sketch coming</span>}
+          {done ? <a href={viewerHref(s.slug)}>Open sketch</a> : <span className="soon">{placeholder}</span>}
           <a href={s.url} target="_blank" rel="noopener">Learn article</a>
         </p>
       </div>

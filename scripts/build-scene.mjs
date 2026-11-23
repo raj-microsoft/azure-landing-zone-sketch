@@ -56,6 +56,11 @@ const CAT = [
 ];
 export const categoryOf = (url) => (CAT.find(([re]) => re.test(url)) ?? [null, "Design guidance"])[1];
 
+// Articles whose page has no architecture diagram (gallery shows a note instead of 'Sketch coming').
+export const NO_DIAGRAM = {
+  "troubleshoot-vpn": "Article has only Azure Monitor / VPN diagnostics screenshots, no architecture diagram",
+  "azure-data-factory-on-azure-landing-zones-index": "Series index page linking the baseline, hardened and mission-critical articles; no diagram",
+};
 const queue = readFileSync("work/queue.tsv", "utf8").trim().split(/\r?\n/).map((l) => l.split("\t"));
 const scenes = [];
 const seenUrl = new Map();
@@ -67,7 +72,7 @@ for (const [num, slug, url, title] of queue) {
   // The queue lists some articles twice under different slugs; draw once and mark the repeat.
   if (!b && seenUrl.has(url)) { scenes.push({ ...base, status: "duplicate", duplicateOf: seenUrl.get(url) }); continue; }
   seenUrl.set(url, slug);
-  scenes.push(b ? { ...base, ...b, num: +num, category: b.category ?? base.category } : base);
+  scenes.push(b ? { ...base, ...b, num: +num, category: b.category ?? base.category } : NO_DIAGRAM[slug] ? { ...base, status: "no-diagram", noDiagramReason: NO_DIAGRAM[slug] } : base);
 }
 const listed = scenes.filter((s) => s.status !== "duplicate");
 writeFileSync(idxPath, JSON.stringify({ updated: new Date().toISOString().slice(0, 10), count: listed.length, done: listed.filter((s) => s.status === "done").length, scenes }, null, 1));

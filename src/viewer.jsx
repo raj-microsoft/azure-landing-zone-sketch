@@ -32,7 +32,7 @@ export default function Viewer({ slug }) {
       if (!e) throw new Error("unknown");
       setEntry(e);
       document.title = `${e.title}, sketched`;
-      if (e.status !== "done" && !new URLSearchParams(location.search).has("draft")) { setError("pending"); return null; }
+      if (e.status !== "done" && !new URLSearchParams(location.search).has("draft")) { setError(e.status === "no-diagram" ? "no-diagram" : "pending"); return null; }
       return fetch(`${BASE}scenes/${slug}.excalidraw`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
     }).then((scene) => {
       if (!scene) return;
@@ -125,7 +125,8 @@ export default function Viewer({ slug }) {
         </nav>
       </header>
       {editing && <p className="note" role="status">Editing. Changes stay in this browser only.</p>}
-      {error === "pending" && <p className="note" role="status">This sketch is not drawn yet. <a href={entry?.url} target="_blank" rel="noopener">Read the Learn article</a> or <a href={BASE}>go back to the gallery</a>.</p>}
+      {error === "no-diagram" && <p className="note" role="status">No architecture diagram in this article. <a href={entry?.url} target="_blank" rel="noopener">Read the Learn article</a> or <a href={BASE}>go back to the gallery</a>.</p>}
+        {error === "pending" && <p className="note" role="status">This sketch is not drawn yet. <a href={entry?.url} target="_blank" rel="noopener">Read the Learn article</a> or <a href={BASE}>go back to the gallery</a>.</p>}
       {error === "unknown" && <p className="note err" role="alert">There is no architecture called &ldquo;{slug}&rdquo;. <a href={BASE}>Go back to the gallery</a>.</p>}
       {error === "load" && <p className="note err" role="alert">The diagram could not be loaded. Reload the page to try again.</p>}
       <main className="canvas">

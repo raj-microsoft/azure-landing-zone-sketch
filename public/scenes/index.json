@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 101,
+ "done": 114,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -3685,13 +3685,14 @@
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/troubleshoot-vpn",
    "category": "Hybrid + multicloud",
    "num": 87,
-   "status": "pending",
+   "status": "no-diagram",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
    "differences": [],
    "icons": [],
-   "checks": {}
+   "checks": {},
+   "noDiagramReason": "Article has only Azure Monitor / VPN diagnostics screenshots, no architecture diagram"
   },
   {
    "slug": "aks-front-door",
@@ -4315,15 +4316,44 @@
    "slug": "access-multitenant-web-app-from-on-premises",
    "title": "Improved-security access to App Service web apps from an on-premises network",
    "url": "https://learn.microsoft.com/azure/architecture/web-apps/guides/networking/access-multitenant-web-app-from-on-premises",
-   "category": "Networking",
+   "category": "Web",
    "num": 105,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "UDR": "route-tables",
+    "S2S VPN/ExpressRoute": "expressroute-circuits",
+    "Private endpoint": "private-endpoints",
+    "DNS Private Resolver inbound/outbound endpoint": "dns-private-resolver",
+    "Private DNS zones": "dns-zones",
+    "Client virtual machine / DNS server": "virtual-machine",
+    "Gateway subnet": "virtual-network-gateways"
+   },
+   "differences": [
+    "On-premises building glyph and subscription key badges omitted.",
+    "UDR callouts are drawn as notes inside each subnet rather than on the vnet border.",
+    "VNet integration dot-and-line drawn as a plain App Service card."
+   ],
+   "icons": [
+    "app-services",
+    "dns-private-resolver",
+    "dns-zones",
+    "expressroute-circuits",
+    "firewalls",
+    "key-vaults",
+    "network-security-groups",
+    "private-endpoints",
+    "sql-database",
+    "storage-accounts",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "103 elements, 10 bound arrows, 26 images with files"
+   }
   },
   {
    "slug": "sas-overview",
@@ -4331,41 +4361,97 @@
    "url": "https://learn.microsoft.com/azure/architecture/guide/sas/sas-overview",
    "category": "Infrastructure + storage",
    "num": 106,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "VM with P30 disks": "virtual-machine (disk shown in caption)"
+   },
+   "differences": [
+    "Proximity placement group fully contains both subnets (official diagram shows a partial overlap).",
+    "Each VM-plus-disk glyph is one VM card captioned 'P30 disks'; the separate disk stack is not drawn."
+   ],
+   "icons": [
+    "network-security-groups",
+    "proximity-placement-groups",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "75 elements, 0 bound arrows, 22 images with files"
+   }
   },
   {
    "slug": "performance-security-optimized-vwan",
    "title": "Virtual WAN architecture optimized for department-specific requirements",
-   "url": "https://learn.microsoft.com/azure/architecture/networking/architecture/performance-security-optimized-vwan",
+   "url": "https://learn.microsoft.com/azure/architecture/networking/guide/performance-security-optimized-vwan",
    "category": "Networking",
    "num": 107,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: traffic pathways",
+    "img2: cross-regional traffic problem"
+   ],
+   "substitutions": {
+    "VNet1-4 / NVA VNets": "virtual-networks",
+    "NVA1 / NVA2": "virtual-machine",
+    "Virtual WAN hub": "virtual-wan-hub",
+    "ExpressRoute": "expressroute-circuits"
+   },
+   "differences": [
+    "Diagonal connections redrawn orthogonally; the line hop where peering crosses a hub connection is avoided by routing VNet4's hub connection round the right side.",
+    "Branch building and firewall glyphs drawn as a labelled on-premises shape.",
+    "Route tables drawn as sketch grids."
+   ],
+   "icons": [
+    "expressroute-circuits",
+    "virtual-machine",
+    "virtual-networks",
+    "virtual-wan-hub"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "110 elements, 10 bound arrows, 8 images with files"
+   }
   },
   {
    "slug": "azure-files-on-premises-authentication",
-   "title": "Azure Files accessed from on-premises and secured by AD DS in a private network",
+   "title": "Azure Files accessed on-premises and secured by AD DS",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/hybrid/azure-files-on-premises-authentication",
    "category": "Hybrid + multicloud",
    "num": 108,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Microsoft Entra ID": "entra-connect",
+    "Azure VPN Gateway": "virtual-network-gateways",
+    "Azure DNS (proxy VM)": "virtual-machine",
+    "Azure Files": "storage-azure-files",
+    "Azure Backup": "backup-vault",
+    "Azure (Internal) DNS": "dns-zones",
+    "User": "users"
+   },
+   "differences": [
+    "VPN device and AD DS/DNS server are on-premises products drawn as labelled sketch shapes."
+   ],
+   "icons": [
+    "backup-vault",
+    "dns-zones",
+    "entra-connect",
+    "private-endpoints",
+    "storage-azure-files",
+    "users",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "78 elements, 11 bound arrows, 9 images with files"
+   }
   },
   {
    "slug": "azure-data-factory-on-azure-landing-zones-index",
@@ -4373,139 +4459,388 @@
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/azure-data-factory-on-azure-landing-zones-index",
    "category": "Databases + analytics",
    "num": 109,
-   "status": "pending",
+   "status": "no-diagram",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
    "differences": [],
    "icons": [],
-   "checks": {}
+   "checks": {},
+   "noDiagramReason": "Series index page linking the baseline, hardened and mission-critical articles; no diagram"
   },
   {
    "slug": "azure-data-factory-on-azure-landing-zones-baseline",
-   "title": "Azure Data Factory baseline architecture in an Azure landing zone",
+   "title": "Baseline Azure Data Factory architecture in an Azure landing zone",
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/azure-data-factory-on-azure-landing-zones-baseline",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 110,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: medallion architecture network design"
+   ],
+   "substitutions": {
+    "Power BI": "power-bi-embedded",
+    "Bronze/Silver/Gold": "data-lake-storage-gen1",
+    "Microsoft Entra ID": "entra-connect",
+    "Azure Site Recovery": "recovery-services-vaults",
+    "Microsoft Cost Management": "cost-management"
+   },
+   "differences": [
+    "Ingest group shortened so the data-source arrow passes below it rather than through it.",
+    "Data source (on-premises) and Delta Lake / Apache Spark are drawn as labelled shapes.",
+    "Purview Data Governance has no sketch icon: plain labelled box."
+   ],
+   "icons": [
+    "azure-databricks",
+    "azure-devops",
+    "cost-management",
+    "data-factories",
+    "data-lake-storage-gen1",
+    "entra-connect",
+    "key-vaults",
+    "monitor",
+    "power-bi-embedded",
+    "recovery-services-vaults",
+    "sql-server"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "80 elements, 9 bound arrows, 13 images with files"
+   }
   },
   {
    "slug": "azure-data-factory-enterprise-hardened",
-   "title": "Azure Data Factory enterprise hardened architecture",
+   "title": "Enterprise-hardened Azure Data Factory architecture",
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/azure-data-factory-enterprise-hardened",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 111,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: hardened network design"
+   ],
+   "substitutions": {
+    "Power BI": "power-bi-embedded",
+    "Bronze/Silver/Gold / Azure Data Lake Storage": "data-lake-storage-gen1",
+    "Microsoft Entra": "entra-connect",
+    "Azure Site Recovery": "recovery-services-vaults",
+    "Foundry Tools": "ai-foundry",
+    "Azure Cost Management and Billing": "cost-management-and-billing"
+   },
+   "differences": [
+    "Delta Lake and Apache Spark logos shown as text.",
+    "Purview Data Governance has no sketch icon: plain labelled box.",
+    "Domain 2 and Domain N stacked frames drawn as offset outlines behind Domain 1."
+   ],
+   "icons": [
+    "ai-foundry",
+    "azure-databricks",
+    "azure-devops",
+    "azure-machine-learning",
+    "azure-openai",
+    "cost-management-and-billing",
+    "data-factories",
+    "data-lake-storage-gen1",
+    "entra-connect",
+    "key-vaults",
+    "monitor",
+    "power-bi-embedded",
+    "recovery-services-vaults",
+    "sql-server"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "122 elements, 0 bound arrows, 22 images with files"
+   }
   },
   {
    "slug": "azure-data-factory-mission-critical",
-   "title": "Azure Data Factory mission-critical architecture",
+   "title": "Mission-critical Azure Data Factory architecture",
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/azure-data-factory-mission-critical",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 112,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: hardened network design"
+   ],
+   "substitutions": {
+    "Web App for Containers": "app-services",
+    "Bronze / Data Lake Storage": "data-lake-storage-gen1",
+    "Azure Front Door": "front-door-and-cdn-profiles",
+    "Azure DNS": "dns-zones",
+    "Jump hosts / Self-hosted build agents": "virtual-machine",
+    "Private endpoint glyph": "private-endpoints"
+   },
+   "differences": [
+    "Private endpoint glyphs next to Key Vault and Data Lake Storage drawn as separate small cards."
+   ],
+   "icons": [
+    "app-services",
+    "application-insights",
+    "azure-devops",
+    "bastions",
+    "container-registries",
+    "data-factories",
+    "data-lake-storage-gen1",
+    "dns-zones",
+    "front-door-and-cdn-profiles",
+    "key-vaults",
+    "log-analytics-workspaces",
+    "private-endpoints",
+    "virtual-machine"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "138 elements, 0 bound arrows, 30 images with files"
+   }
   },
   {
    "slug": "retry",
    "title": "Retry pattern",
    "url": "https://learn.microsoft.com/azure/architecture/patterns/retry",
-   "category": "Design guidance",
+   "category": "Design patterns",
    "num": 113,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
-   "differences": [],
+   "differences": [
+    "Conceptual pattern diagram with no Azure products: Application (gear) and Hosted service (globe) are labelled sketch shapes; the failure glyph is a text marker."
+   ],
    "icons": [],
-   "checks": {}
+   "checks": {
+    "geometry": "PASS",
+    "summary": "25 elements, 6 bound arrows, 0 images with files"
+   }
   },
   {
    "slug": "oracle-azure-netapp-files",
    "title": "Oracle Database with Azure NetApp Files",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/file-storage/oracle-azure-netapp-files",
-   "category": "Infrastructure + storage",
+   "category": "Databases",
    "num": 114,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: consolidated Oracle databases",
+    "img2-5: replication, backup and DR variants"
+   ],
+   "substitutions": {
+    "Oracle VM": "virtual-machine",
+    "Volume NIC": "network-interfaces",
+    "ANF volumes": "azure-netapp-files"
+   },
+   "differences": [
+    "Volume cylinders drawn as Azure NetApp Files cards.",
+    "Capacity pool drawn fully around the application volume group (official shows the pool behind its lower part)."
+   ],
+   "icons": [
+    "azure-netapp-files",
+    "network-interfaces",
+    "subnet",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "48 elements, 6 bound arrows, 11 images with files"
+   }
   },
   {
    "slug": "raincode-reference-architecture",
    "title": "Rehost mainframe applications to Azure with Raincode compilers",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/app-modernization/raincode-reference-architecture",
-   "category": "Web + apps",
+   "category": "Mainframe",
    "num": 115,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img0: legacy COBOL mainframe architecture (pre-migration)"
+   ],
+   "substitutions": {
+    "Peer virtual network": "virtual-network-gateways",
+    "AKS cluster/VM": "kubernetes-services",
+    "Business apps": "app-service-plans",
+    "Online/Batch services": "app-services",
+    "SSD managed disk": "disks",
+    "Accelerated networking": "network-interfaces",
+    "Azure Files, NetApp CIFS/NFS": "storage-azure-files",
+    "Active Directory domain controllers": "entra-domain-services",
+    "System and network management": "monitor",
+    "Azure Analytics (Databricks, Power BI)": "azure-databricks",
+    "Azure Blob container": "blob-block",
+    "Azure Data Factory v2": "data-factories",
+    "Azure Stream Analytics or Kafka": "stream-analytics-jobs",
+    "Users": "users"
+   },
+   "differences": [
+    "Main diagram is img1 (img0 is the legacy mainframe).",
+    "The business-app glyph pair (apps grid + function) is shown as one App Service plan icon per row.",
+    "Blob containers 1, 2 and [n] shown as 1 and [n].",
+    "Region 2 is drawn as a narrower zone with the replicated data services only, as in the official diagram."
+   ],
+   "icons": [
+    "app-service-plans",
+    "azure-cosmos-db",
+    "azure-database-postgresql-server",
+    "azure-databricks",
+    "blob-block",
+    "data-factories",
+    "disks",
+    "entra-domain-services",
+    "expressroute-circuits",
+    "kubernetes-services",
+    "load-balancers",
+    "monitor",
+    "network-interfaces",
+    "network-security-groups",
+    "private-link",
+    "sql-database",
+    "storage-accounts",
+    "storage-azure-files",
+    "stream-analytics-jobs",
+    "users",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "174 elements, 16 bound arrows, 41 images with files"
+   }
   },
   {
    "slug": "migrate-aix-azure-linux",
-   "title": "AIX UNIX on-premises to Azure Linux migration",
-   "url": "https://learn.microsoft.com/azure/architecture/example-scenario/unix-migration/migrate-aix-azure-linux",
-   "category": "Mainframe + migration",
+   "title": "Migrate IBM AIX workloads to Azure",
+   "url": "https://learn.microsoft.com/azure/architecture/example-scenario/mainframe/migrate-aix-azure-linux",
+   "category": "Mainframe",
    "num": 116,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img0: pre-migration AIX system architecture"
+   ],
+   "substitutions": {
+    "Web Application Firewall (WAF)": "web-application-firewall-policies-waf",
+    "Azure Files shared storage": "storage-azure-files",
+    "Azure SQL Database": "sql-database",
+    "Microsoft Entra ID": "entra-connect",
+    "Azure Site Recovery": "recovery-services-vaults",
+    "Azure Service Bus": "azure-service-bus",
+    "Users": "users",
+    "Private Endpoint": "private-endpoints"
+   },
+   "differences": [
+    "Main diagram is img1 (img0 is the pre-migration AIX system).",
+    "Diagonal VM-to-private-endpoint lines and line hops redrawn orthogonally; cross-region storage replication lines are routed below the subnets.",
+    "Secondary private endpoint sits just below its virtual network instead of inside it.",
+    "Availability set icon and Azure Files share are shown as one card between the app servers."
+   ],
+   "icons": [
+    "app-services",
+    "azure-netapp-files",
+    "azure-service-bus",
+    "entra-connect",
+    "expressroute-circuits",
+    "load-balancers",
+    "network-security-groups",
+    "private-endpoints",
+    "recovery-services-vaults",
+    "sql-database",
+    "storage-azure-files",
+    "traffic-manager-profiles",
+    "users",
+    "virtual-machine",
+    "web-application-firewall-policies-waf"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "153 elements, 22 bound arrows, 31 images with files"
+   }
   },
   {
    "slug": "migrate-aix-workloads-to-azure-with-skytap",
-   "title": "Migrate AIX workloads to Azure with Skytap",
+   "title": "Migrate AIX workloads to Skytap on Azure",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/mainframe/migrate-aix-workloads-to-azure-with-skytap",
-   "category": "Mainframe + migration",
+   "category": "Mainframe",
    "num": 117,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Data Box VM / Web application VM": "virtual-machine",
+    "Azure Data Box Gateway": "data-box",
+    "Azure Private Link endpoint": "private-link",
+    "Azure Storage account": "storage-accounts",
+    "Azure Blob container": "blob-block",
+    "SSD managed disk": "disks",
+    "Accelerated networking": "network-interfaces",
+    "On-premises user": "users"
+   },
+   "differences": [
+    "AIX LPARs, NIM servers, WebSphere, IBM Db2, IIS and RPG I/O API are non-Azure products drawn as labelled sketch shapes.",
+    "Line hops where links cross are replaced by orthogonal lanes; some lanes are rerouted round the Skytap environment."
+   ],
+   "icons": [
+    "blob-block",
+    "data-box",
+    "disks",
+    "expressroute-circuits",
+    "network-interfaces",
+    "network-security-groups",
+    "private-link",
+    "storage-accounts",
+    "users",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "123 elements, 14 bound arrows, 14 images with files"
+   }
   },
   {
    "slug": "migrate-ibm-i-series-to-azure-with-skytap",
    "title": "Migrate IBM i series to Azure with Skytap",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/mainframe/migrate-ibm-i-series-to-azure-with-skytap",
-   "category": "Mainframe + migration",
+   "category": "Mainframe",
    "num": 118,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Data Box VM / Web application VM / FTP server": "virtual-machine",
+    "Azure Data Box gateway": "data-box",
+    "Azure Private Link endpoint": "private-link",
+    "Azure Storage account": "storage-accounts",
+    "Azure Blob container": "blob-block",
+    "SSD managed disk": "disks",
+    "Accelerated networking": "network-interfaces",
+    "On-premises user": "users"
+   },
+   "differences": [
+    "Layout derived from the 117 AIX Skytap scene (same structure); IBM i LPARs, COBOL/RPG/BRMS, IBM DB2, IIS, RPG I/O API and FTP service are non-Azure products drawn as labelled sketch shapes.",
+    "Headquarters and datacenter building glyphs omitted.",
+    "Line hops replaced by orthogonal lanes."
+   ],
+   "icons": [
+    "blob-block",
+    "data-box",
+    "disks",
+    "expressroute-circuits",
+    "network-interfaces",
+    "network-security-groups",
+    "private-link",
+    "storage-accounts",
+    "users",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "118 elements, 12 bound arrows, 14 images with files"
+   }
   },
   {
    "slug": "arc-sql-managed-instance-disaster-recovery",
