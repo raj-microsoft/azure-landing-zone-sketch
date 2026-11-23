@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>Update Management Center (sketch)</title>
+  
+  <desc>Azure-blue twelve-tooth gear with a dark central hub containing four cyan curved update-arrow sections, without a checkmark or status badge.</desc>
+
+  <!-- Twelve-tooth gear -->
+  <path d="M59 3            Q60 2 63 3            L68 3 Q70 3 71 6            L76 19            Q81 21 86 23            L99 17 Q101 16 103 18            L110 25 Q112 27 110 30            L104 43            Q107 48 109 53            L122 58 Q125 59 125 62            L125 69 Q125 71 122 73            L109 78            Q107 83 104 87            L110 100 Q111 102 109 104            L102 111 Q100 113 97 111            L85 105            Q80 108 75 110            L70 123 Q69 125 66 125            L59 125 Q57 125 56 122            L51 110            Q45 108 41 105            L28 111 Q26 112 24 110            L17 103 Q15 101 17 98            L23 85            Q20 80 19 75            L6 70 Q3 69 3 66            L3 59 Q3 57 6 56            L19 51            Q20 46 23 41            L17 28 Q16 26 18 24            L25 17 Q27 15 29 17            L42 23            Q47 20 52 19            L57 6 Q58 3 59 3 Z" fill="#087BCD" stroke="#263B4B" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Central dark circular mechanism -->
+  <path d="M96 64            C96 82 82 96 64 96            C46 96 32 82 32 64            C32 46 46 32 64 32            C82 32 96 46 96 64 Z" fill="#003B76" stroke="#203546" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- Upper-left cyan update arc -->
+  <path d="M44 43            Q55 35 67 36            Q78 36 88 44            L83 51            Q75 45 65 45            Q56 45 49 50            Q47 51 46 48 Z" fill="#85ECFF" stroke="#203846" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Right descending curved update arrow -->
+  <path d="M88 44            Q99 57 95 70            L103 72            Q105 73 103 75            L92 85            Q90 87 88 83            L82 68            Q81 65 85 66            L89 67            Q91 59 87 52            Q84 47 80 45 Z" fill="#50E6FF" stroke="#203846" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Lower-right cyan update arc -->
+  <path d="M84 85            Q73 93 61 92            Q50 92 40 84            L45 77            Q53 84 63 84            Q72 84 79 79            Q81 78 82 81 Z" fill="#85ECFF" stroke="#203846" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Left ascending curved update arrow -->
+  <path d="M40 84            Q29 71 33 58            L25 56            Q23 55 25 53            L36 43            Q38 41 40 45            L46 60            Q47 63 43 62            L39 61            Q37 69 41 76            Q44 81 48 83 Z" fill="#50E6FF" stroke="#203846" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Subtle marker-edge retraces -->
+  <g fill="none" stroke="#244658" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M59 8 L54 22 Q48 23 44 26"/>
+    <path d="M105 29 L100 42 Q104 47 106 52"/>
+    <path d="M119 61 L111 58"/>
+    <path d="M102 104 L86 101"/>
+    <path d="M67 120 L72 108"/>
+    <path d="M20 99 L27 85"/>
+    <path d="M8 63 L17 64"/>
+    <path d="M27 21 L40 27"/>
+  </g>
+
+  <!-- Restrained yellow sketchnote ticks -->
+  <g fill="none" stroke="#E6B93F" stroke-width="2.5" stroke-linecap="round">
+    <path d="M110 15 L114 11"/>
+    <path d="M115 22 L120 20"/>
+  </g>
+</svg>

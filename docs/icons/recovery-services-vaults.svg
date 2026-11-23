@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none"><title>Recovery Services Vaults (sketch)</title>
+  
+
+  <!-- Rear Azure cloud -->
+  <path d="M34 54        C34 40 44 30 57 29        C62 13 76 7 89 10        C104 12 114 24 115 39        C127 42 128 52 124 63        C121 73 113 78 102 78        L57 78        C43 81 31 70 34 54Z" fill="#278BD9" stroke="#075A9E" stroke-width="3.7" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Rear cloud highlights -->
+  <path d="M41 51 Q43 41 59 35        M65 28 Q79 13 98 22        M116 47 Q123 56 112 69" stroke="#A8D5FF" stroke-width="2.3" stroke-linecap="round"/>
+
+  <!-- Recovery arrow shaft -->
+  <path d="M53 65        C54 48 66 38 82 38        L98 39" stroke="#075A9E" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M53 65        C54 48 66 38 82 38        L98 39" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right-turn arrowhead -->
+  <path d="M85 28 L99 39 L86 50" stroke="#075A9E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M85 28 L99 39 L86 50" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Foreground cyan cloud: lowered and narrowed -->
+  <path d="M24 85        C25 69 37 58 52 59        C58 48 70 46 80 51        C90 56 96 64 97 75        C109 78 115 88 112 99        C110 110 101 117 89 117        L27 117        C13 117 5 109 5 97        C5 86 13 78 24 77        Q23 81 24 85Z" fill="#2EC7EA" stroke="#075A9E" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Foreground cloud highlights -->
+  <path d="M14 94 Q17 85 28 83        M34 75 Q41 63 54 65        M64 58 Q77 52 85 67" stroke="#B7F4FF" stroke-width="2.3" stroke-linecap="round"/>
+
+  <!-- Subtle marker detail -->
+  <path d="M36 108 Q55 110 73 108        M80 108 Q89 110 97 106" stroke="#087EA9" stroke-width="1.8" stroke-linecap="round" opacity=".45"/>
+
+  <!-- Yellow sketchnote accents -->
+  <g stroke="#FFCA45" stroke-width="3" stroke-linecap="round">
+    <path d="M18 37 L13 30"/>
+    <path d="M27 30 L26 20"/>
+    <path d="M19 46 L9 43"/>
+  </g>
+
+  <!-- Small sparkle -->
+  <path d="M113 18 L113 27 M109 22 L117 22" stroke="#FFCA45" stroke-width="2.8" stroke-linecap="round"/>
+</svg>

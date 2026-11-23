@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Load Balancers (sketch)</title>
+  
+  <desc>Hand-drawn green diamond with upward and rightward routing arrows, a central Azure-blue hub, and a connected lower white node.</desc>
+
+  <!-- Main diamond -->
+  <path d="M60 5            Q64 2 68 6            L122 60            Q126 64 122 68            L68 122            Q64 126 60 122            L6 68            Q2 64 6 60Z" fill="#76BC2D" stroke="#243447" stroke-width="3.4"/>
+
+  <!-- Upper directional arrow -->
+  <path d="M48 28            L62 14            Q64 12 66 14            L80 28            Q82 31 78 31            L70 31            L70 44            Q70 46 68 46            L60 46            Q58 46 58 44            L58 31            L50 31            Q46 31 48 28Z" fill="#B4EC36" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Right directional arrow -->
+  <path d="M98 47            L114 62            Q116 64 114 66            L98 81            Q95 83 95 79            L95 71            L82 71            Q80 71 80 69            L80 60            Q80 58 82 58            L95 58            L95 49            Q95 45 98 47Z" fill="#B4EC36" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Short connector behind both nodes -->
+  <path d="M64 76            Q65 85 64 95" stroke="#243447" stroke-width="8"/>
+
+  <path d="M64 77            Q65 85 64 95" stroke="#FFFFFF" stroke-width="4.5"/>
+
+  <!-- Central white hub -->
+  <path d="M64 44            C76 43 86 52 86 64            C87 76 77 86 65 86            C53 87 43 77 43 65            C43 53 52 45 64 44Z" fill="#FFFFFF" stroke="#243447" stroke-width="3.2"/>
+
+  <!-- Azure-blue hub center -->
+  <path d="M64 52            C71 52 77 58 77 65            C77 72 71 78 64 78            C57 78 51 72 51 65            C51 58 57 52 64 52Z" fill="#5EA0EF" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Lower connected white node -->
+  <path d="M64 91            C72 90 79 97 79 105            C79 113 72 120 64 120            C56 120 49 113 49 105            C49 97 56 91 64 91Z" fill="#FFFFFF" stroke="#243447" stroke-width="3.2"/>
+</svg>

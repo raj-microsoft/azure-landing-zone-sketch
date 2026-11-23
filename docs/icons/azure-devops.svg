@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none"><title>Azure DevOps (sketch)</title>
+  
+  <desc>
+    Hand-drawn Azure DevOps logo preserving the
+    official angular ribbon geometry, open left
+    connector, slanted upper arm, right vertical
+    panel, and folded lower ribbon. Flat Azure-blue
+    fills, uneven charcoal marker outlines,
+    and a transparent background.
+  </desc>
+
+  <!-- Main upper-right ribbon and descending panel -->
+  <path d="M119 28        Q120.5 27.5 121 30        L121 96.8        Q121 98.5 119.5 99.8        L94.1 120.7        Q92.5 121.8 90.5 121        L49.5 105.9        L49.5 121        L26.2 90.5        L97.2 96.2        L97.2 34.2        Z" fill="#0078D4" stroke="#203746" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Upper folded diagonal ribbon -->
+  <path d="M97.2 34.2        L121 28        L121 96.8        L94.1 120.7        L49.5 105.9        L49.5 121        L26.2 90.5        L97.2 96.2        Z" fill="#3C91E5" stroke="#203746" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Lower folded ribbon: dark-blue visible face -->
+  <path d="M26.2 90.5        L97.2 96.2        L97.2 34.2        L121 28        L121 96.8        L94.1 120.7        L49.5 105.9        L49.5 121        Z" fill="#1380DA" stroke="#203746" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Angular upper connector and left descending arm -->
+  <path d="M97.7 34.7        L57.5 10.3        L57.5 26.2        L20.6 37        L9.5 51.2        L9.5 83.4        L25.8 90.3        L25.8 49.1        Z" fill="#5EA0EF" stroke="#203746" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Left connector front face -->
+  <path d="M9.5 51.2        L25.8 49.1        L25.8 90.3        L9.5 83.4        Z" fill="#2B89DF" stroke="#203746" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Upper connector shoulder -->
+  <path d="M9.5 51.2        L20.6 37        L57.5 26.2        L57.5 10.3        L97.7 34.7        L25.8 49.1        Z" fill="#559CEC" stroke="#203746" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right folded panel, visibly separate from the left arm -->
+  <path d="M97.2 34.2        L121 28        L121 96.8        L94.1 120.7        L49.5 105.9        L49.5 121        L26.2 90.5        L97.2 96.2        Z" fill="#3C91E5" stroke="#203746" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Lower vertical fold -->
+  <path d="M26.2 90.5        L49.5 105.9        L49.5 121        Z" fill="#0078D4" stroke="#203746" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+</svg>

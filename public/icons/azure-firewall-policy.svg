@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Azure Firewall Policy (sketch)</title>
+
+  
+  <desc>
+    Hand-drawn Azure Firewall Policy icon featuring a crimson
+    brick firewall and an overlapping gray policy document
+    with three bullet-point rules. Flat fills, uneven charcoal
+    marker outlines, and transparent background.
+  </desc>
+
+  <!-- Firewall wall background -->
+  <path d="M5 18        Q5 16 9 16        L111 16        Q115 16 115 21        L115 60        L64 60        L64 81        L9 81        Q5 81 5 77 Z" fill="#821010" stroke="#203746" stroke-width="3.5"/>
+
+  <!-- Top row: three bricks -->
+  <g stroke="#203746" stroke-width="2.4">
+    <path d="M11 23 L41 23 L41 37 L11 37 Z" fill="#E62323"/>
+
+    <path d="M46 23 L76 23 L76 37 L46 37 Z" fill="#FF7381"/>
+
+    <path d="M81 23 L109 23 L109 37 L81 37 Z" fill="#E62323"/>
+  </g>
+
+  <!-- Middle row: staggered brick layout -->
+  <g stroke="#203746" stroke-width="2.4">
+    <path d="M11 42 L23 42 L23 56 L11 56 Z" fill="#E62323"/>
+
+    <path d="M28 42 L58 42 L58 56 L28 56 Z" fill="#FF7381"/>
+
+    <path d="M63 42 L93 42 L93 56 L63 56 Z" fill="#E62323"/>
+
+    <path d="M98 42 L109 42 L109 56 L98 56 Z" fill="#FF7381"/>
+  </g>
+
+  <!-- Bottom row, partly obscured by policy document -->
+  <g stroke="#203746" stroke-width="2.4">
+    <path d="M11 61 L41 61 L41 75 L11 75 Z" fill="#E62323"/>
+
+    <path d="M46 61 L76 61 L76 75 L46 75 Z" fill="#FF7381"/>
+
+    <path d="M81 61 L109 61 L109 75 L81 75 Z" fill="#E62323"/>
+  </g>
+
+  <!-- Policy document overlapping lower-right firewall -->
+  <path d="M65 60        Q65 57 69 57        L123 57        Q126 57 126 61        L126 106        Q126 110 122 110        L69 110        Q65 110 65 106 Z" fill="#E6E6E6" stroke="#203746" stroke-width="3.5"/>
+
+  <!-- Dark gray document header -->
+  <path d="M69 57        L122 57        Q126 57 126 61        L126 66        L65 66        L65 61        Q65 58 69 57 Z" fill="#666666" stroke="#203746" stroke-width="2.5"/>
+
+  <!-- Three policy rule bullets -->
+  <g fill="#666666" stroke="#203746" stroke-width="1.5">
+    <path d="M74 75              C76 74 78 76 78 78              C78 80 76 82 74 82              C72 82 70 80 70 78              C70 76 72 75 74 75 Z"/>
+
+    <path d="M74 87              C76 86 78 88 78 90              C78 92 76 94 74 94              C72 94 70 92 70 90              C70 88 72 87 74 87 Z"/>
+
+    <path d="M74 99              C76 98 78 100 78 102              C78 104 76 106 74 106              C72 106 70 104 70 102              C70 100 72 99 74 99 Z"/>
+  </g>
+
+  <!-- Three horizontal document rule lines -->
+  <g fill="#666666" stroke="#203746" stroke-width="1.6">
+
+    <path d="M84 76              Q84 75 86 75              L119 75              Q121 75 121 77              L121 79              Q121 81 119 81              L86 81              Q84 81 84 79 Z"/>
+
+    <path d="M84 88              Q84 87 86 87              L119 87              Q121 87 121 89              L121 91              Q121 93 119 93              L86 93              Q84 93 84 91 Z"/>
+
+    <path d="M84 100              Q84 99 86 99              L119 99              Q121 99 121 101              L121 103              Q121 105 119 105              L86 105              Q84 105 84 103 Z"/>
+  </g>
+
+</svg>

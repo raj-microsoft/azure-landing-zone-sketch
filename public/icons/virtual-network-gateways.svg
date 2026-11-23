@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Virtual Network Gateways (sketch)</title>
+  
+  <desc>Hand-drawn Azure Virtual Network Gateway with a cyan gateway arch, rectangular body, and four white directional arrows. Horizontal arrows point inward toward the center.</desc>
+
+  <!-- Gateway arch: dark irregular marker boundary -->
+  <path d="M27 57        L27 39        C27 18 42 7 64 7        C86 7 101 19 101 39        L101 57" fill="none" stroke="#243447" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Flat cyan arch -->
+  <path d="M27 57        L27 39        C27 18 42 7 64 7        C86 7 101 19 101 39        L101 57" fill="none" stroke="#32D4F5" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Gateway body -->
+  <path d="M19 56        Q16 56 16 62        L16 112        Q16 120 23 120        L105 120        Q112 120 112 112        L112 62        Q112 56 106 56        Z" fill="#32D4F5" stroke="#243447" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Flat lower gateway color region -->
+  <path d="M20 62        L108 62        L108 112        Q108 116 104 116        L24 116        Q20 116 20 112        Z" fill="#29BADE" stroke="#243447" stroke-width="1.8" stroke-linejoin="round"/>
+
+  <!-- Four routing arrows, each pointing toward its
+       intended direction as in the official icon -->
+
+  <!-- Up arrow -->
+  <path d="M64 66        L64 78        L72 78        L64 69        L56 78        L64 78        Z" fill="none"/>
+
+  <path d="M54 76        L64 66        L74 76        L68 76        L68 88        L60 88        L60 76        Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Down arrow -->
+  <path d="M60 98        L68 98        L68 108        L74 108        L64 118        L54 108        L60 108        Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Left-side horizontal arrow points RIGHT, inward -->
+  <path d="M27 91        Q27 90 29 90        L43 90        L43 84        Q43 82 45 84        L56 95        Q57 96 56 97        L45 108        Q43 110 43 107        L43 101        L29 101        Q27 101 27 99        Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Right-side horizontal arrow points LEFT, inward -->
+  <path d="M101 91        Q101 90 99 90        L85 90        L85 84        Q85 82 83 84        L72 95        Q71 96 72 97        L83 108        Q85 110 85 107        L85 101        L99 101        Q101 101 101 99        Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Restrained yellow sketchnote accents -->
+  <g fill="none" stroke="#F4C542" stroke-width="2.8">
+    <path d="M13 39 L7 34"/>
+    <path d="M115 39 L121 34"/>
+    <path d="M12 104 L6 107"/>
+    <path d="M115 104 L122 107"/>
+  </g>
+</svg>
