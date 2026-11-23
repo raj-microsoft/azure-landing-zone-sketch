@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 60,
+ "done": 70,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -2583,141 +2583,437 @@
    "slug": "baseline-aks",
    "title": "Baseline architecture for an Azure Kubernetes Service (AKS) cluster",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/containers/aks/baseline-aks",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 62,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "AKS hub-and-spoke network topology",
+    "Cluster traffic flow",
+    "TLS termination",
+    "Workload CI/CD",
+    "GitOps flow"
+   ],
+   "substitutions": {
+    "Via native client": "users",
+    "Azure Bastion": "bastions",
+    "Azure Firewall": "firewalls",
+    "Gateway subnet": "virtual-network-gateways",
+    "Private Link endpoints": "private-link",
+    "Internal load balancer": "load-balancers",
+    "Application Gateway": "application-gateways",
+    "Key Vault": "key-vaults",
+    "Container Registry": "container-registries",
+    "AKS cluster": "kubernetes-services",
+    "Pods (CoreDNS, metric-server, Traefik, workload)": "container-instances",
+    "Azure Monitor workspace": "monitor",
+    "Metrics": "metrics",
+    "Log Analytics": "log-analytics-workspaces",
+    "Health Model": "monitor-health-models"
+   },
+   "differences": [
+    "On-premises network, remote office spoke, Internet and Managed Prometheus are plain sketch shapes (no sketch icon).",
+    "Per-subnet NSG shields and peering glyphs are omitted; peering is shown as labelled dotted arrows."
+   ],
+   "icons": [
+    "application-gateways",
+    "bastions",
+    "container-instances",
+    "container-registries",
+    "firewalls",
+    "key-vaults",
+    "kubernetes-services",
+    "load-balancers",
+    "log-analytics-workspaces",
+    "metrics",
+    "monitor",
+    "monitor-health-models",
+    "private-link",
+    "users",
+    "virtual-network-gateways"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "90 elements, 9 bound arrows, 19 images with files"
+   }
   },
   {
    "slug": "baseline-zone-redundant",
    "title": "Baseline highly available zone-redundant web application",
    "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service/architectures/baseline-zone-redundant",
-   "category": "Web + apps",
+   "category": "Web",
    "num": 63,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Network flows",
+    "Encryption flow",
+    "Deployment architecture"
+   ],
+   "substitutions": {
+    "User": "users",
+    "Private DNS zones": "dns-zones",
+    "DDoS Protection": "ddos-protection-plans",
+    "Virtual network": "virtual-networks",
+    "Application Gateway with WAF": "application-gateways",
+    "Virtual interface": "network-interfaces",
+    "Private endpoints": "private-link",
+    "App Service / instances": "app-services",
+    "Managed identity": "managed-identities",
+    "Azure SQL Database": "sql-database",
+    "Azure Key Vault": "key-vaults",
+    "Azure Storage": "storage-accounts",
+    "Microsoft Entra ID": "entra-connect",
+    "Application Insights": "application-insights",
+    "Azure Monitor": "monitor",
+    "Health Model": "monitor-health-models"
+   },
+   "differences": [
+    "Subnet NSG shields are omitted."
+   ],
+   "icons": [
+    "app-services",
+    "application-gateways",
+    "application-insights",
+    "ddos-protection-plans",
+    "dns-zones",
+    "entra-connect",
+    "key-vaults",
+    "managed-identities",
+    "monitor",
+    "monitor-health-models",
+    "network-interfaces",
+    "private-link",
+    "sql-database",
+    "storage-accounts",
+    "users",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "100 elements, 11 bound arrows, 22 images with files"
+   }
   },
   {
    "slug": "small-medium-data-warehouse",
    "title": "Modern data warehouses for small or medium-sized businesses",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/data/small-medium-data-warehouse",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 64,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Expanded architecture for future needs"
+   ],
+   "substitutions": {
+    "Data pipeline": "data-factories",
+    "SQL Database or SQL Managed Instance": "sql-database",
+    "Users / Power BI": "power-bi-embedded"
+   },
+   "differences": [
+    "Legacy data warehousing solution and Microsoft Fabric are plain sketch shapes (no sketch icon).",
+    "The mirroring link glyph between the zones is drawn as a labelled connector."
+   ],
+   "icons": [
+    "data-factories",
+    "power-bi-embedded",
+    "sql-database"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "24 elements, 4 bound arrows, 3 images with files"
+   }
   },
   {
    "slug": "microservices-with-container-apps",
    "title": "Deploy Microservices to Azure Container Apps",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/serverless/microservices-with-container-apps",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 65,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Service Bus": "azure-service-bus",
+    "Azure Container Apps environment": "container-apps-environments",
+    "Ingestion / Package / Drone scheduler / Delivery service": "worker-container-app",
+    "Workflow service": "workflow",
+    "Azure DocumentDB": "azure-documentdb",
+    "Azure Cosmos DB for NoSQL": "azure-cosmos-db",
+    "Azure Managed Redis": "azure-managed-redis",
+    "Application Insights": "application-insights",
+    "Log Analytics workspace": "log-analytics-workspaces",
+    "Azure Monitor": "monitor",
+    "Azure Key Vault": "key-vaults",
+    "Azure Container Registry": "container-registries"
+   },
+   "differences": [
+    "HTTP traffic is a plain sketch shape (no sketch icon).",
+    "Managed identity badges on the environment and services are omitted."
+   ],
+   "icons": [
+    "application-insights",
+    "azure-cosmos-db",
+    "azure-documentdb",
+    "azure-managed-redis",
+    "azure-service-bus",
+    "container-apps-environments",
+    "container-registries",
+    "key-vaults",
+    "log-analytics-workspaces",
+    "monitor",
+    "worker-container-app",
+    "workflow"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "82 elements, 11 bound arrows, 15 images with files"
+   }
   },
   {
    "slug": "enterprise-bi-microsoft-fabric",
    "title": "Use Microsoft Fabric to design an enterprise BI solution",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/analytics/enterprise-bi-microsoft-fabric",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 66,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure data services": "azure-cosmos-db",
+    "Azure Event Hubs": "event-hubs",
+    "Azure IoT Hub": "iot-hub",
+    "Data Factory pipelines": "data-factories",
+    "Mirroring for SQL Server or Copy job": "sql-database",
+    "SQL scripts": "sql-database",
+    "Microsoft Foundry": "ai-foundry",
+    "Azure Machine Learning": "azure-machine-learning",
+    "Power BI": "power-bi-embedded",
+    "Vector store": "cognitive-search",
+    "Business users": "users",
+    "Agentic AI": "foundry-agent-service",
+    "Microsoft Entra ID": "entra-connect",
+    "Cost Management": "cost-management",
+    "Azure Key Vault": "key-vaults",
+    "Azure Monitor": "monitor",
+    "Microsoft Defender for Cloud": "microsoft-defender-for-cloud",
+    "Azure DevOps and GitHub": "azure-devops",
+    "Azure Policy": "policy"
+   },
+   "differences": [
+    "Fabric items (eventstreams, Eventhouse, Lakehouse/Warehouse, mirrored replica, KQL queryset, Spark notebook, Dataflow Gen2, data agent, shortcuts), OneLake, Purview and the source types are plain sketch shapes (no sketch icon).",
+    "The second 'Hot path' label beside the source arrows is omitted for space; the hot path label beside Event Hubs is kept."
+   ],
+   "icons": [
+    "ai-foundry",
+    "azure-cosmos-db",
+    "azure-devops",
+    "azure-machine-learning",
+    "cognitive-search",
+    "cost-management",
+    "data-factories",
+    "entra-connect",
+    "event-hubs",
+    "foundry-agent-service",
+    "iot-hub",
+    "key-vaults",
+    "microsoft-defender-for-cloud",
+    "monitor",
+    "policy",
+    "power-bi-embedded",
+    "sql-database",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "154 elements, 26 bound arrows, 19 images with files"
+   }
   },
   {
    "slug": "data-platform-end-to-end",
    "title": "Analytics end-to-end with Microsoft Fabric",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/dataplate2e/data-platform-end-to-end",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 67,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "IoT Hub": "iot-hub",
+    "Azure Event Hubs": "event-hubs",
+    "Azure Data Explorer": "azure-data-explorer-clusters",
+    "Azure Databricks": "azure-databricks",
+    "Azure SQL Database": "sql-database",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Azure Database for PostgreSQL": "azure-database-postgresql-server",
+    "Machine Learning": "azure-machine-learning",
+    "Microsoft Foundry": "ai-foundry",
+    "Power BI": "power-bi-embedded",
+    "Microsoft Entra ID": "entra-connect",
+    "Cost Management": "cost-management",
+    "Azure Key Vault": "key-vaults",
+    "Azure DevOps": "azure-devops",
+    "Azure Policy": "policy",
+    "Data Lake Storage": "data-lake-storage-gen1",
+    "Blob storage": "blob-block"
+   },
+   "differences": [
+    "Fabric items (Lakehouse, Data Warehouse, SQL database, Eventhouse, mirrored database, Real-Time Intelligence, data agent, GraphQL API, SQL analytics endpoint), Copilot, OneLake, Purview and all non-Azure sources and shortcuts (AWS, Google Cloud, Kafka, Snowflake, Dataverse, Amazon S3, GitHub) are plain sketch shapes.",
+    "Ingest and process tool glyphs (Notebook, Data Factory, Eventstream, Stored procedure, Dataflow Gen2) are text labels.",
+    "The dense web of Serve-layer connectors is simplified to one arrow per item."
+   ],
+   "icons": [
+    "ai-foundry",
+    "azure-cosmos-db",
+    "azure-data-explorer-clusters",
+    "azure-database-postgresql-server",
+    "azure-databricks",
+    "azure-devops",
+    "azure-machine-learning",
+    "blob-block",
+    "cost-management",
+    "data-lake-storage-gen1",
+    "entra-connect",
+    "event-hubs",
+    "iot-hub",
+    "key-vaults",
+    "policy",
+    "power-bi-embedded",
+    "sql-database"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "187 elements, 20 bound arrows, 17 images with files"
+   }
   },
   {
    "slug": "aws-azure-ad-security",
    "title": "Microsoft Entra identity management and access management for AWS",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/aws/aws-azure-ad-security",
-   "category": "Security + identity",
+   "category": "Identity",
    "num": 68,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
+   "otherDiagrams": [
+    "Multiple-account AWS environment",
+    "AWS and Microsoft Entra integration",
+    "Role mapping from AWS IAM to Microsoft Entra ID",
+    "Configuration interactions",
+    "Portal screenshots"
+   ],
    "substitutions": {},
-   "differences": [],
+   "differences": [
+    "The first diagram is the single-account AWS environment; every item is an AWS concept, so all are plain sketch shapes (no Azure icons)."
+   ],
    "icons": [],
-   "checks": {}
+   "checks": {
+    "geometry": "PASS",
+    "summary": "25 elements, 5 bound arrows, 0 images with files"
+   }
   },
   {
    "slug": "stream-processing-databricks",
    "title": "Stream processing with Azure Databricks",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/data/stream-processing-databricks",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 69,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Stream processing with Azure Databricks and Event Hubs (detail)"
+   ],
+   "substitutions": {
+    "Event Hubs": "event-hubs",
+    "Azure Databricks": "azure-databricks",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Analyze/Report (Fabric, Log Analytics)": "log-analytics-workspaces",
+    "Azure Monitor": "monitor",
+    "Dashboard": "dashboard"
+   },
+   "differences": [
+    "Data sources, Microsoft Fabric items and generic data analysis tools are plain sketch shapes."
+   ],
+   "icons": [
+    "azure-cosmos-db",
+    "azure-databricks",
+    "dashboard",
+    "event-hubs",
+    "log-analytics-workspaces",
+    "monitor"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "62 elements, 9 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "basic-web-app",
    "title": "Basic web application",
    "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service/architectures/basic-web-app",
-   "category": "Web + apps",
+   "category": "Web",
    "num": 70,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "User": "users",
+    "App Service built-in authentication (Easy Auth)": "entra-connect",
+    "App Service / instance": "app-services",
+    "Managed identity": "managed-identities",
+    "Azure SQL Database": "sql-database",
+    "Microsoft Entra ID": "entra-connect",
+    "Application Insights": "application-insights",
+    "Azure Monitor (second 'Application Insights' tile)": "monitor",
+    "Health model": "monitor-health-models"
+   },
+   "differences": [
+    "The official diagram labels the gauge icon 'Application Insights' a second time; the sketch keeps that label with the Azure Monitor icon."
+   ],
+   "icons": [
+    "app-services",
+    "application-insights",
+    "entra-connect",
+    "managed-identities",
+    "monitor",
+    "monitor-health-models",
+    "sql-database",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "49 elements, 2 bound arrows, 10 images with files"
+   }
   },
   {
    "slug": "gitops-blueprint-aks",
    "title": "GitOps for Azure Kubernetes Service",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/gitops-aks/gitops-blueprint-aks",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 71,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "CI/CD with GitOps, Flux, GitHub and AKS",
+    "GitOps with Argo CD, GitHub and AKS",
+    "CI/CD with GitOps, Argo CD, GitHub and AKS"
+   ],
+   "substitutions": {
+    "Developer": "users",
+    "Azure Kubernetes Service": "kubernetes-services",
+    "Pods": "container-instances"
+   },
+   "differences": [
+    "GitHub, the app repository and the Flux operator are plain sketch shapes (non-Azure, no logos)."
+   ],
+   "icons": [
+    "container-instances",
+    "kubernetes-services",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "34 elements, 3 bound arrows, 4 images with files"
+   }
   },
   {
    "slug": "analyze-video-computer-vision-machine-learning",

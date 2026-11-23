@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>IoT Hub (sketch)</title>
+
+  
+  <desc>Five cyan network nodes connected by gray links, with a solid central cyan hub and two opposing gray corner brackets.</desc>
+
+  <!-- Network connections -->
+  <g stroke="#203746" stroke-width="4.2">
+    <path d="M56 23 Q66 39 79 55"/>
+    <path d="M25 65 Q48 63 77 61"/>
+    <path d="M78 69 Q70 82 62 95"/>
+    <path d="M85 69 Q96 85 105 101"/>
+  </g>
+
+  <!-- Gray connection surfaces -->
+  <g stroke="#949494" stroke-width="2.8">
+    <path d="M56 23 Q66 39 79 55"/>
+    <path d="M25 65 Q48 63 77 61"/>
+    <path d="M78 69 Q70 82 62 95"/>
+    <path d="M85 69 Q96 85 105 101"/>
+  </g>
+
+  <!-- Upper-right corner bracket -->
+  <path d="M91 9            Q89 9 89 12            L89 18            Q89 21 92 21            L108 21            L108 36            Q108 39 111 39            L119 39            Q122 39 122 36            L122 12            Q122 6 116 6            Z" fill="#A0A0A0" stroke="#203746" stroke-width="3.5"/>
+
+  <!-- Lower-left corner bracket -->
+  <path d="M9 89            Q6 89 6 92            L6 116            Q6 122 12 122            L36 122            Q39 122 39 119            L39 111            Q39 108 36 108            L21 108            L21 92            Q21 89 18 89            Z" fill="#A0A0A0" stroke="#203746" stroke-width="3.5"/>
+
+  <!-- Upper cyan node -->
+  <path d="M66 23            Q66 35 55 36            Q43 36 43 24            Q43 12 55 12            Q66 12 66 23 Z" fill="#32D4F5" stroke="#203746" stroke-width="3.8"/>
+
+  <!-- Left cyan node -->
+  <path d="M33 65            Q33 74 23 75            Q13 75 13 65            Q13 55 23 55            Q33 55 33 65 Z" fill="#29BADE" stroke="#203746" stroke-width="3.6"/>
+
+  <!-- Central hub: solid node, no inner ring -->
+  <path d="M97 60            Q97 76 81 77            Q65 77 65 61            Q65 45 81 45            Q97 45 97 60 Z" fill="#29BADE" stroke="#203746" stroke-width="4.2"/>
+
+  <!-- Lower-middle cyan node -->
+  <path d="M72 95            Q72 105 62 106            Q52 106 52 96            Q52 86 62 86            Q72 86 72 95 Z" fill="#29BADE" stroke="#203746" stroke-width="3.6"/>
+
+  <!-- Lower-right cyan node -->
+  <path d="M116 103            Q116 114 105 115            Q94 115 94 104            Q94 93 105 93            Q116 93 116 103 Z" fill="#32D4F5" stroke="#203746" stroke-width="3.7"/>
+
+</svg>

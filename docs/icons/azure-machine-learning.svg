@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title desc"><title>Azure Machine Learning (sketch)</title>
+
+  
+  <desc id="desc">Three independent bent purple ribbon strips arranged in a triangular triskelion, with a completely open white triangular center.</desc>
+
+  <!-- Left descending ribbon -->
+  <path d="     M43 10     Q43 8 46 8     L57 8     Q60 8 60 11     L60 29     Q60 37 55 44     L23 99     Q21 103 17 101     L8 95     Q5 93 8 89     L39 35     Q43 29 43 22     Z" fill="#5146EF" stroke="#203746" stroke-width="3.2"/>
+
+  <!-- Right descending ribbon -->
+  <path d="     M68 8     L80 8     Q83 8 83 11     L83 22     Q83 29 87 35     L120 89     Q122 93 119 95     L110 101     Q106 103 104 99     L73 44     Q67 37 67 29     Z" fill="#8179F6" stroke="#203746" stroke-width="3.2"/>
+
+  <!-- Bottom independent bent ribbon -->
+  <path d="     M19 107     Q17 104 21 102     L45 88     Q49 85 54 85     L74 85     Q79 85 83 88     L107 102     Q111 104 109 107     L103 116     Q101 119 97 117     L76 104     Q73 102 69 102     L58 102     Q54 102 51 104     L30 117     Q26 119 24 116     Z" fill="#625BF4" stroke="#203746" stroke-width="3.2"/>
+
+</svg>
