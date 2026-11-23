@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 89,
+ "done": 99,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -3861,85 +3861,215 @@
    "slug": "spot-eviction",
    "title": "Build workloads on spot virtual machines",
    "url": "https://learn.microsoft.com/azure/architecture/guide/spot/spot-eviction",
-   "category": "Infrastructure + storage",
+   "category": "Compute",
    "num": 92,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Workload lifecycle with application warmup period (img0, conceptual chart)"
+   ],
+   "substitutions": {
+    "VM application definition": "vm-app-definitions",
+    "Application version": "vm-app-versions",
+    "orchestrate.sh": "dev-console",
+    ".NET worker app": "code",
+    "Scheduled Events endpoint": "scheduled-actions",
+    "worker-0.1.0.tar.gz": "file"
+   },
+   "differences": [
+    "First image is a conceptual lifecycle chart; the example scenario architecture (img1) is drawn.",
+    "Light-cone from storage account to the package file is omitted; package is a card beside the storage account."
+   ],
+   "icons": [
+    "application-insights",
+    "azure-a",
+    "bastions",
+    "code",
+    "dev-console",
+    "entra-connect",
+    "file",
+    "public-ip-addresses",
+    "resource-groups",
+    "scheduled-actions",
+    "storage-accounts",
+    "storage-queue",
+    "virtual-machine",
+    "virtual-networks",
+    "vm-app-definitions",
+    "vm-app-versions"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "85 elements, 10 bound arrows, 16 images with files"
+   }
   },
   {
    "slug": "automate-pdf-forms-processing",
    "title": "Automate PDF forms processing",
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/automate-pdf-forms-processing",
-   "category": "AI + machine learning",
+   "category": "AI + Machine Learning",
    "num": 93,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Data Lake Storage": "data-lake-storage-gen1",
+    "Document Intelligence": "form-recognizers",
+    "Microsoft Power BI": "power-bi-embedded"
+   },
+   "differences": [
+    "Email attachment, PDF upload and the 'further processing' globe are labelled sketch shapes (no product icons)."
+   ],
+   "icons": [
+    "azure-cosmos-db",
+    "data-lake-storage-gen1",
+    "form-recognizers",
+    "function-apps",
+    "logic-apps",
+    "power-bi-embedded"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "68 elements, 11 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "search-blob-metadata",
    "title": "Create an Azure AI Search index based on file content and metadata",
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/search-blob-metadata",
-   "category": "AI + machine learning",
+   "category": "AI + Machine Learning",
    "num": 94,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
-   "differences": [],
+   "differences": [
+    "The diagram has no product icons; blob tree, tables and indexers are plain labelled shapes, the laptop client is a labelled shape.",
+    "Green field-mapping arrows from Table Storage are drawn as Table Storage -> Table indexer -> index columns, orthogonally, instead of diagonal lines passing through the indexer.",
+    "Connector lines from each blob to its author metadata tag are replaced by placing the tags beside the blobs."
+   ],
    "icons": [],
-   "checks": {}
+   "checks": {
+    "geometry": "PASS",
+    "summary": "133 elements, 11 bound arrows, 0 images with files"
+   }
   },
   {
    "slug": "generative-ai-gateway-custom-authentication",
    "title": "Provide custom authentication to Foundry Models through a gateway",
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/guide/generative-ai-gateway-custom-authentication",
-   "category": "AI + machine learning",
+   "category": "AI + Machine Learning",
    "num": 95,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img0: direct API-key access without a gateway (the 'before' state)",
+    "img2-img8: certificate, managed identity, shared key, per-subscription key, multiple instances and external IdP variants"
+   ],
+   "substitutions": {
+    "Intelligent application": "mobile",
+    "JWT": "keys",
+    "Gateway": "ai-gateway",
+    "Azure managed identity": "entra-managed-identities",
+    "gpt-35-turbo": "foundry-models"
+   },
+   "differences": [
+    "img0 is the no-gateway baseline; the gateway architecture (img1) is drawn as the main diagram.",
+    "Identity provider is a labelled sketch shape (generic external IdP)."
+   ],
+   "icons": [
+    "ai-gateway",
+    "azure-openai",
+    "entra-managed-identities",
+    "foundry-models",
+    "keys",
+    "mobile"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "32 elements, 6 bound arrows, 6 images with files"
+   }
   },
   {
    "slug": "app-service-environment-standard-deployment",
    "title": "Enterprise deployment that uses App Service Environment",
    "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service-environment/architectures/app-service-environment-standard-deployment",
-   "category": "Web + apps",
+   "category": "Web",
    "num": 96,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Multisite (zone-redundant) deployment (img1)"
+   ],
+   "substitutions": {
+    "Internet": "globe-success",
+    "App Service Environment ILB": "app-service-environments",
+    "Web app": "app-services",
+    "Private API": "api-connections",
+    "Firewall": "firewalls",
+    "Outbound traffic": "outbound-connection",
+    "Microsoft Entra ID": "entra-connect",
+    "Private endpoints": "private-endpoints",
+    "Private DNS zones": "dns-zones",
+    "Subnet NSG shield": "network-security-groups",
+    "Jump box virtual machine": "virtual-machine"
+   },
+   "differences": [
+    "GitHub Actions is a labelled sketch shape (no logo).",
+    "Diagonal ILB-to-web-app arrow is drawn orthogonally; small App Service plan glyphs beside each app are omitted."
+   ],
+   "icons": [
+    "api-connections",
+    "app-service-environments",
+    "app-services",
+    "application-gateways",
+    "azure-cosmos-db",
+    "azure-managed-redis",
+    "azure-service-bus",
+    "dns-zones",
+    "entra-connect",
+    "firewalls",
+    "function-apps",
+    "globe-success",
+    "key-vaults",
+    "network-security-groups",
+    "outbound-connection",
+    "private-endpoints",
+    "sql-database",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "119 elements, 17 bound arrows, 31 images with files"
+   }
   },
   {
    "slug": "map-requests",
    "title": "Map requests to tenants in a multitenant solution",
    "url": "https://learn.microsoft.com/azure/architecture/guide/multitenant/considerations/map-requests",
-   "category": "Design guidance",
+   "category": "Multitenancy",
    "num": 97,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Tenant": "users",
+    "Web server": "server-farm",
+    "Database": "sql-database"
+   },
+   "differences": [
+    "Tenant mapping is a plain labelled shape (conceptual component, no product)."
+   ],
+   "icons": [
+    "server-farm",
+    "sql-database",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "59 elements, 5 bound arrows, 8 images with files"
+   }
   },
   {
    "slug": "trusted-internet-connections",
@@ -3947,55 +4077,159 @@
    "url": "https://learn.microsoft.com/azure/architecture/networking/architecture/trusted-internet-connections",
    "category": "Networking",
    "num": 98,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: Azure Firewall uploads logs to CLAW",
+    "img2-img4: Application Gateway, Front Door and third-party firewall variants"
+   ],
+   "substitutions": {
+    "Subscription key glyph": "subscriptions",
+    "Certificate": "app-service-certificates",
+    "CLAW Registered app": "app-registrations",
+    "Reader (service principal)": "users",
+    "Event hub namespace": "event-hub-clusters",
+    "Event hub": "event-hubs",
+    "Alert on failed job": "alerts",
+    "Diagnostic": "diagnostics-settings",
+    "Azure Firewall table": "log-analytics-workspaces",
+    "App service": "app-services",
+    "Front Door with WAF": "front-door-and-cdn-profiles",
+    "Third-party firewall": "firewalls"
+   },
+   "differences": [
+    "CLAW/TALON, Email and External users are labelled sketch shapes.",
+    "Curved diagnostic-to-Log Analytics line and the CLAW dotted curve are drawn orthogonally.",
+    "The footnote about FCEB/CISA is shortened into the footer."
+   ],
+   "icons": [
+    "alerts",
+    "app-registrations",
+    "app-service-certificates",
+    "app-services",
+    "application-gateways",
+    "azure-a",
+    "diagnostics-settings",
+    "event-hub-clusters",
+    "event-hubs",
+    "firewalls",
+    "front-door-and-cdn-profiles",
+    "log-analytics-workspaces",
+    "resource-groups",
+    "subscriptions",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "92 elements, 12 bound arrows, 24 images with files"
+   }
   },
   {
    "slug": "moodle-azure-netapp-files",
    "title": "Moodle deployment with Azure NetApp Files",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/file-storage/moodle-azure-netapp-files",
-   "category": "Infrastructure + storage",
+   "category": "Storage",
    "num": 99,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: single-zone Moodle with Azure NetApp Files"
+   ],
+   "substitutions": {
+    "Students": "users",
+    "Azure VPN Gateway": "virtual-network-gateways",
+    "Virtual machine scale set": "vm-scale-sets",
+    "Azure Database for MySQL": "azure-database-mysql-server",
+    "NSG": "network-security-groups"
+   },
+   "differences": [
+    "Customer datacenter, VPN lock, NFS volumes and the NGINX/PHP/Apache/Moodle stack logos are labelled sketch shapes.",
+    "Diagonal app-gateway-to-VM fan lines and the cross-zone replication ellipse are simplified."
+   ],
+   "icons": [
+    "application-gateways",
+    "azure-database-mysql-server",
+    "azure-managed-redis",
+    "azure-netapp-files",
+    "traffic-manager-profiles",
+    "users",
+    "virtual-network-gateways",
+    "vm-scale-sets"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "86 elements, 11 bound arrows, 13 images with files"
+   }
   },
   {
    "slug": "teamcenter-plm-netapp-files",
    "title": "Use Teamcenter PLM with Azure NetApp Files",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/manufacturing/teamcenter-plm-netapp-files",
-   "category": "IoT + manufacturing",
+   "category": "Storage",
    "num": 100,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: Azure NetApp Files snapshot restore options",
+    "img2: cross-zone replication DR",
+    "img3: further storage layout"
+   ],
+   "substitutions": {
+    "Tier VMs": "virtual-machine",
+    "Load balancer": "load-balancers",
+    "ExpressRoute": "expressroute-circuits",
+    "Volumes / Data & log": "azure-netapp-files"
+   },
+   "differences": [
+    "Availability zone 1 and 2 bands are drawn as labels plus a dashed divider instead of overlapping rectangles.",
+    "Each enterprise column shows two VM icons per zone instead of three; performance-colour tints of VM icons are summarised in the legend only.",
+    "On-premises datacenter and the [a]/[b] storage-path markers are labelled sketch shapes."
+   ],
+   "icons": [
+    "azure-netapp-files",
+    "expressroute-circuits",
+    "load-balancers",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "161 elements, 15 bound arrows, 52 images with files"
+   }
   },
   {
    "slug": "migrate-oracle-azure-iaas",
    "title": "Migrate an Oracle database to an Azure virtual machine",
    "url": "https://learn.microsoft.com/azure/architecture/databases/idea/migrate-oracle-azure-iaas",
-   "category": "Databases + analytics",
+   "category": "Databases",
    "num": 101,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: same migration with additional integrations"
+   ],
+   "substitutions": {
+    "Source database": "oracle-database",
+    "Gateway": "virtual-network-gateways",
+    "Azure Firewall/NVA": "firewalls",
+    "To-be database server": "virtual-machine",
+    "Gateway subnet": "subnet"
+   },
+   "differences": [
+    "On-premises building glyph omitted; on-premises is a labelled zone."
+   ],
+   "icons": [
+    "firewalls",
+    "oracle-database",
+    "subnet",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "37 elements, 2 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "migrate-oracle-odaa-exadata",

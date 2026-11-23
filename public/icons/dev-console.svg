@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none"><title>Dev Console (sketch)</title>
+  
+  <desc>Hand-drawn Azure Dev Console with a plain blue header, cyan terminal body, white command chevron and underscore cursor.</desc>
+
+  <!-- Cyan terminal body -->
+  <path d="M4 41        Q4 39 8 39        L120 39        Q124 39 124 43        L124 107        Q124 112 120 112        L8 112        Q4 112 4 108        Z" fill="#32CAEA" stroke="#203746" stroke-width="3.2" stroke-linejoin="round"/>
+
+  <!-- Plain Azure-blue header: no browser controls -->
+  <path d="M8 14        Q5 14 4 18        L4 40        Q34 41 65 40        L124 40        L124 18        Q124 14 120 14        Z" fill="#0078D4" stroke="#203746" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Header separator -->
+  <path d="M5 40 Q35 40.5 65 40 Q94 39.5 123 40" stroke="#203746" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Command prompt upper diagonal -->
+  <path d="M27 52        Q25 51 24 54        L49 79        Q51 81 53 79        L56 76        Q57 74 55 72        L31 52        Q29 50 27 52 Z" fill="#F2F2F2" stroke="#203746" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Command prompt lower diagonal -->
+  <path d="M49 74        Q51 72 53 74        L56 77        Q57 79 55 81        L30 105        Q28 107 26 105        L23 102        Q22 100 24 98 Z" fill="#E6E6E6" stroke="#203746" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Terminal underscore cursor -->
+  <path d="M53 90        Q53 88 56 88        L86 88        Q89 88 89 91        L89 93        Q89 95 86 95        L56 95        Q53 95 53 93 Z" fill="#F2F2F2" stroke="#203746" stroke-width="2.4" stroke-linejoin="round"/>
+</svg>

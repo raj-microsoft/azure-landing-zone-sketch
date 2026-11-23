@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>VM App Definitions (sketch)</title>
+
+  
+  <desc>
+    Hand-drawn Azure VM App Definitions icon featuring a blue monitor,
+    centered overlapping-square application symbol, and blue monitor stand.
+    Flat colors, uneven charcoal marker contours, and transparent background.
+  </desc>
+
+  <!-- Main monitor body -->
+  <path d="M5 5        Q5 4 9 4        L119 4        Q123 4 123 9        L123 86        Q123 90 119 90        L9 90        Q5 90 5 86        Z" fill="#398FE0" stroke="#203746" stroke-width="3.4"/>
+
+  <!-- Monitor stand neck -->
+  <path d="M51 90        L77 90        Q77 104 79 110        Q81 115 89 116        L89 119        L39 119        L39 116        Q47 115 49 110        Q51 104 51 90 Z" fill="#1F70B9" stroke="#203746" stroke-width="3"/>
+
+  <!-- Monitor stand foot -->
+  <path d="M39 116        Q35 117 33 120        Q32 122 32 124        L96 124        Q96 120 92 118        L89 116        Z" fill="#1490DF" stroke="#203746" stroke-width="3"/>
+
+  <!-- White outer application square -->
+  <path d="M44 30        Q43 30 43 32        L43 68        Q43 70 45 70        L82 70        Q84 70 84 68        L84 53        L79 53        L79 64        Q79 65 77 65        L49 65        Q48 65 48 64        L48 37        Q48 35 50 35        L62 35        L62 30        Z" fill="#FFFFFF" stroke="#203746" stroke-width="2.5"/>
+
+  <!-- Cyan inner application square -->
+  <path d="M53 40        Q53 39 54 39        L71 39        Q72 39 72 40        L72 57        Q72 58 71 58        L54 58        Q53 58 53 57 Z" fill="#9CEBFF" stroke="#203746" stroke-width="2.3"/>
+
+  <!-- Purple upper-right overlapping-square corner -->
+  <path d="M66 26        Q66 25 68 25        L84 25        Q86 25 86 27        L86 45        Q86 46 85 46        L81 46        Q80 46 80 45        L80 32        Q80 31 79 31        L67 31        Q66 31 66 30 Z" fill="#773ADC" stroke="#203746" stroke-width="2.5"/>
+
+</svg>
