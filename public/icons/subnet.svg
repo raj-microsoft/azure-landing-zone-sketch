@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Subnet (sketch)</title>
+
+  
+  <desc>
+    Two separate open angle brackets surrounding a central
+    green circular node. Each bracket consists of an upper
+    Azure-blue diagonal segment and a lower cyan diagonal
+    segment. Wide gaps separate the upper and lower endpoints.
+    Flat fills, irregular charcoal marker outlines,
+    and a transparent background.
+  </desc>
+
+  <!-- Left bracket: upper Azure-blue diagonal -->
+  <path d="M40.8 21.8        Q43.2 19.7 45.5 22        L49.5 26        Q51.2 28 49.3 30.2        L19.5 60.3        Q17.5 62.2 15.3 60.3        L11.4 56.4        Q9.5 54.4 11.5 52.3        Z" fill="#1490DF" stroke="#203746" stroke-width="3.2"/>
+
+  <!-- Left bracket: lower cyan diagonal -->
+  <path d="M15.3 57.7        Q17.3 55.7 19.4 57.7        L49.3 87.8        Q51.2 90 49.5 92        L45.5 96        Q43.2 98.3 40.8 96        L11.5 65.7        Q9.5 63.6 11.4 61.6        Z" fill="#50E6FF" stroke="#203746" stroke-width="3.2"/>
+
+  <!-- Right bracket: upper Azure-blue diagonal -->
+  <path d="M82.5 22        Q84.8 19.7 87.2 21.8        L116.5 52.3        Q118.5 54.4 116.6 56.4        L112.7 60.3        Q110.5 62.2 108.5 60.3        L78.7 30.2        Q76.8 28 78.5 26        Z" fill="#1490DF" stroke="#203746" stroke-width="3.2"/>
+
+  <!-- Right bracket: lower cyan diagonal -->
+  <path d="M108.6 57.7        Q110.7 55.7 112.7 57.7        L116.6 61.6        Q118.5 63.6 116.5 65.7        L87.2 96        Q84.8 98.3 82.5 96        L78.5 92        Q76.8 90 78.7 87.8        Z" fill="#50E6FF" stroke="#203746" stroke-width="3.2"/>
+
+  <!-- Central green network node, centered at (64,59) -->
+  <path d="M64 49.7        C69.3 49.5 73.4 53.6 73.5 58.8        C73.7 64.2 69.5 68.4 64.2 68.5        C58.9 68.6 54.6 64.5 54.5 59.2        C54.4 54 58.6 49.9 64 49.7Z" fill="#7CC52F" stroke="#203746" stroke-width="3.2"/>
+
+</svg>

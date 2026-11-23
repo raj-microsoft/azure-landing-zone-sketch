@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="#203746" stroke-linecap="round" stroke-linejoin="round"><title>Application Gateway Containers (sketch)</title>
+
+  
+  <desc>Blue hexagonal gateway with a central routing hub connected independently to one upper endpoint and three lower endpoints.</desc>
+
+  <!-- Outer hexagonal gateway -->
+  <path d="M35 8            Q38 6 41 7            L87 7            Q91 7 93 11            L119 59            Q121 63 119 67            L93 113            Q91 117 87 118            L41 118            Q37 118 35 115            L9 68            Q6 64 9 59            L35 11 Z" fill="#0078D4" stroke-width="3.8"/>
+
+  <!-- Central vertical incoming connection -->
+  <path d="M64 24            Q63 35 64 48" stroke="#FFFFFF" stroke-width="9"/>
+
+  <!-- Three independent outgoing spokes -->
+  <path d="M58 72            Q42 88 22 105" stroke="#FFFFFF" stroke-width="8"/>
+
+  <path d="M70 72            Q87 88 106 105" stroke="#FFFFFF" stroke-width="8"/>
+
+  <path d="M64 75            Q63 93 64 112" stroke="#FFFFFF" stroke-width="8"/>
+
+  <!-- Top incoming endpoint -->
+  <path d="M64 12            C70 12 75 17 75 23            C75 29 70 34 64 34            C58 34 53 29 53 23            C53 17 58 12 64 12 Z" fill="#83B9F9" stroke-width="3.2"/>
+
+  <!-- Central routing hub -->
+  <path d="M64 45            C76 45 83 53 83 64            C83 76 75 84 64 84            C52 84 45 76 45 64            C45 53 53 45 64 45 Z" fill="#FFFFFF" stroke-width="3.5"/>
+
+  <!-- Central hub node -->
+  <path d="M64 54            C70 54 74 58 74 64            C74 70 70 74 64 74            C58 74 54 70 54 64            C54 58 58 54 64 54 Z" fill="#5EA0EF" stroke-width="2.8"/>
+
+  <!-- Lower-left endpoint -->
+  <path d="M22 94            C29 94 34 99 34 106            C34 113 29 118 22 118            C15 118 10 113 10 106            C10 99 15 94 22 94 Z" fill="#83B9F9" stroke-width="3.2"/>
+
+  <!-- Lower-right endpoint -->
+  <path d="M106 94            C113 94 118 99 118 106            C118 113 113 118 106 118            C99 118 94 113 94 106            C94 99 99 94 106 94 Z" fill="#83B9F9" stroke-width="3.2"/>
+
+  <!-- Bottom endpoint -->
+  <path d="M64 105            C71 105 76 110 76 117            C76 123 71 126 64 126            C57 126 52 123 52 117            C52 110 57 105 64 105 Z" fill="#83B9F9" stroke-width="3.2"/>
+
+</svg>

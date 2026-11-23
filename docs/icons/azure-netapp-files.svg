@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Azure NetApp Files (sketch)</title>
+
+  
+  <desc>
+    Hand-drawn Azure NetApp Files icon with a dark teal header,
+    turquoise storage enclosure, three horizontal storage layers,
+    and a simple squared blue NetApp arch. Flat fills, uneven
+    charcoal marker outlines, and transparent background.
+  </desc>
+
+  <!-- Turquoise storage enclosure -->
+  <path d="M4 41            L124 41            L124 107            Q124 112 119 112            L9 112            Q4 112 4 107            Z" fill="#32BEDD" stroke="#243447" stroke-width="3.4"/>
+
+  <!-- Dark teal storage header -->
+  <path d="M9 15            L119 15            Q124 15 124 20            L124 41            L4 41            L4 20            Q4 15 9 15            Z" fill="#198AB3" stroke="#243447" stroke-width="3.4"/>
+
+  <!-- Upper white storage layer -->
+  <path d="M21 49            Q20 49 20 51            L20 59            Q20 61 22 61            L106 61            Q108 61 108 59            L108 51            Q108 49 106 49            Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.2"/>
+
+  <!-- Middle pale-cyan storage layer -->
+  <path d="M22 69            L106 69            Q108 69 108 71            L108 79            Q108 81 106 81            L22 81            Q20 81 20 79            L20 71            Q20 69 22 69            Z" fill="#9CEBFF" stroke="#243447" stroke-width="2.2"/>
+
+  <!-- Lower pale-cyan storage layer -->
+  <path d="M22 89            L106 89            Q108 89 108 91            L108 99            Q108 101 106 101            L22 101            Q20 101 20 99            L20 91            Q20 89 22 89            Z" fill="#9CEBFF" stroke="#243447" stroke-width="2.2"/>
+
+  <!--
+    Official NetApp squared arch.
+    One continuous blue shape with a rectangular opening.
+    No extra central symbol, inset panel, or lock detail.
+  -->
+  <path d="M37 56            Q37 54 39 54            L89 54            Q91 54 91 56            L91 101            Q91 103 89 103            L73 103            Q71 103 71 101            L71 75            Q71 73 69 73            L59 73            Q57 73 57 75            L57 101            Q57 103 55 103            L39 103            Q37 103 37 101            Z" fill="#0078D4" stroke="#243447" stroke-width="3.2"/>
+
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Application Gateways (sketch)</title>
+
+  
+  <desc>Green diamond-shaped application gateway with three white routing arrows and a central blue network globe. The globe has three correctly positioned circular nodes connected by fine network paths.</desc>
+
+  <!-- Main green gateway diamond -->
+  <path d="M59 8            Q64 4 69 9            L119 59            Q124 64 119 70            L69 120            Q64 124 59 119            L9 69            Q5 64 10 59Z" fill="#6DAD2A" stroke="#30343D" stroke-width="3.7"/>
+
+  <!-- Diamond surface details -->
+  <path d="M17 58 L59 16            Q64 11 69 16 L109 56" stroke="#B6DE77" stroke-width="2.4"/>
+
+  <path d="M113 74 L68 116            Q64 119 60 115 L16 71" stroke="#487E20" stroke-width="2"/>
+
+  <!-- Left outbound routing arrow -->
+  <path d="M60 52            L34 78            L25 69            L25 90            L46 90            L37 81            L69 49Z" fill="#FFFFFF" stroke="#30343D" stroke-width="2.7"/>
+
+  <!-- Right outbound routing arrow -->
+  <path d="M72 50            L101 79            L110 70            L110 91            L89 91            L98 82            L64 48Z" fill="#FFFFFF" stroke="#30343D" stroke-width="2.7"/>
+
+  <!-- Downward routing arrow -->
+  <path d="M59 58            L69 58            L69 97            L80 97            L64 113            L48 97            L59 97Z" fill="#FFFFFF" stroke="#30343D" stroke-width="2.8"/>
+
+  <!-- Central blue network globe -->
+  <path d="M53 29            C59 23 69 24 76 29            C83 34 85 43 80 50            C76 57 67 60 59 56            C51 53 47 45 49 37            Q50 32 53 29Z" fill="#0078D4" stroke="#174F77" stroke-width="2.8"/>
+
+  <!-- Network connections: preserve official three-node arrangement -->
+  <g stroke="#DDF2FF" stroke-width="2.5">
+    <path d="M54 40 Q60 34 68 39"/>
+    <path d="M54 40 Q59 45 66 51"/>
+    <path d="M68 39 Q72 44 66 51"/>
+    <path d="M68 39 Q72 39 76 41"/>
+  </g>
+
+  <!-- Upper-left network node -->
+  <circle cx="54" cy="40" r="6.2" fill="#F5F8FA" stroke="#174F77" stroke-width="2.2"/>
+
+  <!-- Lower-right network node -->
+  <circle cx="66.5" cy="50.7" r="4" fill="#F5F8FA" stroke="#174F77" stroke-width="2"/>
+
+  <!-- Upper-right network node -->
+  <circle cx="75.6" cy="40.8" r="4.3" fill="#F5F8FA" stroke="#174F77" stroke-width="2"/>
+
+  <!-- Small network arc -->
+  <path d="M76 55            Q84 47 81 38            Q78 30 70 29" stroke="#0078D4" stroke-width="2.4"/>
+
+  <!-- Restrained yellow sketchnote accents -->
+  <g stroke="#FFCC4D" stroke-width="2.8">
+    <path d="M19 48 L14 43"/>
+    <path d="M26 41 L24 34"/>
+    <path d="M105 42 L111 37"/>
+    <path d="M110 50 L117 48"/>
+  </g>
+
+  <!-- Small finishing marks -->
+  <g stroke="#EAF6DB" stroke-width="1.8">
+    <path d="M29 56 L36 49"/>
+    <path d="M93 57 L99 63"/>
+    <path d="M49 104 L55 110"/>
+  </g>
+
+</svg>

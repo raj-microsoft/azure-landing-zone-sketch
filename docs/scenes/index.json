@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 20,
+ "done": 30,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -805,57 +805,156 @@
    "slug": "manage-microsoft-365-tenant-configuration-microsoft365dsc-devops",
    "title": "Manage Microsoft 365 tenant configuration by using Microsoft365DSC and Azure DevOps",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/devops/manage-microsoft-365-tenant-configuration-microsoft365dsc-devops",
-   "category": "Integration + DevOps",
+   "category": "DevOps",
    "num": 21,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Git repository (fork, main)": "tfs-vc-repository",
+    "Azure Pipelines / multi-stage pipeline": "azure-devops",
+    "Microsoft365DSC": "powershell",
+    "Admins": "users",
+    "Config file": "file",
+    "Key Vault": "key-vaults"
+   },
+   "differences": [
+    "Microsoft 365 staging and production have no sketch icon; they are plain labelled shapes.",
+    "Diagonal deploy and approve arrows are drawn as orthogonal routes."
+   ],
+   "icons": [
+    "azure-devops",
+    "file",
+    "key-vaults",
+    "powershell",
+    "tfs-vc-repository",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "83 elements, 12 bound arrows, 12 images with files"
+   }
   },
   {
    "slug": "app-service-environment-high-availability-deployment",
    "title": "High availability enterprise deployment that uses App Service Environment",
    "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service-environment/architectures/app-service-environment-high-availability-deployment",
-   "category": "Web + apps",
+   "category": "Web",
    "num": 22,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Private API (API app)": "api-proxy",
+    "Web app instance": "app-services",
+    "Function instance": "function-apps",
+    "Microsoft Entra ID": "entra-connect",
+    "Jump box VM": "virtual-machine",
+    "Private DNS zone": "dns-zones"
+   },
+   "differences": [
+    "Internet and GitHub Actions are plain shapes (no Azure icon).",
+    "Each private endpoint row carries a short label; the original shows only icons.",
+    "Diagonal arrows are drawn as orthogonal routes."
+   ],
+   "icons": [
+    "api-proxy",
+    "app-service-environments",
+    "app-services",
+    "application-gateways",
+    "azure-cosmos-db",
+    "azure-managed-redis",
+    "azure-service-bus",
+    "dns-zones",
+    "entra-connect",
+    "firewalls",
+    "function-apps",
+    "key-vaults",
+    "load-balancers",
+    "outbound-connection",
+    "private-endpoints",
+    "sql-database",
+    "subnet",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "157 elements, 27 bound arrows, 39 images with files"
+   }
   },
   {
    "slug": "write-through-caching-azure-sql-managed-redis",
    "title": "Write-through caching with Azure Managed Redis and Azure SQL Database",
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/write-through-caching-azure-sql-managed-redis",
-   "category": "Databases + analytics",
+   "category": "Databases",
    "num": 23,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Client application": "browser",
+    "Application tier (App Service)": "app-services",
+    "Write-through / repair function": "function-apps"
+   },
+   "differences": [
+    "Green circles are the read flow and blue squares the write flow, as in the original; a small legend is added."
+   ],
+   "icons": [
+    "app-services",
+    "azure-managed-redis",
+    "browser",
+    "function-apps",
+    "monitor",
+    "private-endpoints",
+    "sql-database",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "73 elements, 10 bound arrows, 9 images with files"
+   }
   },
   {
    "slug": "aks-agc",
    "title": "Use Application Gateway for Containers with a multitenant Azure Kubernetes Service cluster",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/aks-agic/aks-agc",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 24,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Multitenant AKS with per-tenant namespaces fronted by Application Gateway for Containers"
+   ],
+   "substitutions": {
+    "Client application / Internet browser": "browser",
+    "Azure recursive resolvers": "dns-zones",
+    "Application Gateway for Containers": "application-gateway-containers"
+   },
+   "differences": [
+    "NSG shields are noted in the subnet titles instead of as icons.",
+    "Azure-provided DNS and service pods are plain shapes (no sketch icon).",
+    "Arrow colours follow the original legend; routes are orthogonal."
+   ],
+   "icons": [
+    "application-gateway-containers",
+    "bastions",
+    "browser",
+    "container-registries",
+    "dns-zones",
+    "key-vaults",
+    "kubernetes-services",
+    "log-analytics-workspaces",
+    "private-endpoints",
+    "storage-accounts",
+    "virtual-machine",
+    "virtual-networks",
+    "web-application-firewall-policies-waf"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "99 elements, 22 bound arrows, 19 images with files"
+   }
   },
   {
    "slug": "run-sap-bw4hana-with-linux-virtual-machines",
@@ -863,13 +962,37 @@
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/sap/run-sap-bw4hana-with-linux-virtual-machines",
    "category": "SAP",
    "num": 25,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "VPN or Azure ExpressRoute": "expressroute-circuits",
+    "SAP VM pools / iSCSI target VMs / SAP HANA database": "virtual-machine",
+    "Microsoft Power BI": "power-bi-embedded",
+    "Azure Backup and Azure Site Recovery": "recovery-services-vaults",
+    "Azure Managed Disks": "disks"
+   },
+   "differences": [
+    "On-premises datacenter is a plain grey shape with the gateway icon.",
+    "Dotted connections are drawn as dashed lines along orthogonal routes."
+   ],
+   "icons": [
+    "azure-netapp-files",
+    "bastions",
+    "disks",
+    "expressroute-circuits",
+    "load-balancers",
+    "network-security-groups",
+    "power-bi-embedded",
+    "recovery-services-vaults",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "88 elements, 10 bound arrows, 20 images with files"
+   }
   },
   {
    "slug": "basic-microsoft-foundry-chat",
@@ -877,13 +1000,33 @@
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/basic-microsoft-foundry-chat",
    "category": "AI + machine learning",
    "num": 26,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
+   "substitutions": {
+    "App Service built-in authentication (Easy Auth)": "entra-connect",
+    "Microsoft Foundry resource": "ai-foundry",
+    "Foundry Agent Service": "foundry-agent-service",
+    "Azure AI Search": "cognitive-search",
+    "Managed identity": "entra-managed-identities"
+   },
    "differences": [],
-   "icons": [],
-   "checks": {}
+   "icons": [
+    "ai-foundry",
+    "app-services",
+    "application-insights",
+    "azure-openai",
+    "cognitive-search",
+    "entra-connect",
+    "entra-managed-identities",
+    "foundry-agent-service",
+    "monitor",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "63 elements, 5 bound arrows, 12 images with files"
+   }
   },
   {
    "slug": "baseline-microsoft-foundry-landing-zone",
@@ -891,13 +1034,67 @@
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/baseline-microsoft-foundry-landing-zone",
    "category": "AI + machine learning",
    "num": 27,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Network ingress flows",
+    "Network egress flows"
+   ],
+   "substitutions": {
+    "Knowledge store": "storage-accounts",
+    "Azure AI Search": "cognitive-search",
+    "Microsoft Foundry": "ai-foundry",
+    "Build agents / jump boxes": "virtual-machine",
+    "Spoke / Hub virtual network": "virtual-networks",
+    "User-defined route": "route-tables",
+    "Org policy assignments": "policy",
+    "Role assignments": "entra-identity-roles-and-administrators",
+    "Defender for Cloud": "microsoft-defender-for-cloud",
+    "Azure DNS Private Resolver": "dns-private-resolver",
+    "VPN Gateway / ExpressRoute": "virtual-network-gateways",
+    "Managed identity": "entra-managed-identities"
+   },
+   "differences": [
+    "Private endpoints are one row of labelled cards; the many crossing lines from endpoints to resources are reduced to one link per resource.",
+    "Platform services (cost, policy, Defender, roles) are compact icon boxes."
+   ],
+   "icons": [
+    "ai-foundry",
+    "app-services",
+    "application-gateways",
+    "azure-cosmos-db",
+    "azure-openai",
+    "bastions",
+    "cognitive-search",
+    "cost-management",
+    "ddos-protection-plans",
+    "diagnostics-settings",
+    "dns-private-resolver",
+    "dns-zones",
+    "entra-identity-roles-and-administrators",
+    "entra-managed-identities",
+    "firewalls",
+    "foundry-agent-service",
+    "key-vaults",
+    "log-analytics-workspaces",
+    "management-groups",
+    "microsoft-defender-for-cloud",
+    "network-security-groups",
+    "network-watcher",
+    "policy",
+    "private-endpoints",
+    "route-tables",
+    "storage-accounts",
+    "subnet",
+    "users",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "196 elements, 18 bound arrows, 50 images with files"
+   }
   },
   {
    "slug": "secure-compute-for-research",
@@ -905,27 +1102,78 @@
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/secure-compute-for-research",
    "category": "AI + machine learning",
    "num": 28,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Blob Storage": "storage-accounts",
+    "Data Factory (Fabric orchestrator)": "data-factories",
+    "Microsoft Power Platform": "power-platform",
+    "Data Science VM": "virtual-machine",
+    "Microsoft Entra ID": "entra-connect",
+    "Microsoft Defender": "microsoft-defender-for-cloud",
+    "UDR": "route-tables"
+   },
+   "differences": [
+    "Fabric Data Science, Microsoft Purview, Internet and the people have no sketch icon; they are plain labelled shapes.",
+    "Private endpoints are compact cards on the connection lines.",
+    "Lines that cross in the original are rerouted around groups."
+   ],
+   "icons": [
+    "azure-sentinel",
+    "azure-virtual-desktop",
+    "data-factories",
+    "entra-connect",
+    "firewalls",
+    "key-vaults",
+    "machine-learning",
+    "microsoft-defender-for-cloud",
+    "monitor",
+    "network-security-groups",
+    "policy",
+    "power-platform",
+    "private-endpoints",
+    "route-tables",
+    "storage-accounts",
+    "virtual-machine"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "160 elements, 25 bound arrows, 26 images with files"
+   }
   },
   {
    "slug": "adds-extend-domain",
    "title": "Deploy AD DS in an Azure virtual network",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/identity/adds-extend-domain",
-   "category": "Security + identity",
+   "category": "Identity",
    "num": 29,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Active Directory servers / AD DS servers": "entra-domain-services",
+    "Load balancer (router icon)": "load-balancers",
+    "Internet": "globe-success"
+   },
+   "differences": [
+    "The two load-balanced VMs and the two AD DS servers are each one card per server inside a dashed set, as in the original."
+   ],
+   "icons": [
+    "ddos-protection-plans",
+    "entra-domain-services",
+    "globe-success",
+    "load-balancers",
+    "network-security-groups",
+    "public-ip-addresses",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "75 elements, 7 bound arrows, 17 images with files"
+   }
   },
   {
    "slug": "hybrid-file-services",
@@ -933,13 +1181,32 @@
    "url": "https://learn.microsoft.com/azure/architecture/hybrid/hybrid-file-services",
    "category": "Hybrid + multicloud",
    "num": 30,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Microsoft Entra Connect sync": "entra-connect-sync",
+    "Microsoft Entra tenant": "entra-connect",
+    "Azure Storage Sync": "storage-sync-services",
+    "Azure File Share": "storage-azure-files",
+    "Domain controller (Azure)": "virtual-machine"
+   },
+   "differences": [
+    "On-premises domain controllers, file servers and clients are plain labelled shapes (no Azure icon).",
+    "Dashed two-way arrows follow orthogonal routes."
+   ],
+   "icons": [
+    "entra-connect",
+    "entra-connect-sync",
+    "storage-azure-files",
+    "storage-sync-services",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "67 elements, 9 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "aks-multi-cluster",
