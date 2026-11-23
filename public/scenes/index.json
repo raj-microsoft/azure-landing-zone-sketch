@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 71,
+ "done": 80,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -3064,127 +3064,375 @@
    "slug": "aks-microservices-advanced",
    "title": "Advanced Azure Kubernetes Service (AKS) microservices architecture",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/containers/aks-microservices/aks-microservices-advanced",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 73,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Application Gateway with WAF": "application-gateways",
+    "Azure Kubernetes Service": "kubernetes-services",
+    "Pods (Ingestion, Workflow, Scheduler, Package, Delivery, Node-managed identity, Secrets Store CSI Driver, Kubelet)": "container-instances",
+    "Kubernetes services": "load-balancers",
+    "Advanced Container Networking Services": "aks-network-policy",
+    "Azure Bastion": "bastions",
+    "Azure Firewall": "firewalls",
+    "Route": "route-tables",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Azure DocumentDB": "azure-documentdb",
+    "Azure Service Bus": "azure-service-bus",
+    "Azure Managed Redis": "azure-managed-redis",
+    "Azure Monitor": "monitor",
+    "Azure Cloud Services": "cloud-services-classic",
+    "Key Vault": "key-vaults",
+    "Container Registry": "container-registries"
+   },
+   "differences": [
+    "Public internet, Gateway API proxy (NGINX), Flux, Azure CNI powered by Cilium and FQDNs are plain sketch shapes (no sketch icon or non-Azure logo).",
+    "Port numbers are folded into the service captions; private endpoint glyphs and the green allow tick are omitted."
+   ],
+   "icons": [
+    "aks-network-policy",
+    "application-gateways",
+    "azure-cosmos-db",
+    "azure-documentdb",
+    "azure-managed-redis",
+    "azure-service-bus",
+    "bastions",
+    "cloud-services-classic",
+    "container-instances",
+    "container-registries",
+    "firewalls",
+    "key-vaults",
+    "kubernetes-services",
+    "load-balancers",
+    "monitor",
+    "route-tables"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "140 elements, 28 bound arrows, 26 images with files"
+   }
   },
   {
    "slug": "azure-redhat-openshift-financial-services-workloads",
    "title": "Use Azure Red Hat OpenShift in the financial services industry",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/containers/aro/azure-redhat-openshift-financial-services-workloads",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 74,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Client / Developers / End customers": "users",
+    "Azure Front Door + WAF": "front-door-and-cdn-profiles",
+    "Private Link service": "private-link-service",
+    "Private endpoints": "private-endpoints",
+    "Private DNS zones": "dns-zones",
+    "Azure Red Hat OpenShift private cluster / OpenShift cluster / pipelines": "azure-red-hat-openshift",
+    "Control plane and worker nodes": "virtual-machine",
+    "Route table": "route-tables",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Key vault": "key-vaults",
+    "Microsoft Entra ID": "entra-connect",
+    "Azure Firewall": "firewalls",
+    "Firewall IP address": "public-ip-addresses",
+    "Azure Bastion": "bastions",
+    "Virtual machine": "virtual-machine",
+    "Gateway (on-premises)": "virtual-network-gateways",
+    "Spoke / hub virtual network": "virtual-networks",
+    "Logging and monitoring": "monitor",
+    "Azure Arc": "azure-arc",
+    "Customer's container registry": "container-registries",
+    "On-premises databases": "sql-database",
+    "Internet": "globe-success"
+   },
+   "differences": [
+    "GitHub Enterprise and the on-premises firewall and gateway are plain sketch shapes (non-Azure, no logos).",
+    "Subnet NSG shields, the 'interchangeable product' orange markers and the colour legend are omitted; inbound arrows are green, outbound red, internal dark as in the original."
+   ],
+   "icons": [
+    "azure-arc",
+    "azure-cosmos-db",
+    "azure-red-hat-openshift",
+    "bastions",
+    "container-registries",
+    "dns-zones",
+    "entra-connect",
+    "firewalls",
+    "front-door-and-cdn-profiles",
+    "globe-success",
+    "key-vaults",
+    "monitor",
+    "private-endpoints",
+    "private-link-service",
+    "public-ip-addresses",
+    "route-tables",
+    "sql-database",
+    "users",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "174 elements, 22 bound arrows, 41 images with files"
+   }
   },
   {
    "slug": "virtual-network-peering",
    "title": "Virtual network connectivity options and spoke-to-spoke communication",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/virtual-network-peering",
-   "category": "Hybrid + multicloud",
+   "category": "Networking",
    "num": 75,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Single-region hub-and-spoke",
+    "Two-region hub-and-spoke",
+    "Peering growth",
+    "Spokes via hub NVA",
+    "Spokes via two NVAs",
+    "Two-region via hub NVAs",
+    "Separate east-west and north-south",
+    "Spokes via Virtual WAN",
+    "Mixed Virtual WAN designs"
+   ],
+   "substitutions": {
+    "Virtual network (hub and spokes)": "virtual-networks"
+   },
+   "differences": [
+    "Connectors are orthogonal instead of diagonal. In the mesh panel only neighbouring peerings are drawn, with a note that every VNet peers with every other (the original draws all 15 diagonal dotted lines)."
+   ],
+   "icons": [
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "93 elements, 27 bound arrows, 20 images with files"
+   }
   },
   {
    "slug": "etl",
    "title": "Extract, transform, and load (ETL)",
    "url": "https://learn.microsoft.com/azure/architecture/data-guide/relational-data/etl",
-   "category": "Databases + analytics",
+   "category": "Databases",
    "num": 76,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Extract, load, transform (ELT)",
+    "Data flow as a task within a control flow",
+    "Push, transform, and load"
+   ],
+   "substitutions": {
+    "Data source 1 (table)": "table",
+    "Data source 2 / Target (database cylinder)": "sql-database",
+    "Transformation engine": "gear"
+   },
+   "differences": [
+    "The generic table and database glyphs map to the table and sql-database sketch icons."
+   ],
+   "icons": [
+    "gear",
+    "sql-database",
+    "table"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "22 elements, 2 bound arrows, 4 images with files"
+   }
   },
   {
    "slug": "cache-aside",
    "title": "Cache-Aside pattern",
    "url": "https://learn.microsoft.com/azure/architecture/patterns/cache-aside",
-   "category": "Design guidance",
+   "category": "Databases",
    "num": 77,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Cache (grid of items)": "table",
+    "Data store (cylinder)": "sql-database",
+    "Data store items": "table"
+   },
+   "differences": [
+    "The item grids are drawn as the table sketch icon; the red 'requested item' cell is described in a note instead."
+   ],
+   "icons": [
+    "table"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "22 elements, 3 bound arrows, 2 images with files"
+   }
   },
   {
    "slug": "sql-server-azure-netapp-files",
    "title": "SQL Server on Azure Virtual Machines with Azure NetApp Files",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/file-storage/sql-server-azure-netapp-files",
-   "category": "Infrastructure + storage",
+   "category": "Databases",
    "num": 78,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
+   "otherDiagrams": [
+    "Second SQL Server deployment variant",
+    "Benefits of SQL Server with Azure NetApp Files"
+   ],
+   "substitutions": {
+    "SQL Server VM": "azure-sql-vm",
+    "SQL-data volumes": "sql-database",
+    "SQL-log / SQL-backup volumes": "files",
+    "Capacity pool": "azure-netapp-files",
+    "VM subnet / delegated subnet / Virtual Network": "virtual-networks"
+   },
    "differences": [],
-   "icons": [],
-   "checks": {}
+   "icons": [
+    "azure-sql-vm",
+    "files",
+    "sql-database",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "38 elements, 4 bound arrows, 8 images with files"
+   }
   },
   {
    "slug": "protect-apis",
    "title": "Protect APIs by using Application Gateway and API Management",
    "url": "https://learn.microsoft.com/azure/architecture/web-apps/api-management/architectures/protect-apis",
-   "category": "Web + apps",
+   "category": "Web",
    "num": 79,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Clients": "devices",
+    "External APIs": "gear",
+    "Internet": "globe-success",
+    "API Management": "api-management-services",
+    "App Service Environment": "app-service-environments",
+    "SQL Managed Instance": "sql-managed-instance",
+    "Application Gateway": "application-gateways",
+    "Web Application Firewall": "web-application-firewall-policies-waf",
+    "Azure Kubernetes Service": "kubernetes-services",
+    "Virtual network": "virtual-networks",
+    "DDoS Protection": "ddos-protection-plans"
+   },
+   "differences": [
+    "Padlock overlays on the subnets are omitted. The dead-end sinkpool is a small labelled shape."
+   ],
+   "icons": [
+    "api-management-services",
+    "app-service-environments",
+    "application-gateways",
+    "ddos-protection-plans",
+    "devices",
+    "gear",
+    "globe-success",
+    "kubernetes-services",
+    "sql-managed-instance",
+    "virtual-networks",
+    "web-application-firewall-policies-waf"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "66 elements, 10 bound arrows, 12 images with files"
+   }
   },
   {
    "slug": "fully-managed-secure-apps",
    "title": "Securely managed web applications",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/apps/fully-managed-secure-apps",
-   "category": "Web + apps",
+   "category": "Web",
    "num": 80,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Employee / Customers": "users",
+    "On-premises gateway": "virtual-router",
+    "ExpressRoute / site-to-site VPN": "connections",
+    "VPN Gateway": "virtual-network-gateways",
+    "ILB": "load-balancers",
+    "App Service Environment": "app-service-environments",
+    "Azure DevOps agent": "virtual-machine",
+    "Azure DevOps": "azure-devops",
+    "Azure SQL Database": "sql-database",
+    "DDoS Protection": "ddos-protection-plans",
+    "Internet": "globe-success",
+    "Web Application Firewall": "web-application-firewall-policies-waf",
+    "L7 load balancer": "application-gateways",
+    "Azure virtual network": "virtual-networks"
+   },
+   "differences": [
+    "Subnet NSG shields are omitted."
+   ],
+   "icons": [
+    "app-service-environments",
+    "application-gateways",
+    "azure-devops",
+    "connections",
+    "ddos-protection-plans",
+    "globe-success",
+    "load-balancers",
+    "sql-database",
+    "users",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks",
+    "virtual-router",
+    "web-application-firewall-policies-waf"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "70 elements, 10 bound arrows, 15 images with files"
+   }
   },
   {
    "slug": "app-gateway-internal-api-management-function",
    "title": "Azure API Management landing zone architecture",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/integration/app-gateway-internal-api-management-function",
-   "category": "Web + apps",
+   "category": "Integration",
    "num": 81,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Subscription": "subscriptions",
+    "Public IP addresses": "public-ip-addresses",
+    "Application Gateway": "application-gateways",
+    "Web Application Firewall policies (WAF)": "web-application-firewall-policies-waf",
+    "API Management (Premium)": "api-management-services",
+    "Private endpoint": "private-endpoints",
+    "Key vaults": "key-vaults",
+    "Log Analytics workspaces": "log-analytics-workspaces",
+    "Application Insights": "application-insights",
+    "azure-api.net (DNS)": "dns-zones",
+    "Virtual network / subnets": "virtual-networks"
+   },
+   "differences": [
+    "Subnet NSG shields are omitted; each subnet icon and label sits below its subnet as in the original."
+   ],
+   "icons": [
+    "api-management-services",
+    "application-gateways",
+    "application-insights",
+    "dns-zones",
+    "key-vaults",
+    "log-analytics-workspaces",
+    "private-endpoints",
+    "public-ip-addresses",
+    "subscriptions",
+    "virtual-networks",
+    "web-application-firewall-policies-waf"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "47 elements, 3 bound arrows, 14 images with files"
+   }
   },
   {
    "slug": "noisy-neighbor",
