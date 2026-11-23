@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>Peerings (sketch)</title>
+
+<path d="M53 75 C43 73 36 66 35 56 C34 44 43 35 55 34 C59 20 71 12 85 13 C99 14 108 24 109 36 C121 38 127 47 125 58 C124 69 115 76 103 76 Z" fill="#9562E8" stroke="#51258A" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M39 51 Q40 40 53 37 M64 25 Q72 15 84 17" fill="none" stroke="#51258A" stroke-width="1.5" stroke-linecap="round" opacity=".65"/>
+<path d="M61 66 Q62 47 74 39 Q84 32 98 32 L98 26 Q98 23 101 26 L117 41 Q120 43 117 46 L101 60 Q98 63 98 59 L98 53 Q78 51 77 67 Q77 70 74 70 L64 70 Q61 70 61 66 Z" fill="#FFFFFF" stroke="#42236D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M76 85 C76 106 59 123 39 123 C18 123 3 107 3 86 C3 65 19 49 40 49 C60 49 76 65 76 85 Z" fill="#0078D4" stroke="#063C69" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="none" stroke="#9CCDFB" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 68 Q39 70 66 68"/><path d="M4 85 Q39 86 75 85"/><path d="M13 103 Q39 102 66 103"/><path d="M39 50 Q40 67 39 85 Q39 105 39 122"/><path d="M35 50 C24 61 20 72 20 85 C20 102 27 114 35 122"/><path d="M44 50 C55 61 59 73 59 85 C59 102 52 115 44 122"/></g>
+<g fill="none" stroke="#073F70" stroke-width="1.1" stroke-linecap="round" opacity=".55"><path d="M14 70 Q24 71 31 70"/><path d="M48 102 Q57 102 65 104"/><path d="M21 77 Q19 83 21 91"/></g>
+<g fill="none" stroke="#F2C94C" stroke-width="2.8" stroke-linecap="round"><path d="M115 82 L120 78"/><path d="M117 91 L123 91"/></g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Data Collection Rules (sketch)</title>
+<path d="M25 3Q23 3 23 7L23 120Q23 125 27 125L120 125Q125 124 125 120L125 7Q125 3 121 3Z" fill="#3789DF" stroke="#164F84" stroke-width="3.2"/>
+<path d="M116 14Q119 13 122 15M120 32Q121 51 120 65M120 91Q122 108 119 117" stroke="#B7DFFF" stroke-width="1.8" opacity=".65"/>
+<path d="M5 16Q4 15 7 15L96 15Q99 15 99 19L99 61Q99 65 95 65L7 65Q4 65 4 61Z" fill="#42CBE8" stroke="#164F84" stroke-width="3.2"/>
+<path d="M18 25Q18 24 20 24L27 24Q29 24 29 26L29 33Q29 35 27 35L20 35Q18 35 18 33Z" fill="#FFFFFF" stroke="#155C85" stroke-width="2.5"/>
+<path d="M36 27Q49 26 62 27Q75 26 85 27" stroke="#164F84" stroke-width="5.8"/>
+<path d="M36 27Q49 26 62 27Q75 26 85 27" stroke="#FFFFFF" stroke-width="4"/>
+<path d="M18 43Q18 42 20 42L27 42Q29 42 29 44L29 51Q29 53 27 53L20 53Q18 53 18 51Z" fill="#42CBE8" stroke="#164F84" stroke-width="3"/>
+<path d="M19 44Q20 43 22 43L27 43Q28 43 28 45L28 50Q28 52 26 52L21 52Q19 52 19 50Z" stroke="#FFFFFF" stroke-width="1.5"/>
+<path d="M36 45Q50 44 64 45L85 45" stroke="#164F84" stroke-width="5.8"/>
+<path d="M36 45Q50 44 64 45L85 45" stroke="#FFFFFF" stroke-width="4"/>
+<path d="M25 91Q23 91 23 94L23 100Q23 103 26 103L94 103L94 112Q94 115 97 112L112 99Q115 97 112 95L97 81Q94 78 94 82L94 91Z" fill="#83B9F9" stroke="#164F84" stroke-width="3.2"/>
+<path d="M34 96Q52 95 72 96M77 96Q84 96 89 96" stroke="#E8F5FF" stroke-width="2" opacity=".8"/>
+<path d="M105 19L106 14M101 21L97 19M109 22L113 19" stroke="#FFCC4D" stroke-width="2.2"/>
+</svg>

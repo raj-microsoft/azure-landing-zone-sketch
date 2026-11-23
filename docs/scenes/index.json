@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 114,
+ "done": 124,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -4846,141 +4846,360 @@
    "slug": "arc-sql-managed-instance-disaster-recovery",
    "title": "Deploy an Azure Arc-enabled SQL managed instance for disaster recovery",
    "url": "https://learn.microsoft.com/azure/architecture/hybrid/arc-sql-managed-instance-disaster-recovery",
-   "category": "Hybrid + multicloud",
+   "category": "Hybrid",
    "num": 119,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Pod": "kubernetes-services",
+    "Azure Arc data controller": "arc-data-services",
+    "Domain controller (Entra ID glyph)": "entra-connect",
+    "DNS": "dns-zones"
+   },
+   "differences": [
+    "Availability group band drawn as a free outline across the pods.",
+    "Domain controller icons given short captions."
+   ],
+   "icons": [
+    "arc-data-services",
+    "arc-kubernetes",
+    "arc-sql-managed-instance",
+    "dns-zones",
+    "entra-connect",
+    "kubernetes-services",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "104 elements, 14 bound arrows, 26 images with files"
+   }
   },
   {
    "slug": "enterprise-file-shares-disaster-recovery",
    "title": "Enterprise file shares with disaster recovery",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/file-storage/enterprise-file-shares-disaster-recovery",
-   "category": "Infrastructure + storage",
+   "category": "Storage",
    "num": 120,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Client / AD DS servers": "virtual-machine",
+    "Vol1 volumes": "azure-netapp-files"
+   },
+   "differences": [
+    "Volume cylinders drawn as Azure NetApp Files cards.",
+    "Region logo shown as a text label (no sketch icon)."
+   ],
+   "icons": [
+    "azure-netapp-files",
+    "subscriptions",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "40 elements, 4 bound arrows, 10 images with files"
+   }
   },
   {
    "slug": "monitoring-observable-systems-media",
    "title": "Build real-time monitoring and observable systems for media",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/monitoring/monitoring-observable-systems-media",
-   "category": "Integration + DevOps",
+   "category": "Analytics",
    "num": 121,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Collect device telemetry (Azure Functions)": "function-apps",
+    "Azure Event Hubs": "event-hubs",
+    "Azure Blob Storage": "storage-accounts",
+    "Azure Event Grid": "event-grid-topics"
+   },
+   "differences": [
+    "Users, client devices, applications and Fabric items (Eventstream, Eventhouse, Data Activator, Real-Time hub) drawn as labelled shapes; no sketch icons exist for them.",
+    "Dashed diagonal from eventstream to Data Activator drawn orthogonally."
+   ],
+   "icons": [
+    "event-grid-topics",
+    "event-hubs",
+    "function-apps",
+    "storage-accounts"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "61 elements, 12 bound arrows, 4 images with files"
+   }
   },
   {
    "slug": "move-archive-data-mainframes",
    "title": "Move archive data from mainframe systems to Azure",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/mainframe/move-archive-data-mainframes",
-   "category": "Mainframe + migration",
+   "category": "Mainframe",
    "num": 122,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Tape / VSAM / GDG / sequential files": "file",
+    "Windows VM with self-hosted IR": "virtual-machine",
+    "FTP connector": "ftp",
+    "Copy activity": "code",
+    "Azure hot storage": "storage-accounts",
+    "Azure cold storage": "blob-block",
+    "Azure Backup archive": "backup-vault"
+   },
+   "differences": [
+    "Db2, IMS, mainframe, application, JCL-to-Blob solution, ISV solutions and Delete drawn as labelled shapes.",
+    "Step 3b placed beside 3a/3c above the JCL solution."
+   ],
+   "icons": [
+    "backup-vault",
+    "blob-block",
+    "code",
+    "data-box",
+    "data-factories",
+    "file",
+    "ftp",
+    "storage-accounts",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "104 elements, 15 bound arrows, 13 images with files"
+   }
   },
   {
    "slug": "blue-green-deployment-for-aks",
    "title": "Blue-green deployment of AKS clusters",
    "url": "https://learn.microsoft.com/azure/architecture/guide/aks/blue-green-deployment-for-aks",
-   "category": "Containers + microservices",
+   "category": "Containers",
    "num": 123,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: private-facing architecture",
+    "img2-3, img8-10: T0-T4 deployment stages",
+    "img4: AKS monitoring levels",
+    "img5-7: screenshots"
+   ],
+   "substitutions": {
+    "Azure Front Door with WAF": "front-door-and-cdn-profiles",
+    "WAF policy": "web-application-firewall-policies-waf",
+    "App endpoints (internal load balancer)": "load-balancers",
+    "AKS cluster": "kubernetes-services",
+    "DNS": "dns-zones",
+    "Azure Monitor": "monitor"
+   },
+   "differences": [
+    "User drawn as a labelled shape.",
+    "Blue and green colour squares shown as small labelled tags."
+   ],
+   "icons": [
+    "application-gateways",
+    "container-registries",
+    "dns-zones",
+    "front-door-and-cdn-profiles",
+    "key-vaults",
+    "kubernetes-services",
+    "load-balancers",
+    "monitor",
+    "public-ip-addresses",
+    "subnet",
+    "virtual-networks",
+    "web-application-firewall-policies-waf"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "73 elements, 10 bound arrows, 19 images with files"
+   }
   },
   {
    "slug": "valet-key",
    "title": "Valet Key pattern",
    "url": "https://learn.microsoft.com/azure/architecture/patterns/valet-key",
-   "category": "Design guidance",
+   "category": "Design patterns",
    "num": 124,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: client accessing a storage account with a SAS token"
+   ],
+   "substitutions": {
+    "Token": "keys"
+   },
+   "differences": [
+    "Circular nodes drawn as rounded boxes.",
+    "User, application and target resource drawn as labelled shapes (generic glyphs)."
+   ],
+   "icons": [
+    "keys"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "31 elements, 6 bound arrows, 2 images with files"
+   }
   },
   {
    "slug": "baseline",
    "title": "Azure Virtual Machines baseline architecture",
    "url": "https://learn.microsoft.com/azure/architecture/virtual-machines/baseline",
-   "category": "Infrastructure + storage",
+   "category": "Compute",
    "num": 125,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: network layout",
+    "img2-3: ingress flow",
+    "img4: monitoring data flow",
+    "img5: TLS termination"
+   ],
+   "substitutions": {
+    "VMSS (Flexible)": "vm-scale-sets",
+    "Frontend/Backend VM": "virtual-machine",
+    "Managed disks": "disks",
+    "Azure portal": "management-portal",
+    "Internal / public load balancer": "load-balancers"
+   },
+   "differences": [
+    "Workload user, operator, GitHub actions/repository and public internet drawn as labelled shapes.",
+    "Managed-disk glyphs folded into the VM cards."
+   ],
+   "icons": [
+    "application-gateways",
+    "application-insights",
+    "bastions",
+    "key-vaults",
+    "load-balancers",
+    "log-analytics-workspaces",
+    "management-portal",
+    "network-security-groups",
+    "private-endpoints",
+    "subnet",
+    "virtual-machine",
+    "vm-scale-sets"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "88 elements, 10 bound arrows, 19 images with files"
+   }
   },
   {
    "slug": "baseline-landing-zone",
    "title": "Azure Virtual Machines baseline architecture in an Azure landing zone",
    "url": "https://learn.microsoft.com/azure/architecture/virtual-machines/baseline-landing-zone",
-   "category": "Infrastructure + storage",
+   "category": "Compute",
    "num": 126,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1-2: hub-spoke network layout",
+    "img3: workload monitoring resources"
+   ],
+   "substitutions": {
+    "Scale Set (Flexible)": "vm-scale-sets",
+    "Frontend/Backend VM": "virtual-machine",
+    "User defined route": "route-tables",
+    "Spoke virtual network": "virtual-networks",
+    "Hub virtual network": "virtual-networks",
+    "Org policy assignments": "policy",
+    "Role assignments": "entra-identity-roles-and-administrators",
+    "VPN (P2S/S2S)": "virtual-network-gateways",
+    "VNet peering": "peerings",
+    "Private DNS Zones": "dns-zones"
+   },
+   "differences": [
+    "User, GitHub actions and repository drawn as labelled shapes.",
+    "Stacked hub regions drawn as a single hub card.",
+    "ExpressRoute placed beside VPN rather than below it.",
+    "Subscription title tabs drawn as labels above/below the subscription frames."
+   ],
+   "icons": [
+    "application-gateways",
+    "bastions",
+    "cost-management",
+    "data-collection-rules",
+    "ddos-protection-plans",
+    "diagnostics-settings",
+    "dns-zones",
+    "entra-identity-roles-and-administrators",
+    "expressroute-circuits",
+    "firewalls",
+    "key-vaults",
+    "load-balancers",
+    "log-analytics-workspaces",
+    "management-groups",
+    "microsoft-defender-for-cloud",
+    "network-security-groups",
+    "network-watcher",
+    "peerings",
+    "policy",
+    "private-endpoints",
+    "route-tables",
+    "subnet",
+    "subscriptions",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks",
+    "vm-scale-sets"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "139 elements, 7 bound arrows, 39 images with files"
+   }
   },
   {
    "slug": "apache-kafka-migration",
    "title": "Apache Kafka migration to Azure",
    "url": "https://learn.microsoft.com/azure/architecture/guide/hadoop/apache-kafka-migration",
-   "category": "Databases + analytics",
+   "category": "Analytics",
    "num": 127,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
-   "differences": [],
+   "differences": [
+    "The article's only diagram is a decision chart; redrawn as a sketch flowchart with no icons (as in the official image)."
+   ],
    "icons": [],
-   "checks": {}
+   "checks": {
+    "geometry": "PASS",
+    "summary": "42 elements, 11 bound arrows, 0 images with files"
+   }
   },
   {
    "slug": "messaging-bridge",
    "title": "Messaging Bridge pattern",
    "url": "https://learn.microsoft.com/azure/architecture/patterns/messaging-bridge",
-   "category": "Design guidance",
+   "category": "Design patterns",
    "num": 128,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Service Bus queues": "azure-service-bus",
+    "Azure Functions": "function-apps",
+    "Web app": "app-services",
+    "Container app": "worker-container-app"
+   },
+   "differences": [
+    "Legacy MSMQ endpoints, MSMQ queues and the bridge drawn as labelled shapes (no sketch icons).",
+    "Envelope glyphs replaced by 'message' labels; diagonal arrows drawn orthogonally."
+   ],
+   "icons": [
+    "app-services",
+    "azure-service-bus",
+    "function-apps",
+    "worker-container-app"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "45 elements, 10 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "wordpress-overview",
