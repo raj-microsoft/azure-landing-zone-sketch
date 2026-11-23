@@ -163,6 +163,7 @@ export class LineMotion {
         }
       }
       this.drawLayer.append(g);
+      l.g = g;
       l.reveal = reveal;
       l.heads = heads;
       // Flow: only lines with a direction get a dot; two-headed arrows alternate direction per trip.
@@ -180,8 +181,15 @@ export class LineMotion {
   }
 
   sizeDots() {
-    const r = Math.max(3.5, 3 / (this.zoom || 1));
-    for (const l of this.lines) l.dot?.setAttribute("r", r);
+    const z = this.zoom || 1;
+    // Keep motion readable when a big diagram is fitted small (phones zoom to ~0.15):
+    // the overlay pencil stroke is at least ~2.5 screen px and dots at least ~5 screen px.
+    const r = Math.max(3.5, 5 / z);
+    for (const l of this.lines) {
+      l.dot?.setAttribute("r", r);
+      if (l.g) l.g.setAttribute("stroke-width", Math.max(l.e.strokeWidth, 2.5 / z));
+      if (l.reveal) l.reveal.setAttribute("stroke-width", Math.max(l.e.strokeWidth, 2.5 / z) + 4 / z);
+    }
   }
 
   // Draw every line in reading order over ~2.4 s. onReveal: canvas arrows should come back now.
@@ -189,11 +197,11 @@ export class LineMotion {
     this.finishDraw(false);
     const n = this.lines.length;
     if (!n) { onReveal?.(); onDone?.(); return; }
-    const span = Math.min(1300, 60 * n + 300);
+    const span = Math.min(2600, 110 * n + 600);
     let end = 0;
     this.lines.forEach((l, i) => {
-      l.start = n > 1 ? (i / (n - 1)) * span : 0;
-      l.dur = clamp(320 + l.geo.len * 0.45, 420, 800);
+      l.start = 500 + (n > 1 ? (i / (n - 1)) * span : 0);
+      l.dur = clamp(500 + l.geo.len * 0.6, 700, 1300);
       end = Math.max(end, l.start + l.dur + 160);
     });
     this.drawLayer.style.transition = "none";
