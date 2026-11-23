@@ -1,0 +1,144 @@
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Excalidraw, exportToBlob, exportToSvg, serializeAsJSON } from "@excalidraw/excalidraw";
+import "@excalidraw/excalidraw/index.css";
+
+const BASE = import.meta.env.BASE_URL;
+
+function save(name, blob) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+export default function Viewer({ slug }) {
+  // The landing zone keeps its original key so edits saved before the gallery existed still load.
+  const KEY = slug === "azure-landing-zone" ? "alz-sketch:edits:v1" : `aac-sketch:edits:v1:${slug}`;
+  const [entry, setEntry] = useState(null);
+  const [original, setOriginal] = useState(null);
+  const [initial, setInitial] = useState(null);
+  const [editing, setEditing] = useState(false);
+  const [edited, setEdited] = useState(false);
+  const [error, setError] = useState(null);
+  const api = useRef(null);
+  const ready = useRef(false);
+
+  useEffect(() => {
+    fetch(BASE + "scenes/index.json").then((r) => r.json()).then((idx) => {
+      const e = idx.scenes.find((s) => s.slug === slug);
+      if (!e) throw new Error("unknown");
+      setEntry(e);
+      document.title = `${e.title}, sketched`;
+      if (e.status !== "done" && !new URLSearchParams(location.search).has("draft")) { setError("pending"); return null; }
+      return fetch(`${BASE}scenes/${slug}.excalidraw`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+    }).then((scene) => {
+      if (!scene) return;
+      setOriginal(scene);
+      let elements = scene.elements;
+      try {
+        const saved = JSON.parse(localStorage.getItem(KEY) || "null");
+        if (saved?.elements?.length) { elements = saved.elements; setEdited(true); }
+      } catch {}
+      setInitial({ elements, files: scene.files, appState: { ...scene.appState, viewModeEnabled: true }, scrollToContent: true });
+    }).catch((err) => setError(err.message === "unknown" ? "unknown" : "load"));
+  }, [slug]);
+
+  const fit = useCallback(() => {
+    const a = api.current;
+    if (!a) return;
+    const els = a.getSceneElements();
+    const s = a.getAppState();
+    let x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
+    for (const e of els) { x1 = Math.min(x1, e.x); y1 = Math.min(y1, e.y); x2 = Math.max(x2, e.x + e.width); y2 = Math.max(y2, e.y + e.height); }
+    const pad = 24;
+    const z = Math.max(0.1, Math.min(1, (s.width - pad) / (x2 - x1), (s.height - pad) / (y2 - y1)));
+    a.updateScene({ appState: { zoom: { value: z }, scrollX: s.width / 2 / z - (x1 + x2) / 2, scrollY: s.height / 2 / z - (y1 + y2) / 2 } });
+  }, []);
+
+  const onApi = useCallback((a) => {
+    api.current = a;
+    window.__alz = { api: a, exportToSvg, exportToBlob };
+    requestAnimationFrame(() => { fit(); ready.current = true; });
+  }, [fit]);
+
+  useEffect(() => {
+    const main = document.querySelector(".canvas");
+    if (!main || !initial) return;
+    let t;
+    const ro = new ResizeObserver(() => { clearTimeout(t); t = setTimeout(fit, 120); });
+    ro.observe(main);
+    const late = setTimeout(fit, 600);
+    return () => { ro.disconnect(); clearTimeout(t); clearTimeout(late); };
+  }, [fit, initial]);
+
+  const onChange = useCallback((elements) => {
+    if (!ready.current || !editing) return;
+    try { localStorage.setItem(KEY, JSON.stringify({ elements })); setEdited(true); } catch {}
+  }, [editing, KEY]);
+
+  const reset = () => {
+    localStorage.removeItem(KEY);
+    setEdited(false);
+    setEditing(false);
+    api.current?.updateScene({ elements: original.elements, appState: { viewModeEnabled: true } });
+    requestAnimationFrame(fit);
+  };
+  const toggleEdit = () => {
+    const next = !editing;
+    setEditing(next);
+    api.current?.updateScene({ appState: { viewModeEnabled: !next } });
+  };
+  const current = () => ({
+    elements: api.current.getSceneElements(),
+    appState: { ...api.current.getAppState(), exportBackground: true, exportWithDarkMode: false, viewBackgroundColor: "#fdfdfb" },
+    files: api.current.getFiles(),
+  });
+  const download = () => {
+    const c = current();
+    save(`${slug}-sketch.excalidraw`, new Blob([serializeAsJSON(c.elements, c.appState, c.files, "local")], { type: "application/json" }));
+  };
+  const png = async () => save(`${slug}-sketch.png`, await exportToBlob({ ...current(), mimeType: "image/png", exportPadding: 24 }));
+  const svg = async () => {
+    const el = await exportToSvg({ ...current(), exportPadding: 24 });
+    save(`${slug}-sketch.svg`, new Blob([el.outerHTML], { type: "image/svg+xml" }));
+  };
+
+  const title = entry?.title ?? "Sketch";
+  return (
+    <div className="shell">
+      <header className="bar">
+        <div className="crumb">
+          <a className="back" href={BASE}>All architectures</a>
+          <h1>{title}</h1>
+        </div>
+        <nav aria-label="Diagram actions">
+          <button type="button" aria-pressed={editing} onClick={toggleEdit} disabled={!initial}>{editing ? "Done editing" : "Edit"}</button>
+          <button type="button" onClick={reset} disabled={!initial || (!edited && !editing)}>Reset</button>
+          <span className="sep" aria-hidden="true" />
+          <button type="button" onClick={download} disabled={!initial}>Download .excalidraw</button>
+          <button type="button" onClick={png} disabled={!initial}>PNG</button>
+          <button type="button" onClick={svg} disabled={!initial}>SVG</button>
+          {entry && <a href={entry.url} target="_blank" rel="noopener">Source: Microsoft Learn</a>}
+        </nav>
+      </header>
+      {editing && <p className="note" role="status">Editing. Changes stay in this browser only.</p>}
+      {error === "pending" && <p className="note" role="status">This sketch is not drawn yet. <a href={entry?.url} target="_blank" rel="noopener">Read the Learn article</a> or <a href={BASE}>go back to the gallery</a>.</p>}
+      {error === "unknown" && <p className="note err" role="alert">There is no architecture called &ldquo;{slug}&rdquo;. <a href={BASE}>Go back to the gallery</a>.</p>}
+      {error === "load" && <p className="note err" role="alert">The diagram could not be loaded. Reload the page to try again.</p>}
+      <main className="canvas">
+        {initial && (
+          <Excalidraw
+            initialData={initial}
+            excalidrawAPI={onApi}
+            viewModeEnabled={!editing}
+            onChange={onChange}
+            UIOptions={{ canvasActions: { loadScene: false, saveToActiveFile: false, export: false, saveAsImage: false, toggleTheme: false, changeViewBackgroundColor: false } }}
+          />
+        )}
+      </main>
+    </div>
+  );
+}

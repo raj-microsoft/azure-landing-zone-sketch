@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="#203746" stroke-linecap="round" stroke-linejoin="round"><title>Management Portal (sketch)</title>
+
+  
+  <desc>Azure management portal represented by a cyan rectangular window, teal header, pale cyan left sidebar and bottom status pane. The workspace remains blank.</desc>
+
+  <!-- Main portal window -->
+  <path d="     M14 18     Q14 15 18 15     L110 15     Q115 15 115 20     L115 103     Q115 108 110 108     L18 108     Q13 108 13 103     L13 21     Q13 19 14 18Z" fill="#32D2F2" stroke-width="3.8"/>
+
+  <!-- Management header -->
+  <path d="     M18 15     L110 15     Q115 15 115 20     L115 43     L13 43     L13 21     Q13 16 18 15Z" fill="#198AB3" stroke-width="3.5"/>
+
+  <!-- Left navigation sidebar -->
+  <path d="     M13.5 43     L40.5 43     L40.5 107.5     L18 107.5     Q13 107.5 13 103     Z" fill="#9CEBFF" stroke-width="3"/>
+
+  <!-- Blank main workspace -->
+  <path d="     M40.5 43     L115 43     L115 94     L40.5 94     Z" fill="#32D2F2" stroke-width="2.8"/>
+
+  <!-- Blank bottom status pane -->
+  <path d="     M40.5 94     L115 94     L115 103     Q115 108 110 108     L40.5 108     Z" fill="#32BEDD" stroke-width="2.8"/>
+
+</svg>

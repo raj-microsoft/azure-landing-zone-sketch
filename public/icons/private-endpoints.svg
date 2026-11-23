@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Private Endpoints (sketch)</title>
+  
+  <desc>Two separate open blue and cyan angle brackets with four free tips, a thin gray central stem, a cyan upper endpoint and a smaller green lower endpoint.</desc>
+
+  <!-- Left bracket: upper blue diagonal -->
+  <path d="M40 47            Q39 46 37 48            L10 75            Q8 77 10 79            L13 82            Q15 83 17 81            L44 54            Q46 52 44 50Z" fill="#1490DF" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Left bracket: lower cyan diagonal -->
+  <path d="M10 75            Q8 77 10 79            L37 106            Q39 109 41 107            L44 104            Q46 102 44 100            L17 73            Q15 71 13 73Z" fill="#50E6FF" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Right bracket: upper blue diagonal -->
+  <path d="M88 47            Q89 46 91 48            L118 75            Q120 77 118 79            L115 82            Q113 83 111 81            L84 54            Q82 52 84 50Z" fill="#1490DF" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Right bracket: lower cyan diagonal -->
+  <path d="M118 75            Q120 77 118 79            L91 106            Q89 109 87 107            L84 104            Q82 102 84 100            L111 73            Q113 71 115 73Z" fill="#50E6FF" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Thin central gray stem -->
+  <path d="M61 22            Q64 21 67 22            L67 80            Q64 82 61 80Z" fill="#B3B3B3" stroke="#243447" stroke-width="1.8"/>
+
+  <!-- Cyan upper endpoint -->
+  <path d="M64 3            C71 3 76 8 76 15            C76 22 71 27 64 27            C57 27 52 22 52 15            C52 8 57 3 64 3Z" fill="#50E6FF" stroke="#243447" stroke-width="3"/>
+
+  <!-- Green lower endpoint -->
+  <path d="M64 67            C71 67 76 72 76 79            C76 86 71 91 64 91            C57 91 52 86 52 79            C52 72 57 67 64 67Z" fill="#86D633" stroke="#243447" stroke-width="3"/>
+</svg>

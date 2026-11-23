@@ -1,8 +1,9 @@
-// Geometry and integrity check for public/scene.excalidraw. Prints PASS or the list of failures.
-import { readFileSync } from "node:fs";
+// Geometry and integrity check for an Excalidraw scene. Prints PASS or the list of failures.
+// Usage: node scripts/check-geometry.mjs <scene.excalidraw> [more scenes...]   (default: every public/scenes/*.excalidraw)
+import { readFileSync, readdirSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 
-const path = process.argv[2] ?? "public/scene.excalidraw";
-const scene = JSON.parse(readFileSync(path, "utf8"));
+export function checkScene(scene) {
 const els = scene.elements.filter((e) => !e.isDeleted);
 const byId = new Map(els.map((e) => [e.id, e]));
 const fail = [];
@@ -101,5 +102,18 @@ for (const e of els) {
   if (e.type === "text" && ![1, 5].includes(e.fontFamily)) fail.push(`font ${e.id}`);
 }
 
-if (fail.length) { console.log(fail.join("\n")); console.log(`FAIL (${fail.length})`); process.exit(1); }
-console.log(`PASS: ${els.length} elements, ${arrows.length} bound arrows, ${els.filter((e) => e.type === "image").length} images with files, no crossings/overlaps`);
+  const summary = `${els.length} elements, ${arrows.length} bound arrows, ${els.filter((e) => e.type === "image").length} images with files`;
+  return { pass: fail.length === 0, fail, summary };
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  let paths = process.argv.slice(2);
+  if (!paths.length) paths = readdirSync("public/scenes").filter((f) => f.endsWith(".excalidraw")).map((f) => `public/scenes/${f}`);
+  let bad = 0;
+  for (const p of paths) {
+    const r = checkScene(JSON.parse(readFileSync(p, "utf8")));
+    if (r.pass) console.log(`PASS ${p}: ${r.summary}, no crossings/overlaps`);
+    else { bad++; console.log(r.fail.join("\n")); console.log(`FAIL ${p} (${r.fail.length})`); }
+  }
+  process.exit(bad ? 1 : 0);
+}

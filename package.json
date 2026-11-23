@@ -1,13 +1,14 @@
 {
   "name": "azure-landing-zone-sketch",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "build-scene": "node scripts/build-scene.mjs",
     "dev": "vite",
     "build": "node scripts/build-scene.mjs && node scripts/check-geometry.mjs && vite build",
-    "check": "node scripts/check-geometry.mjs"
+    "check": "node scripts/check-geometry.mjs",
+    "render": "node scripts/render.mjs"
   },
   "dependencies": {
     "@excalidraw/excalidraw": "0.18.1",

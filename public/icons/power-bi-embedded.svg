@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Power BI Embedded (sketch)</title>
+
+  
+  <desc>
+    Hand-drawn Power BI Embedded icon featuring three overlapping
+    ascending yellow and gold columns. Flat fills, slightly uneven
+    charcoal marker outlines, and a transparent background.
+    No trend arrows, dots, or additional symbols.
+  </desc>
+
+  <!-- Tallest column: dark golden yellow -->
+  <path d="M69 9            Q69 5 74 5            L105 5            Q110 5 110 10            L110 118            Q110 123 105 123            L69 123            Z" fill="#D99A10" stroke="#243447" stroke-width="3.4"/>
+
+  <!-- Middle column: warm yellow -->
+  <path d="M44 39            Q44 34 49 34            L78 34            Q83 34 83 39            L83 123            L44 123            Z" fill="#F6D751" stroke="#243447" stroke-width="3.2"/>
+
+  <!-- Shortest column: pale yellow -->
+  <path d="M19 69            Q19 64 24 64            L53 64            Q58 64 58 69            L58 123            L24 123            Q19 123 19 118            Z" fill="#F9E589" stroke="#243447" stroke-width="3.2"/>
+
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>Public IP Addresses (sketch)</title>
+  
+
+  <!-- Cyan address panel -->
+  <path d="M13.5 43.5            Q13 40 17.5 39.5            L110 39.5            Q114.5 39.5 114.5 44            L114.5 104.5            Q114.5 109.5 109.5 109.5            L18 109.5            Q13.5 109.5 13.5 105 Z" fill="#32D2F2" stroke="#203746" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Gray server header -->
+  <path d="M18 21.5            Q13.5 21.5 13.5 26            L13.5 43            Q14 44 18 43.5            L110 43.5            L114.5 43            L114.5 26.5            Q114.5 21.5 110 21.5 Z" fill="#767676" stroke="#203746" stroke-width="3.8" stroke-linejoin="round"/>
+
+  <!-- White address field -->
+  <path d="M27.5 32.5            Q27 32 30 32            L98.5 32            Q101 32 101 34.5            L101 38.5            Q100.5 40 98 40            L30 40            Q27 40 27 38 Z" fill="#F2F2F2" stroke="#203746" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Exactly three white IP indicator dots -->
+  <g fill="#F2F2F2" stroke="#203746" stroke-width="2.8">
+    <circle cx="40" cy="77" r="9"/>
+    <circle cx="64" cy="77" r="9"/>
+    <circle cx="88" cy="77" r="9"/>
+  </g>
+</svg>
