@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Logic Apps (sketch)</title>
+
+  
+  <desc>Three rounded workflow squares connected by a branching blue connector. The three squares contain no symbols.</desc>
+
+  <!-- Central branching connector -->
+  <path d="M64 42            L64 57            Q64 67 55 68            L30 68            Q23 68 23 77            L23 83" stroke="#203746" stroke-width="8"/>
+
+  <path d="M64 42            L64 57            Q64 67 55 68            L30 68            Q23 68 23 77            L23 83" stroke="#0078D4" stroke-width="5"/>
+
+  <path d="M64 57            Q64 67 73 68            L98 68            Q105 68 105 77            L105 83" stroke="#203746" stroke-width="8"/>
+
+  <path d="M64 57            Q64 67 73 68            L98 68            Q105 68 105 77            L105 83" stroke="#0078D4" stroke-width="5"/>
+
+  <!-- Top cyan square -->
+  <path d="M44 6            Q44 4 48 4            L80 5            Q84 5 84 9            L85 41            Q85 45 81 45            L47 45            Q43 45 43 41            Z" fill="#50E6FF" stroke="#203746" stroke-width="3.5"/>
+
+  <!-- Left green square -->
+  <path d="M5 83            Q5 80 9 80            L38 81            Q42 81 42 85            L43 119            Q43 123 39 123            L8 122            Q4 122 4 118            Z" fill="#A4E63A" stroke="#203746" stroke-width="3.5"/>
+
+  <!-- Right green square -->
+  <path d="M87 83            Q87 80 91 80            L120 81            Q124 81 124 85            L125 119            Q125 123 121 123            L90 122            Q86 122 86 118            Z" fill="#A4E63A" stroke="#203746" stroke-width="3.5"/>
+
+</svg>

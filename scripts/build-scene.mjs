@@ -58,14 +58,19 @@ export const categoryOf = (url) => (CAT.find(([re]) => re.test(url)) ?? [null, "
 
 const queue = readFileSync("work/queue.tsv", "utf8").trim().split(/\r?\n/).map((l) => l.split("\t"));
 const scenes = [];
+const seenUrl = new Map();
 const lz = built.get("azure-landing-zone");
 if (lz) scenes.push(lz);
 for (const [num, slug, url, title] of queue) {
   const b = built.get(slug);
   const base = { slug, title, url, category: categoryOf(url), num: +num, status: "pending", featured: false, otherDiagrams: [], substitutions: {}, differences: [], icons: [], checks: {} };
+  // The queue lists some articles twice under different slugs; draw once and mark the repeat.
+  if (!b && seenUrl.has(url)) { scenes.push({ ...base, status: "duplicate", duplicateOf: seenUrl.get(url) }); continue; }
+  seenUrl.set(url, slug);
   scenes.push(b ? { ...base, ...b, num: +num, category: b.category ?? base.category } : base);
 }
-writeFileSync(idxPath, JSON.stringify({ updated: new Date().toISOString().slice(0, 10), count: scenes.length, done: scenes.filter((s) => s.status === "done").length, scenes }, null, 1));
+const listed = scenes.filter((s) => s.status !== "duplicate");
+writeFileSync(idxPath, JSON.stringify({ updated: new Date().toISOString().slice(0, 10), count: listed.length, done: listed.filter((s) => s.status === "done").length, scenes }, null, 1));
 
 // keep public/icons in sync with every icon used by any scene (reference copies of the sketch SVGs)
 mkdirSync("public/icons", { recursive: true });

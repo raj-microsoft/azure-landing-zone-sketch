@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
- "count": 149,
- "done": 11,
+ "count": 146,
+ "done": 20,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -461,43 +461,108 @@
    "slug": "hybrid-considerations",
    "title": "Azure hybrid options",
    "url": "https://learn.microsoft.com/azure/architecture/guide/technology-choices/hybrid-considerations",
-   "category": "Design guidance",
+   "category": "Hybrid + multicloud",
    "num": 11,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Site-to-site VPN": "virtual-network-gateways"
+   },
+   "differences": [
+    "Dark header bars are drawn as pale blue banners."
+   ],
+   "icons": [
+    "azure-arc",
+    "azure-local",
+    "expressroute-circuits",
+    "virtual-network-gateways"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "51 elements, 16 bound arrows, 5 images with files"
+   }
   },
   {
    "slug": "aks-baseline",
    "title": "Azure Kubernetes Service (AKS) baseline architecture for Azure Local",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/hybrid/aks-baseline",
-   "category": "Hybrid + multicloud",
+   "category": "Containers + microservices",
    "num": 12,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Arc resource bridge": "azure-arc",
+    "Container": "worker-container-app",
+    "Hyper-V virtual machine": "virtual-machine",
+    "Load balancer (control plane)": "load-balancers",
+    "API server": "server-farm",
+    "Physical node": "server-farm",
+    "Azure Blob Storage": "blob-block"
+   },
+   "differences": [
+    "Dotted Hyper-V VM outlines around system services are drawn as dashed groups.",
+    "Each worker node VM shows its containers inside one shared 'User application' group, as in the original."
+   ],
+   "icons": [
+    "automation-accounts",
+    "azure-arc",
+    "azure-local",
+    "blob-block",
+    "kubernetes-services",
+    "load-balancers",
+    "microsoft-defender-for-cloud",
+    "monitor",
+    "policy",
+    "server-farm",
+    "users",
+    "virtual-machine",
+    "worker-container-app"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "99 elements, 9 bound arrows, 28 images with files"
+   }
   },
   {
    "slug": "aks-hybrid-azure-local",
-   "title": "Deploy containerized apps with AKS Hybrid and Edge by using GitOps",
+   "title": "AKS on Azure Local and AKS Edge Essentials with GitOps",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/hybrid/aks-hybrid-azure-local",
-   "category": "Hybrid + multicloud",
+   "category": "Containers + microservices",
    "num": 13,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "AKS Hybrid and Edge": "kubernetes-services",
+    "GitOps configurations": "gear",
+    "Container with a desired state": "worker-container-app",
+    "Git repo": "tfs-vc-repository",
+    "Git merge": "commit",
+    "Application changes / versions": "code",
+    "Azure Pipelines": "azure-devops"
+   },
+   "differences": [
+    "Flux and Helm controllers are labelled sketch boxes (no Azure icon or third-party logo).",
+    "The large brace grouping the Git steps under Azure Pipelines is drawn as a dashed group."
+   ],
+   "icons": [
+    "azure-devops",
+    "azure-local",
+    "code",
+    "commit",
+    "container-registries",
+    "gear",
+    "kubernetes-services",
+    "tfs-vc-repository",
+    "users",
+    "worker-container-app"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "81 elements, 15 bound arrows, 12 images with files"
+   }
   },
   {
    "slug": "quantum-computing-integration-with-classical-apps",
@@ -505,41 +570,105 @@
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/quantum/quantum-computing-integration-with-classical-apps",
    "category": "AI + machine learning",
    "num": 14,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Workflow-orchestrated integration state machine",
+    "Workflow-orchestrated integration topology"
+   ],
+   "substitutions": {
+    "Client app": "browser",
+    "Microsoft Entra ID": "entra-connect",
+    "Provider": "metrics",
+    "Targets (QPU)": "input-output"
+   },
+   "differences": [
+    "Azure Quantum has no sketch icon; the workspace is a labelled group.",
+    "Steps 2 and 5 leave the front end through separate lanes instead of the original's shared bend."
+   ],
+   "icons": [
+    "browser",
+    "entra-connect",
+    "input-output",
+    "metrics",
+    "storage-accounts",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "51 elements, 9 bound arrows, 6 images with files"
+   }
   },
   {
    "slug": "dataops-mdw",
-   "title": "Modern data warehouse medallion architecture in Microsoft Fabric",
+   "title": "DataOps for the modern data warehouse",
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/dataops-mdw",
    "category": "Databases + analytics",
    "num": 15,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Operational DBs": "sql-database",
+    "Blobs": "blob-block",
+    "Mirroring": "data-shares",
+    "Pipelines / Fabric Data Factory": "data-factories",
+    "Warehouse / notebook (bronze, silver, gold)": "sql-data-warehouses",
+    "OneLake": "data-lake-storage-gen1",
+    "Power BI": "power-bi-embedded"
+   },
+   "differences": [
+    "Fabric item icons (warehouse, notebook, mirroring) have no sketch icon; Azure equivalents are used and recorded.",
+    "Hexagon shapes for other sources and consumers are drawn as rounded boxes."
+   ],
+   "icons": [
+    "blob-block",
+    "data-factories",
+    "data-lake-storage-gen1",
+    "data-shares",
+    "power-bi-embedded",
+    "sql-data-warehouses",
+    "sql-database"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "59 elements, 11 bound arrows, 12 images with files"
+   }
   },
   {
    "slug": "hub-spoke-virtual-wan-architecture",
-   "title": "Hub-spoke network topology using Azure Virtual WAN",
+   "title": "Hub-spoke network topology with Azure Virtual WAN",
    "url": "https://learn.microsoft.com/azure/architecture/networking/architecture/hub-spoke-virtual-wan-architecture",
    "category": "Networking",
    "num": 16,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Advantages of the hub-spoke reference architecture"
+   ],
+   "substitutions": {
+    "VPN branch (building)": "branch",
+    "VPN P2S user": "users",
+    "Routing configuration": "route-tables"
+   },
+   "differences": [
+    "Diagonal connections from each virtual hub are routed orthogonally; connection names sit beside each line.",
+    "Virtual network clouds are labelled cards with the virtual network sketch icon; branch buildings use the 'branch' sketch icon.",
+    "The routing configuration cards use the route-tables sketch icon in place of the small virtual hub badge."
+   ],
+   "icons": [
+    "branch",
+    "ddos-protection-plans",
+    "expressroute-circuits",
+    "route-tables",
+    "users",
+    "virtual-networks",
+    "virtual-wan-hub"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "78 elements, 13 bound arrows, 17 images with files"
+   }
   },
   {
    "slug": "cache-aside-azure-managed-redis-postgresql",
@@ -547,13 +676,30 @@
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/cache-aside-azure-managed-redis-postgresql",
    "category": "Databases + analytics",
    "num": 17,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Client application": "browser",
+    "App Service": "app-services"
+   },
+   "differences": [
+    "Read steps are green circles and write steps blue squares, as in the original.",
+    "The App Service to private endpoint flows leave through separate lanes so no two arrows share a line."
+   ],
+   "icons": [
+    "app-services",
+    "azure-database-postgresql-server",
+    "azure-managed-redis",
+    "browser",
+    "monitor",
+    "private-endpoints",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "75 elements, 15 bound arrows, 8 images with files"
+   }
   },
   {
    "slug": "cache-aside-azure-managed-redis-postgresql-2",
@@ -561,13 +707,14 @@
    "url": "https://learn.microsoft.com/azure/architecture/databases/architecture/cache-aside-azure-managed-redis-postgresql",
    "category": "Databases + analytics",
    "num": 18,
-   "status": "pending",
+   "status": "duplicate",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
    "differences": [],
    "icons": [],
-   "checks": {}
+   "checks": {},
+   "duplicateOf": "cache-aside-azure-managed-redis-postgresql"
   },
   {
    "slug": "deploy-ibm-maximo-application-suite",
@@ -575,13 +722,40 @@
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/apps/deploy-ibm-maximo-application-suite",
    "category": "Web + apps",
    "num": 19,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Public / Private DNS zone": "dns-zones",
+    "Azure Files Premium/Standard": "storage-azure-files",
+    "Twilio SendGrid": "sendgrid-accounts",
+    "ARO nodes": "virtual-machine"
+   },
+   "differences": [
+    "The virtual network gateway sits just outside the VNet edge with a link to it, instead of straddling the edge.",
+    "Network security group badges are shown as small NSG icons at the top right of each subnet.",
+    "The public load balancer arrows to the control plane and worker subnet are routed through lanes."
+   ],
+   "icons": [
+    "azure-red-hat-openshift",
+    "bastions",
+    "dns-zones",
+    "expressroute-circuits",
+    "load-balancers",
+    "network-security-groups",
+    "private-endpoints",
+    "sendgrid-accounts",
+    "sql-managed-instance",
+    "storage-azure-files",
+    "users",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "97 elements, 11 bound arrows, 33 images with files"
+   }
   },
   {
    "slug": "build-deploy-custom-models",
@@ -589,13 +763,43 @@
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/build-deploy-custom-models",
    "category": "AI + machine learning",
    "num": 20,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Email servers": "exchange-on-premises-access",
+    "FTP server": "ftp",
+    "Web apps": "app-services",
+    "Document Intelligence": "form-recognizers",
+    "Azure Language in Foundry Tools": "language",
+    "Foundry Models (Azure OpenAI)": "azure-openai",
+    "Microsoft Foundry": "ai-foundry",
+    "Machine Learning studio": "machine-learning",
+    "Batch and online managed endpoints": "machine-learning"
+   },
+   "differences": [
+    "Each column keeps its services in the original order; the dotted endpoint group in Deployment is a dashed box."
+   ],
+   "icons": [
+    "ai-foundry",
+    "app-services",
+    "azure-openai",
+    "blob-block",
+    "data-factories",
+    "data-lake-storage-gen1",
+    "exchange-on-premises-access",
+    "form-recognizers",
+    "ftp",
+    "function-apps",
+    "kubernetes-services",
+    "language",
+    "logic-apps",
+    "machine-learning"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "76 elements, 4 bound arrows, 17 images with files"
+   }
   },
   {
    "slug": "manage-microsoft-365-tenant-configuration-microsoft365dsc-devops",
@@ -1079,13 +1283,14 @@
    "url": "https://learn.microsoft.com/azure/architecture/hybrid/azure-files-private",
    "category": "Hybrid + multicloud",
    "num": 55,
-   "status": "pending",
+   "status": "duplicate",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
    "differences": [],
    "icons": [],
-   "checks": {}
+   "checks": {},
+   "duplicateOf": "azure-files-private"
   },
   {
    "slug": "sync-mongodb-atlas-fabric-analytics",
@@ -1751,13 +1956,14 @@
    "url": "https://learn.microsoft.com/azure/architecture/databases/idea/migrate-oracle-odaa-exadata",
    "category": "Databases + analytics",
    "num": 103,
-   "status": "pending",
+   "status": "duplicate",
    "featured": false,
    "otherDiagrams": [],
    "substitutions": {},
    "differences": [],
    "icons": [],
-   "checks": {}
+   "checks": {},
+   "duplicateOf": "migrate-oracle-odaa-exadata"
   },
   {
    "slug": "machine-learning-inference-iot-edge",

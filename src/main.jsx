@@ -52,13 +52,13 @@ function Gallery() {
   const cats = useMemo(() => {
     if (!idx) return [];
     const m = new Map();
-    for (const s of idx.scenes) m.set(s.category, (m.get(s.category) ?? 0) + 1);
+    for (const s of idx.scenes.filter((s) => s.status !== "duplicate")) m.set(s.category, (m.get(s.category) ?? 0) + 1);
     return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0]));
   }, [idx]);
   const list = useMemo(() => {
     if (!idx) return [];
     const words = q.toLowerCase().split(/\s+/).filter(Boolean);
-    return idx.scenes.filter((s) =>
+    return idx.scenes.filter((s) => s.status !== "duplicate" &&
       (cat === "All" || s.category === cat) && (!onlyDone || s.status === "done") &&
       words.every((w) => `${s.title} ${s.category} ${s.slug}`.toLowerCase().includes(w)));
   }, [idx, q, cat, onlyDone]);
@@ -82,7 +82,7 @@ function Gallery() {
         </label>
       </div>
       <nav className="cats" aria-label="Categories">
-        {[["All", idx?.scenes.length ?? 0], ...cats].map(([c, n]) => (
+        {[["All", idx?.count ?? 0], ...cats].map(([c, n]) => (
           <button key={c} type="button" aria-pressed={cat === c} onClick={() => setCat(c)}>
             {c} <span className="n">{n}</span>
           </button>
@@ -92,7 +92,7 @@ function Gallery() {
       {!idx && !error && <p className="status" role="status">Loading the list…</p>}
       {idx && (
         <>
-          <p className="status" role="status">{list.length === idx.scenes.length ? `${list.length} architectures` : `${list.length} of ${idx.scenes.length} architectures`}</p>
+          <p className="status" role="status">{list.length === idx.count ? `${list.length} architectures` : `${list.length} of ${idx.count} architectures`}</p>
           {list.length ? (
             <ul className="grid">{list.map((s) => <Card key={s.slug} s={s} />)}</ul>
           ) : (

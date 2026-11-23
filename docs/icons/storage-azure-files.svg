@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>Storage Azure Files (sketch)</title>
+  
+  <desc>Azure Files icon with a wide blue browser header, cyan storage panel, and a plain overlapping two-layer folder without a document.</desc>
+
+  <!-- Cyan storage container -->
+  <path d="M4 38            L124 38            L124 107            Q124 112 119 112            L9 112            Q4 112 4 107 Z" fill="#32CBE9" stroke="#203746" stroke-width="3.2" stroke-linejoin="round"/>
+
+  <!-- Solid blue browser header: no folder tab -->
+  <path d="M9 16            L119 16            Q124 16 124 21            L124 38            L4 38            L4 21            Q4 16 9 16 Z" fill="#0078D4" stroke="#203746" stroke-width="3.2" stroke-linejoin="round"/>
+
+  <!-- Rear blue folder layer -->
+  <path d="M32 46            Q32 44 34 44            L57 44            Q59 44 61 46            L69 52            L97 52            Q100 52 100 55            L100 100            Q100 102 97 102            L34 102            Q32 102 32 99 Z" fill="#5EA0EF" stroke="#203746" stroke-width="2.7" stroke-linejoin="round"/>
+
+  <!-- Small horizontal white-and-blue file marker,
+       located above the front folder -->
+  <path d="M37 48            Q37 47 38 47            L52 47            Q53 47 53 48            L53 50            Q53 51 52 51            L38 51            Q37 51 37 50 Z" fill="#FFFFFF" stroke="#203746" stroke-width="1.1" stroke-linejoin="round"/>
+
+  <path d="M37 48            Q37 47 38 47            L40 47            L40 51            L38 51            Q37 51 37 50 Z" fill="#0078D4" stroke="#203746" stroke-width=".8" stroke-linejoin="round"/>
+
+  <!-- Plain white front folder.
+       Small central notch on upper edge.
+       No document, text lines, or page fold. -->
+  <path d="M34 59            L57 59            Q59 59 60 58            L65 53            Q66 52 68 52            L97 52            Q100 52 100 55            L100 99            Q100 102 97 102            L35 102            Q32 102 32 99            L32 62            Q32 59 34 59 Z" fill="#F5FCFF" stroke="#203746" stroke-width="2.8" stroke-linejoin="round"/>
+
+</svg>
