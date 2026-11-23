@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 140,
+ "done": 144,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -5769,57 +5769,147 @@
    "slug": "cdn",
    "title": "CDN guidance",
    "url": "https://learn.microsoft.com/azure/architecture/best-practices/cdn",
-   "category": "Design guidance",
+   "category": "Best practices",
    "num": 145,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "CDN": "cdn-profiles"
+   },
+   "differences": [
+    "Clients, Origin and the cached IMG triangles drawn as labelled sketch shapes; the CDN box carries the cdn-profiles icon.",
+    "The two client lines that merge into one trunk are drawn as separate parallel arrows."
+   ],
+   "icons": [
+    "cdn-profiles"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "16 elements, 4 bound arrows, 1 images with files"
+   }
   },
   {
    "slug": "process-batch-transactions",
    "title": "High-volume batch transaction processing",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/mainframe/process-batch-transactions",
-   "category": "Mainframe + migration",
+   "category": "Mainframe",
    "num": 146,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "ExpressRoute": "expressroute-circuits",
+    "Azure Service Bus topics and queues": "azure-service-bus",
+    "Peer virtual network": "virtual-network-gateways",
+    "Azure load balancers": "load-balancers",
+    "AKS queue cluster": "kubernetes-services",
+    "Kubernetes node": "kubernetes-services",
+    "Java App Services": "app-services",
+    "Java Services / Contribution Java Classes": "code",
+    "Accelerated networking": "network-interfaces",
+    "Managed disk": "disks",
+    "Azure Managed Redis": "azure-managed-redis",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Azure Stream Analytics": "stream-analytics-jobs",
+    "SQL Managed Instance": "sql-managed-instance",
+    "Azure Log Analytics": "log-analytics-workspaces",
+    "Azure Data Factory": "data-factories",
+    "Azure geo-redundant storage account": "storage-accounts",
+    "Azure Blob Storage": "blob-block",
+    "Azure Files": "storage-azure-files",
+    "Network security group": "network-security-groups"
+   },
+   "differences": [
+    "External input and Azure-based input users drawn as labelled shapes.",
+    "Diagonal arrows to SQL MI, Log Analytics, Data Factory and from storage drawn orthogonally.",
+    "Network security group badge drawn as a separate card beside the virtual network instead of on its corner."
+   ],
+   "icons": [
+    "app-services",
+    "azure-cosmos-db",
+    "azure-managed-redis",
+    "azure-service-bus",
+    "blob-block",
+    "code",
+    "data-factories",
+    "disks",
+    "expressroute-circuits",
+    "kubernetes-services",
+    "load-balancers",
+    "log-analytics-workspaces",
+    "network-interfaces",
+    "network-security-groups",
+    "sql-managed-instance",
+    "storage-accounts",
+    "storage-azure-files",
+    "stream-analytics-jobs",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "137 elements, 14 bound arrows, 30 images with files"
+   }
   },
   {
    "slug": "minimize-coordination",
    "title": "Minimize coordination",
    "url": "https://learn.microsoft.com/azure/architecture/guide/design-principles/minimize-coordination",
-   "category": "Design guidance",
+   "category": "Design principles",
    "num": 147,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: coordination between two workers to process orders exactly once"
+   ],
+   "substitutions": {
+    "Node 1 / Node 2": "virtual-machine",
+    "SQL database": "sql-database"
+   },
+   "differences": [
+    "Lock glyphs on locked rows drawn as text labels '(locked)'; Node 1 diagonal arrow drawn orthogonally."
+   ],
+   "icons": [
+    "sql-database",
+    "virtual-machine"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "26 elements, 3 bound arrows, 3 images with files"
+   }
   },
   {
    "slug": "orchestration",
    "title": "Container orchestration for microservices",
    "url": "https://learn.microsoft.com/azure/architecture/microservices/design/orchestration",
-   "category": "Containers + microservices",
+   "category": "Microservices",
    "num": 148,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1: microservices cluster with container orchestrator scenarios (service layers, auto scale, unhealthy instance)"
+   ],
+   "substitutions": {
+    "Application Gateway": "application-gateways",
+    "Azure Kubernetes Service (AKS)": "kubernetes-services",
+    "Node VM": "vm-scale-sets",
+    "Orchestrator": "workload-orchestration"
+   },
+   "differences": [
+    "Users and DevOps drawn as labelled shapes; containers drawn as plain boxes like the original.",
+    "The shared dashed orchestrator bus is drawn as three separate dashed connectors, one per node."
+   ],
+   "icons": [
+    "application-gateways",
+    "kubernetes-services",
+    "vm-scale-sets",
+    "workload-orchestration"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "51 elements, 6 bound arrows, 6 images with files"
+   }
   }
  ]
 }

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Workload Orchestration (sketch)</title>
+
+  
+  <desc>
+    Azure Workload Orchestration with a segmented gray circular
+    ring, purple top node, blue left node, green right node,
+    gray diagonal screwdriver and blue diagonal wrench.
+    Flat fills, uneven dark marker outlines, transparent background.
+  </desc>
+
+  <!-- Gray circular ring: upper-left arc -->
+  <path d="M48.2 14.1        C25.5 20.4 8.2 41.1 7.2 65.1" stroke="#243447" stroke-width="8.2"/>
+  <path d="M48.2 14.1        C25.8 21.2 9.3 42.2 8.3 65.1" stroke="#9B9C9C" stroke-width="5.2"/>
+
+  <!-- Gray circular ring: upper-right arc -->
+  <path d="M79.1 14.1        C102.1 20.5 119.3 41.8 120.2 65.2" stroke="#243447" stroke-width="8.2"/>
+  <path d="M79.1 14.1        C101.6 21.4 118.2 42.5 119.1 65.2" stroke="#9B9C9C" stroke-width="5.2"/>
+
+  <!-- Gray circular ring: lower arc -->
+  <path d="M18.1 94.3        C28 111.8 44.5 123.2 63.8 123.2        C83.7 123.2 100.1 111.5 109.7 94.3" stroke="#243447" stroke-width="8.2"/>
+  <path d="M18.1 94.3        C28.8 111.2 44.9 122 63.8 122        C83.2 122 99.4 110.8 109.7 94.3" stroke="#9B9C9C" stroke-width="5.2"/>
+
+  <!-- Purple top orbital node -->
+  <path d="M63.8 2.7        C70.2 2.5 75.6 7.7 75.7 14        C75.9 20.4 70.9 25.8 64.4 25.9        C57.9 26.1 52.6 21.1 52.5 14.5        C52.3 8.2 57.4 2.9 63.8 2.7Z" fill="#9359E5" stroke="#243447" stroke-width="3.2"/>
+
+  <!-- Blue left orbital node -->
+  <path d="M12.7 66.3        C19.1 66 24.5 71 24.7 77.3        C24.9 83.7 19.9 89 13.6 89.3        C7.1 89.6 1.8 84.5 1.6 78.1        C1.4 71.7 6.3 66.6 12.7 66.3Z" fill="#2389DF" stroke="#243447" stroke-width="3.2"/>
+
+  <!-- Green right orbital node -->
+  <path d="M114.1 66.2        C120.6 65.8 126 70.7 126.3 77        C126.6 83.5 121.6 88.9 115.2 89.2        C108.7 89.5 103.4 84.5 103.2 78        C103 71.8 107.8 66.5 114.1 66.2Z" fill="#32BDAE" stroke="#243447" stroke-width="3.2"/>
+
+  <!-- Gray screwdriver: upper-right tip -->
+  <path d="M83.3 39.1        L86.7 35.5        Q87.9 34.3 89 35.4        L91.9 38.4        Q93.2 39.6 92 40.9        L88.5 44.5        L82.1 49.1        L78.8 45.8Z" fill="#9B9C9C" stroke="#243447" stroke-width="2.8"/>
+
+  <!-- Gray screwdriver: diagonal shaft and lower-left handle -->
+  <path d="M78.8 45.8        L85.2 52.1        L58.5 78.5        Q57.2 79.8 57.4 81.4        L38.8 100.2        Q37.3 101.7 35.8 100.1        L27.5 91.7        Q26.1 90.3 27.6 88.8        L46.2 70.4        Q47.9 70.4 49.2 69.1Z" fill="#9B9C9C" stroke="#243447" stroke-width="3.1"/>
+
+  <!-- Blue wrench: open upper-left jaw and long diagonal body -->
+  <path d="M45.1 29.2        C40.6 27.5 35.8 27.8 31.4 29.4        L40.5 38.6        Q41.3 39.4 41 40.5        L38.8 48.4        Q38.6 49.4 37.6 49.7        L29.7 52.1        Q28.7 52.4 27.9 51.6        L18.8 42.5        C17.3 47.8 18.2 54.2 21.6 59.3        C25.8 65.6 32.7 68.3 40.2 66.5        L87.5 114        C92.1 118.5 99.1 118.7 103.5 114.2        C108 109.8 107.8 102.7 103.2 98.1        L55.9 50.8        C58.1 42 53.2 33.4 45.1 29.2Z" fill="#2389DF" stroke="#243447" stroke-width="3.6"/>
+
+</svg>
