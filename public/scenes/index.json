@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 99,
+ "done": 101,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -4235,15 +4235,34 @@
    "slug": "migrate-oracle-odaa-exadata",
    "title": "Migrate an Oracle database to OD@A Exadata Database Service",
    "url": "https://learn.microsoft.com/azure/architecture/databases/idea/migrate-oracle-odaa-exadata",
-   "category": "Databases + analytics",
+   "category": "Databases",
    "num": 102,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "img1, img2: migration variants with additional services"
+   ],
+   "substitutions": {
+    "Source database": "oracle-database",
+    "Gateway": "virtual-network-gateways",
+    "Azure Firewall/NVA": "firewalls",
+    "Oracle Database@Azure": "oracle-database",
+    "Gateway subnet": "subnet"
+   },
+   "differences": [
+    "Same layout as 101 except the target is Oracle Database@Azure in a delegated subnet; on-premises building glyph omitted."
+   ],
+   "icons": [
+    "firewalls",
+    "oracle-database",
+    "subnet",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "37 elements, 2 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "migrate-oracle-odaa-exadata-2",
@@ -4264,15 +4283,33 @@
    "slug": "machine-learning-inference-iot-edge",
    "title": "Enable machine learning inference on an Azure IoT Edge device",
    "url": "https://learn.microsoft.com/azure/architecture/guide/iot/machine-learning-inference-iot-edge",
-   "category": "IoT + manufacturing",
+   "category": "Internet of Things",
    "num": 104,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Azure Machine Learning": "machine-learning",
+    "Blob Storage": "blob-block",
+    "Azure IoT Hub": "iot-hub",
+    "Module twin": "code",
+    "Client": "virtual-machine"
+   },
+   "differences": [
+    "Edge module stack (Python AI Loader, Flask, OpenCV, PIL, TensorFlow/ONNX RT, Linux container) and local storage cylinders are labelled sketch shapes.",
+    "Step 3 HTTP download is routed below the IoT Hub column to Blob Storage instead of a diagonal line across it."
+   ],
+   "icons": [
+    "blob-block",
+    "code",
+    "iot-hub",
+    "machine-learning",
+    "virtual-machine"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "75 elements, 5 bound arrows, 5 images with files"
+   }
   },
   {
    "slug": "access-multitenant-web-app-from-on-premises",
