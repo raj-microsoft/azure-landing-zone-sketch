@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 40,
+ "done": 50,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -1622,69 +1622,242 @@
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/networking/split-brain-dns",
    "category": "Networking",
    "num": 41,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Public internet workflow",
+    "Private enterprise workflow",
+    "Alternate split-brain DNS hosting architecture"
+   ],
+   "substitutions": {
+    "Internet user / on-premises user": "users",
+    "Internet": "globe-success",
+    "Azure DNS zone": "dns-zones",
+    "Azure Front Door": "front-door-and-cdn-profiles",
+    "Public IP (pip-appgw)": "public-ip-addresses",
+    "Application Gateway": "application-gateways",
+    "App (VM)": "virtual-machine",
+    "Network security group": "network-security-groups",
+    "ExpressRoute circuit": "expressroute-circuits",
+    "Site-to-site VPN connection": "connections",
+    "AD DS DNS server": "entra-domain-services",
+    "Virtual network": "virtual-networks",
+    "Subnet": "subnet"
+   },
+   "differences": [
+    "The public IP is drawn as a card on the Front Door path instead of a floating label.",
+    "On-premises building shown as a dashed group (no sketch building icon)."
+   ],
+   "icons": [
+    "application-gateways",
+    "connections",
+    "dns-zones",
+    "entra-domain-services",
+    "expressroute-circuits",
+    "front-door-and-cdn-profiles",
+    "globe-success",
+    "network-security-groups",
+    "public-ip-addresses",
+    "users",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "59 elements, 11 bound arrows, 15 images with files"
+   }
   },
   {
    "slug": "hybrid-dns-infra",
    "title": "Design a hybrid Domain Name System (DNS) solution by using Azure",
    "url": "https://learn.microsoft.com/azure/architecture/hybrid/hybrid-dns-infra",
-   "category": "Hybrid + multicloud",
+   "category": "Networking",
    "num": 42,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Hybrid resolution from Azure to on-premises",
+    "Hybrid resolution from on-premises to Azure",
+    "Two on-premises locations and two Azure regions (two variants)"
+   ],
+   "substitutions": {
+    "Subscription": "subscriptions",
+    "Forwarding ruleset": "file",
+    "DNS Private Resolver / endpoints": "dns-private-resolver",
+    "Azure private DNS zone": "dns-zones",
+    "VPN/ExpressRoute gateway": "virtual-network-gateways",
+    "Azure Firewall": "firewalls",
+    "DNS servers / workload VMs": "virtual-machine",
+    "On-premises VPN/ExpressRoute termination": "virtual-router",
+    "Virtual network": "virtual-networks"
+   },
+   "differences": [
+    "Outbound and inbound endpoints use the DNS Private Resolver icon."
+   ],
+   "icons": [
+    "dns-private-resolver",
+    "dns-zones",
+    "file",
+    "firewalls",
+    "subscriptions",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks",
+    "virtual-router"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "66 elements, 7 bound arrows, 15 images with files"
+   }
   },
   {
    "slug": "virtual-machine-compliance",
    "title": "Manage virtual machine compliance",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/security/virtual-machine-compliance",
-   "category": "Security + identity",
+   "category": "Security",
    "num": 43,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Compliance management with Azure Policy and machine configuration"
+   ],
+   "substitutions": {
+    "Microsoft Marketplace": "marketplace",
+    "Marketplace image": "vm-images-classic",
+    "VM Image Builder": "image-templates",
+    "Image tattooing": "image-definitions",
+    "Automated tests": "test-base",
+    "Image versions": "image-versions",
+    "Compute Gallery": "shared-image-galleries"
+   },
+   "differences": [
+    "Builder, tattooing and test stages get text captions taken from the article; the official diagram shows them as VM icons with badges only."
+   ],
+   "icons": [
+    "image-definitions",
+    "image-templates",
+    "image-versions",
+    "marketplace",
+    "shared-image-galleries",
+    "test-base",
+    "vm-images-classic"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "44 elements, 7 bound arrows, 7 images with files"
+   }
   },
   {
    "slug": "certificate-lifecycle",
    "title": "Certificate life cycle management on Azure",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/certificate-lifecycle/",
-   "category": "Security + identity",
+   "category": "Security",
    "num": 44,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Automatic certificate renewal workflow",
+    "Certificate status dashboard (screenshot)"
+   ],
+   "substitutions": {
+    "Subscription": "subscriptions",
+    "CERTLC resource group": "resource-groups",
+    "Virtual network": "virtual-networks",
+    "NSG": "network-security-groups",
+    "UDR": "route-tables",
+    "DC / ENT-CA / servers": "virtual-machine",
+    "Automation account": "automation-accounts",
+    "Runbook script": "file",
+    "Webhook": "api-connections",
+    "Schedule": "scheduler",
+    "Automation account identity": "entra-managed-identities",
+    "Storage account (queue)": "storage-queue",
+    "Event Grid": "event-grid-topics",
+    "Key Vault": "key-vaults",
+    "Log Analytics workspace": "log-analytics-workspaces",
+    "Workbook": "workbooks",
+    "Recovery services vault": "recovery-services-vaults",
+    "Role assignment": "entra-identity-roles-and-administrators",
+    "Policy assignment": "policy",
+    "Network Watcher": "network-watcher",
+    "Defender for Cloud": "microsoft-defender-for-cloud",
+    "Active Directory": "entra-domain-services",
+    "Azure Arc-enabled server": "arc-machines",
+    "Hybrid connection (router)": "virtual-router"
+   },
+   "differences": [
+    "Key Vault extension and custom script markers on servers are folded into the server captions.",
+    "Hybrid Runbook Worker is a text label on the dashed worker link."
+   ],
+   "icons": [
+    "api-connections",
+    "arc-machines",
+    "automation-accounts",
+    "entra-domain-services",
+    "entra-identity-roles-and-administrators",
+    "entra-managed-identities",
+    "event-grid-topics",
+    "file",
+    "key-vaults",
+    "log-analytics-workspaces",
+    "microsoft-defender-for-cloud",
+    "network-security-groups",
+    "network-watcher",
+    "policy",
+    "recovery-services-vaults",
+    "resource-groups",
+    "route-tables",
+    "scheduler",
+    "storage-queue",
+    "subscriptions",
+    "virtual-machine",
+    "virtual-networks",
+    "virtual-router",
+    "workbooks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "105 elements, 5 bound arrows, 29 images with files"
+   }
   },
   {
    "slug": "basic-enterprise-integration",
    "title": "Basic enterprise integration on Azure",
    "url": "https://learn.microsoft.com/azure/architecture/reference-architectures/enterprise-integration/basic-enterprise-integration",
-   "category": "Integration + DevOps",
+   "category": "Integration",
    "num": 45,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
+   "substitutions": {
+    "Microsoft Entra": "entra-connect",
+    "Client (internet)": "globe-success",
+    "Developer": "users",
+    "API gateway (API Management)": "api-management-services",
+    "Developer portal": "management-portal",
+    "Logic Apps": "logic-apps",
+    "Azure services": "azure-a",
+    "SaaS services": "cloud-services-classic",
+    "REST / SOAP web services": "gear",
+    "Resource group": "resource-groups"
+   },
    "differences": [],
-   "icons": [],
-   "checks": {}
+   "icons": [
+    "api-management-services",
+    "azure-a",
+    "cloud-services-classic",
+    "entra-connect",
+    "gear",
+    "globe-success",
+    "logic-apps",
+    "management-portal",
+    "resource-groups",
+    "users"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "69 elements, 11 bound arrows, 11 images with files"
+   }
   },
   {
    "slug": "hub-spoke",
@@ -1692,69 +1865,247 @@
    "url": "https://learn.microsoft.com/azure/architecture/networking/architecture/hub-spoke",
    "category": "Networking",
    "num": 46,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Routing between spokes through Azure Firewall",
+    "Virtual Network Manager direct connectivity between spokes",
+    "Spoke global mesh across regions"
+   ],
+   "substitutions": {
+    "Azure Virtual Network Manager": "network-managers",
+    "Virtual network": "virtual-networks",
+    "Azure Bastion": "bastions",
+    "Azure Firewall": "firewalls",
+    "VPN Gateway": "virtual-network-gateways",
+    "Azure Monitor": "monitor",
+    "Virtual machine": "virtual-machine",
+    "NSG": "network-security-groups"
+   },
+   "differences": [
+    "The Virtual Network Manager membership bus (dots on the hub) is shown as the enclosing group only."
+   ],
+   "icons": [
+    "bastions",
+    "firewalls",
+    "monitor",
+    "network-managers",
+    "network-security-groups",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "110 elements, 11 bound arrows, 29 images with files"
+   }
   },
   {
    "slug": "forensics",
    "title": "Computer forensics chain of custody in Azure",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/forensics/",
-   "category": "Security + identity",
+   "category": "Security",
    "num": 47,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Microsoft Entra ID": "entra-connect",
+    "Management group organization (people)": "users",
+    "Subscription": "subscriptions",
+    "Internet": "globe-success",
+    "Azure Firewall / on-premises firewall": "firewalls",
+    "ExpressRoute / VPN gateway": "virtual-network-gateways",
+    "ExpressRoute circuit": "expressroute-circuits",
+    "Azure DDoS standard": "ddos-protection-plans",
+    "Azure DNS": "dns-zones",
+    "Resource group": "resource-groups",
+    "Key Vault": "key-vaults",
+    "Azure Monitor": "monitor",
+    "Recovery services vault": "recovery-services-vaults",
+    "DC / VMs / HRW": "virtual-machine",
+    "Microsoft Entra Domain Services": "entra-domain-services",
+    "Cost management": "cost-management",
+    "Role assignment": "entra-identity-roles-and-administrators",
+    "Policy assignment": "policy",
+    "Network Watcher": "network-watcher",
+    "Defender for Cloud": "microsoft-defender-for-cloud",
+    "Azure Update Manager": "update-management-center",
+    "UDR": "route-tables",
+    "NSG": "network-security-groups",
+    "OS / data disks": "disks",
+    "Snapshots": "disks-snapshots",
+    "Automation account / runbook": "automation-accounts",
+    "Log Analytics workspace": "log-analytics-workspaces",
+    "Storage account": "storage-accounts",
+    "File share": "azure-fileshares",
+    "Immutable blob container": "blob-block",
+    "On-premises router": "virtual-router",
+    "Remote P2S VPN users": "users"
+   },
+   "differences": [
+    "Links from management groups to individual subscriptions are omitted; subscriptions sit under their groups in the same order.",
+    "Identity subscription services are a 3x2 grid instead of one row.",
+    "VM01-to-disk links run as orthogonal lines.",
+    "Application icons on premises are text boxes."
+   ],
+   "icons": [
+    "automation-accounts",
+    "azure-fileshares",
+    "blob-block",
+    "cost-management",
+    "ddos-protection-plans",
+    "disks",
+    "disks-snapshots",
+    "dns-zones",
+    "entra-connect",
+    "entra-domain-services",
+    "entra-identity-roles-and-administrators",
+    "expressroute-circuits",
+    "file",
+    "firewalls",
+    "globe-success",
+    "key-vaults",
+    "log-analytics-workspaces",
+    "microsoft-defender-for-cloud",
+    "monitor",
+    "network-security-groups",
+    "network-watcher",
+    "policy",
+    "recovery-services-vaults",
+    "resource-groups",
+    "route-tables",
+    "storage-accounts",
+    "subscriptions",
+    "update-management-center",
+    "users",
+    "virtual-machine",
+    "virtual-network-gateways",
+    "virtual-networks",
+    "virtual-router"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "327 elements, 28 bound arrows, 80 images with files"
+   }
   },
   {
    "slug": "mainframe-data-replication-azure-data-platform",
    "title": "Migrate mainframe data tier to Azure with mLogica LIBER*IRIS",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/mainframe/mainframe-data-replication-azure-data-platform",
-   "category": "Mainframe + migration",
+   "category": "Mainframe",
    "num": 48,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "VPN gateway": "virtual-network-gateways",
+    "ExpressRoute": "expressroute-circuits",
+    "Site-to-site VPN": "connections",
+    "Linux VMs (LIBER*IRIS cluster)": "azure-linux",
+    "Azure SQL": "sql-database",
+    "Azure Database for PostgreSQL": "azure-database-postgresql-server",
+    "Azure Database for MySQL": "azure-database-mysql-server",
+    "Azure Cosmos DB": "azure-cosmos-db",
+    "Data Lake Storage / Blob Storage": "data-lake-storage-gen1"
+   },
+   "differences": [
+    "Mainframe, Db2, IMS, IDMS, ADABAS, VSAM, PS, GDG, copybooks and mLogica scripts are labelled sketch boxes (non-Azure, no logos)."
+   ],
+   "icons": [
+    "azure-cosmos-db",
+    "azure-database-mysql-server",
+    "azure-database-postgresql-server",
+    "azure-linux",
+    "connections",
+    "data-lake-storage-gen1",
+    "expressroute-circuits",
+    "sql-database",
+    "virtual-network-gateways"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "118 elements, 14 bound arrows, 10 images with files"
+   }
   },
   {
    "slug": "multi-tier-app-disaster-recovery",
    "title": "Multitier web application built for high availability and disaster recovery",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/infrastructure/multi-tier-app-disaster-recovery",
-   "category": "Infrastructure + storage",
+   "category": "Compute",
    "num": 49,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Internet": "globe-success",
+    "Azure Traffic Manager": "traffic-manager-profiles",
+    "Public IP address": "public-ip-addresses",
+    "Load balancer / ILB / Site Recovery LB": "load-balancers",
+    "WEB / APP VMs": "virtual-machine",
+    "DB servers": "sql-server",
+    "Disks / replica disks": "disks",
+    "Virtual network": "virtual-networks"
+   },
+   "differences": [
+    "The vertical 'Availability sets' and 'Availability zones' brackets are horizontal labels.",
+    "Disaster recovery (grey) components use a grey fill instead of grey icons."
+   ],
+   "icons": [
+    "disks",
+    "globe-success",
+    "load-balancers",
+    "public-ip-addresses",
+    "sql-server",
+    "traffic-manager-profiles",
+    "virtual-machine",
+    "virtual-networks"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "262 elements, 52 bound arrows, 52 images with files"
+   }
   },
   {
    "slug": "queues-events",
    "title": "Use a message broker and events to integrate enterprise systems",
    "url": "https://learn.microsoft.com/azure/architecture/example-scenario/integration/queues-events",
-   "category": "Integration + DevOps",
+   "category": "Integration",
    "num": 50,
-   "status": "pending",
+   "status": "done",
    "featured": false,
    "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "substitutions": {
+    "Client apps": "management-portal",
+    "Microsoft Entra ID": "entra-connect",
+    "API Gateway (API Management)": "api-management-services",
+    "Logic app": "logic-apps",
+    "Service Bus": "azure-service-bus",
+    "Event Grid": "event-grid-topics",
+    "SaaS / message-based service": "cloud-services-classic",
+    "Azure services": "azure-a",
+    "REST or SOAP web service": "globe-success",
+    "Resource group": "resource-groups"
+   },
+   "differences": [
+    "Message and event links between logic apps and Service Bus/Event Grid are routed on separate lanes; the official diagram bundles them."
+   ],
+   "icons": [
+    "api-management-services",
+    "azure-a",
+    "azure-service-bus",
+    "cloud-services-classic",
+    "entra-connect",
+    "event-grid-topics",
+    "globe-success",
+    "logic-apps",
+    "management-portal",
+    "resource-groups"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "68 elements, 13 bound arrows, 13 images with files"
+   }
   },
   {
    "slug": "apim-api-scenario",

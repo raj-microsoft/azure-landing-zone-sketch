@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none"><title>Azure Fileshares (sketch)</title>
+  
+  <desc>Hand-drawn sketchnote-style Azure Fileshares icon with folder, document, and three sharing nodes.</desc>
+
+  <!-- outside sharing connectors -->
+  <g stroke="#243447" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M92 41 C99 31 104 24 109 17"/>
+    <path d="M98 96 C104 102 109 108 113 114"/>
+    <path d="M41 78 C31 81 23 84 16 88"/>
+  </g>
+
+  <!-- top document -->
+  <path d="M52 44        L55 31        Q56 27 61 28        L103 34        Q108 35 107 40        L104 55        L49 55        Z" fill="#0078D4" stroke="#243447" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M58 44        L60 34        Q61 31 64 32        L100 37        Q104 38 103 42        L102 51        L56 50        Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- dark rear folder mass -->
+  <path d="M36 36        Q36 33 40 33        L73 33        Q77 33 80 36        L87 43        L107 43        Q111 43 111 48        L111 99        Q111 104 106 104        L39 104        Q35 104 35 99        Z" fill="#005BA1" stroke="#243447" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- main folder -->
+  <path d="M36 39        Q36 36 40 36        L72 36        Q76 36 79 39        L86 46        Q88 48 91 48        L108 48        Q112 48 112 52        L111 99        Q111 103 106 103        L39 103        Q35 103 35 99        Z" fill="#32D4F5" stroke="#243447" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- subtle lower folder shade -->
+  <path d="M40 53        Q54 51 69 52        L107 52        L106 97        Q85 99 63 98        Q50 98 40 98        Z" fill="#27B9DD" stroke="#243447" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- folder tab seam -->
+  <path d="M41 40        C54 39 67 40 76 43        C79 44 81 46 84 49" stroke="#7DEEFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- sharing nodes -->
+  <circle cx="110" cy="14" r="8" fill="#50E5FF" stroke="#243447" stroke-width="3.6"/>
+  <circle cx="115" cy="115" r="9" fill="#50E5FF" stroke="#243447" stroke-width="3.6"/>
+  <circle cx="14" cy="89" r="10" fill="#50E5FF" stroke="#243447" stroke-width="3.6"/>
+
+  <!-- small restrained yellow sketch accents -->
+  <g stroke="#F4C542" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M22 56 L27 53" stroke-width="2.8"/>
+    <path d="M91 21 L95 19" stroke-width="2.5"/>
+    <path d="M20 111 Q26 114 33 112" stroke-width="2.4"/>
+  </g>
+</svg>

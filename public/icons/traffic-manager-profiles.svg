@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none"><title>Traffic Manager Profiles (sketch)</title>
+  
+
+  <!-- Purple octagonal body -->
+  <path d="M43 7            L85 7            Q89 7 92 11            L117 36            Q121 40 121 45            L121 83            Q121 88 117 92            L92 117            Q88 121 83 121            L44 121            Q39 121 35 117            L11 93            Q7 89 7 84            L7 44            Q7 39 11 35            L35 11            Q39 7 43 7 Z" fill="#773ADC" stroke="#203746" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Pale inner octagonal border -->
+  <path d="M45 15            L83 15            L113 45            L113 83            L83 113            L45 113            L15 83            L15 45 Z" stroke="#C6A4FF" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Arrow 1: upper-left to lower-right -->
+  <path d="M24 23            L34 19            L67 52            L79 40            L82 72            L50 69            L62 57            Z" fill="#FFFFFF" stroke="#203746" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Arrow 2: lower-right to upper-left -->
+  <path d="M113 91            L106 101            L79 74            L67 86            L64 54            L96 57            L84 69            Z" fill="#FFFFFF" stroke="#203746" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Arrow 3: lower-right to upper-left -->
+  <path d="M96 115            L85 118            L53 86            L41 98            L38 66            L70 69            L58 81            Z" fill="#FFFFFF" stroke="#203746" stroke-width="2.2" stroke-linejoin="round"/>
+
+</svg>

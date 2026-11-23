@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="title desc"><title>Network Managers (sketch)</title>
+
+  
+  <desc id="desc">
+    Two blue angle brackets enclosing three separate green
+    nodes, positioned above-left of a large blue cogwheel
+    with one plain circular opening.
+  </desc>
+
+  <!-- Left angle bracket -->
+  <path d="M35 7        L9 30        Q7 32 9 34        L35 55" stroke="#203746" stroke-width="9"/>
+  <path d="M35 7        L9 30        Q7 32 9 34        L35 55" stroke="#1490DF" stroke-width="5.5"/>
+
+  <!-- Right angle bracket -->
+  <path d="M72 7        L97 23        Q100 25 98 28        L73 42" stroke="#203746" stroke-width="9"/>
+  <path d="M72 7        L97 23        Q100 25 98 28        L73 42" stroke="#50E6FF" stroke-width="5.5"/>
+
+  <!-- Three independent green nodes -->
+  <g fill="#76BC2D" stroke="#203746" stroke-width="2.8">
+    <path d="M32 21              C37 21 40 25 40 30              C40 35 36 39 32 39              C27 39 24 35 24 30              C24 25 27 21 32 21 Z"/>
+    <path d="M53 21              C58 21 61 25 61 30              C61 35 57 39 53 39              C48 39 45 35 45 30              C45 25 48 21 53 21 Z"/>
+    <path d="M74 21              C79 21 82 25 82 30              C82 35 78 39 74 39              C69 39 66 35 66 30              C66 25 69 21 74 21 Z"/>
+  </g>
+
+  <!-- Large ordinary cogwheel -->
+  <path d="M84 53        L91 53        L94 59        Q98 60 101 62        L108 59        L115 66        L112 73        Q114 77 115 81        L122 85        L122 95        L115 98        Q114 102 112 105        L115 112        L108 119        L101 116        Q97 118 94 119        L91 126        L81 126        L78 119        Q74 118 71 116        L64 119        L57 112        L60 105        Q58 101 57 98        L50 95        L50 85        L57 81        Q58 77 60 73        L57 66        L64 59        L71 62        Q75 60 78 59        Z" fill="#328AD8" stroke="#203746" stroke-width="3.5"/>
+
+  <!-- Plain circular gear hole -->
+  <path d="M86 71        C96 71 103 78 103 88        C103 98 96 105 86 105        C76 105 69 98 69 88        C69 78 76 71 86 71 Z" fill="#FFFFFF" stroke="#203746" stroke-width="3.5"/>
+
+</svg>

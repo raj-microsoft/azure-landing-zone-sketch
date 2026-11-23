@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none"><title>Test Base (sketch)</title>
+  
+
+  <g stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Cloud silhouette -->
+    <path d="       M113.8 79.5       C113.1 66.1 101.9 54.7 87.5 53.7       C84.5 36.1 69.8 24.2 52.1 24.6       C34.8 24.7 21.6 36.2 18.9 50.9       C7.5 53.1 1.9 61.2 2.1 72.2       C2.2 83.1 10.5 91.4 21.2 91.9       C22.1 91.9 23.1 91.8 24.1 91.7       L104.2 91.7       C110.1 89.7 114.2 85.1 113.8 79.5Z" fill="#398cda" stroke="#174d83" stroke-width="3.5"/>
+
+    <!-- Cloud highlight -->
+    <path d="M26 49       C31 36 42 29 55 29       C68 28 78 34 83 43" stroke="#9edbff" stroke-width="2.5"/>
+
+    <!-- Flask outer silhouette -->
+    <path d="       M56.2 43.5       L73 43.5       L73 59.1       C73 60.5 73.5 61.8 74.3 63       L91.1 86.7       C92.4 88.6 91.6 91.1 89.1 91.2       L38.2 91.2       C35.8 91.1 35.1 88.9 36.5 86.9       L53.5 63       C54.4 61.7 55 60.4 55 58.9       L55 44.5Z" fill="#50e6ff" stroke="#174d83" stroke-width="3.2"/>
+
+    <!-- White flask rim -->
+    <path d="M53.8 43.8       L75.1 43.8" stroke="#ffffff" stroke-width="3.2"/>
+
+    <!-- Flask neck opening -->
+    <path d="M56.5 39.7       L72.4 39.7" stroke="#ffffff" stroke-width="2.5"/>
+
+    <!-- Distinct white liquid triangle -->
+    <path d="       M64 66.8       L83.8 89.4       L43.9 89.4Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
+
+    <!-- Liquid surface -->
+    <path d="M45.1 80.1       Q54.5 77.2 64 80.1       Q74.2 82.9 82.1 79.9" stroke="#ffffff" stroke-width="1.8"/>
+
+    <!-- Left white square bracket -->
+    <path d="       M29.8 54.2       L25.8 54.2       L25.8 87.3       L29.8 87.3" stroke="#ffffff" stroke-width="3.2"/>
+
+    <!-- Right white square bracket -->
+    <path d="       M98.1 54.2       L102.1 54.2       L102.1 87.3       L98.1 87.3" stroke="#ffffff" stroke-width="3.2"/>
+
+  </g>
+</svg>
