@@ -204,6 +204,21 @@ export function createScene({ seed: seed0 = 4100 } = {}) {
   const both = (id, f, fs, fa, t, ts, ta, lanes, o = {}) => arrow(id, f, fs, fa, t, ts, ta, lanes, { tail: "arrow", ...o });
   const peer = (id, f, fs, fa, t, ts, ta, lanes) => arrow(id, f, fs, fa, t, ts, ta, lanes, { head: "circle_outline", tail: "circle_outline", color: "#1971c2" });
 
+  // free polyline / smooth curve (charts, axes); absolute points; not bound
+  function poly(id, pts, { color = INK, dashed = false, head = null, smooth = false, width = 2 } = {}) {
+    const [x0, y0] = pts[0];
+    const rel = pts.map(([x, y]) => [x - x0, y - y0]);
+    const xs = rel.map((p) => p[0]), ys = rel.map((p) => p[1]);
+    const e = base("line", id, x0 + Math.min(...xs), y0 + Math.min(...ys), Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys), {
+      strokeColor: color, strokeWidth: width, strokeStyle: dashed ? "dashed" : "solid", roundness: smooth ? { type: 2 } : null,
+      points: rel, lastCommittedPoint: null, startBinding: null, endBinding: null, startArrowhead: null, endArrowhead: head,
+      customData: { role: "line" },
+    });
+    e.x = x0; e.y = y0;
+    shapes.push(e);
+    return e;
+  }
+
   function finish({ source = "https://raj-microsoft.github.io/azure-landing-zone-sketch/" } = {}) {
     const elements = [...shapes, ...arrowsOut];
     return {
@@ -212,5 +227,5 @@ export function createScene({ seed: seed0 = 4100 } = {}) {
     };
   }
 
-  return { INK, FONT, TINT, byId, txt, zone, group, box, icon, iconCap, card, badge, step, header, arrow, line, both, peer, finish, hasIcon };
+  return { INK, FONT, TINT, byId, txt, zone, group, box, icon, iconCap, card, badge, step, header, arrow, line, both, peer, poly, finish, hasIcon };
 }

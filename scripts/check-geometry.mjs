@@ -14,7 +14,7 @@ const contains = (a, b) => a.x1 <= b.x1 && a.y1 <= b.y1 && a.x2 >= b.x2 && a.y2 
 const intersects = (a, b, pad = 0) => a.x1 < b.x2 - pad && b.x1 < a.x2 - pad && a.y1 < b.y2 - pad && b.y1 < a.y2 - pad;
 
 const arrows = els.filter((e) => e.type === "arrow");
-const solids = els.filter((e) => e.type !== "arrow" && e.customData?.role !== "zone" && !e.containerId);
+const solids = els.filter((e) => e.type !== "arrow" && e.type !== "line" && e.customData?.role !== "zone" && !e.containerId);
 const zones = els.filter((e) => e.customData?.role === "zone");
 
 // 1. images have files
