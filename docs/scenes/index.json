@@ -1,7 +1,7 @@
 {
  "updated": "2026-11-23",
  "count": 146,
- "done": 70,
+ "done": 71,
  "scenes": [
   {
    "slug": "azure-landing-zone",
@@ -3021,13 +3021,44 @@
    "url": "https://learn.microsoft.com/azure/architecture/ai-ml/architecture/analyze-video-computer-vision-machine-learning",
    "category": "AI + machine learning",
    "num": 72,
-   "status": "pending",
+   "status": "done",
    "featured": false,
-   "otherDiagrams": [],
-   "substitutions": {},
-   "differences": [],
-   "icons": [],
-   "checks": {}
+   "otherDiagrams": [
+    "Automated video analysis by using Video Indexer"
+   ],
+   "substitutions": {
+    "Video files": "video-analyzers",
+    "Machine learning storage account": "storage-accounts",
+    "Jupyter Notebook": "code",
+    "Azure Machine Learning": "azure-machine-learning",
+    "Inference cluster": "kubernetes-services",
+    "Picture files": "image",
+    "Azure Data Lake Storage": "data-lake-storage-gen1",
+    "Azure Logic Apps": "logic-apps",
+    "Custom Vision API": "custom-vision",
+    "Azure AI Vision API": "computer-vision",
+    "Power BI": "power-bi-embedded"
+   },
+   "differences": [
+    "FFmpeg, the JSON glyph and Microsoft Fabric are text labels or plain sketch shapes (no sketch icon)."
+   ],
+   "icons": [
+    "azure-machine-learning",
+    "code",
+    "computer-vision",
+    "custom-vision",
+    "data-lake-storage-gen1",
+    "image",
+    "kubernetes-services",
+    "logic-apps",
+    "power-bi-embedded",
+    "storage-accounts",
+    "video-analyzers"
+   ],
+   "checks": {
+    "geometry": "PASS",
+    "summary": "79 elements, 11 bound arrows, 11 images with files"
+   }
   },
   {
    "slug": "aks-microservices-advanced",
