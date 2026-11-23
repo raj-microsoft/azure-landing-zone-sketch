@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><title>Workspaces (sketch)</title>
+  
+  <desc>Hand-drawn Azure Workspaces icon with a blue circular background, one cyan hollow workspace tile and three blank white workspace tiles.</desc>
+
+  <!-- Circular Azure background -->
+  <path d="M64 4            C96 3 123 29 124 62            C126 95 99 123 66 124            C32 126 5 100 4 66            C2 32 29 5 64 4 Z" fill="#0072C6" stroke="#173B55" stroke-width="3.6" stroke-linejoin="round"/>
+
+  <!-- Subtle freehand circle retraces -->
+  <path d="M29 19 Q45 7 65 8" fill="none" stroke="#174562" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M111 87 Q102 111 80 117" fill="none" stroke="#174562" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Upper-right cyan workspace frame -->
+  <path d="M62.5 33.2            Q62.7 30.2 66.5 30.1            L89.4 30            Q93 30.1 93.2 33.8            L93.1 57.5            Q93 61.2 89.5 61.5            L66.4 61.4            Q62.6 61.3 62.5 57.7 Z            M70.4 37.2            Q69.1 37.3 69.2 39            L69.2 52.5            Q69.3 54.6 71.4 54.6            L84.8 54.5            Q86.7 54.5 86.7 52.5            L86.8 39            Q86.8 37.2 84.8 37.2 Z" fill="#7DE2FB" fill-rule="evenodd" stroke="#173B55" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Upper-left blank white workspace -->
+  <path d="M37.3 46.3            Q37.4 43.2 40.5 43.2            L53 43.3            Q56.3 43.2 56.4 46.5            L56.3 59.1            Q56.2 62.4 53 62.4            L40.4 62.3            Q37.3 62.2 37.3 59 Z" fill="#FFFFFF" stroke="#173B55" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Lower-left blank white workspace -->
+  <path d="M37.4 71.2            Q37.3 68 40.5 68            L53.1 68.1            Q56.3 68 56.4 71.3            L56.4 83.8            Q56.3 87 53.1 87.1            L40.6 87            Q37.4 87 37.3 83.8 Z" fill="#FFFFFF" stroke="#173B55" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Lower-right blank white workspace -->
+  <path d="M62 70.8            Q62 67.6 65.3 67.6            L77.9 67.7            Q81.1 67.7 81.2 70.9            L81.2 83.4            Q81.2 86.7 78 86.8            L65.2 86.7            Q62 86.6 62 83.5 Z" fill="#FFFFFF" stroke="#173B55" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Tiny hand-drawn yellow marker accents -->
+  <g fill="none" stroke="#F2C94C" stroke-width="2.7" stroke-linecap="round">
+    <path d="M100 33 L104 29"/>
+    <path d="M104 41 L109 39"/>
+    <path d="M23 44 L19 41"/>
+  </g>
+</svg>

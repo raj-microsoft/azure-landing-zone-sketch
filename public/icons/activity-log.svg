@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Activity Log (sketch)</title>
+
+  
+  <desc>
+    Hand-drawn Azure Activity Log icon with a dark blue
+    offset book backing, exposed white page, blue front cover,
+    and one blank white rectangular label.
+    Flat fills, uneven charcoal marker outlines,
+    and transparent background.
+  </desc>
+
+  <!-- Dark blue offset book backing -->
+  <path d="M14 20            L22 10            Q24 7 28 7            L108 7            Q114 7 114 13            L114 111            Q114 115 111 118            L102 126            L18 126            L13 123            Z" fill="#005BA1" stroke="#243447" stroke-width="3.4"/>
+
+  <!-- Exposed white page -->
+  <path d="M21 20            L26 14            Q27 12 30 12            L104 12            Q109 12 109 17            L109 108            Q109 111 107 113            L100 120            L21 120            Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.5"/>
+
+  <!-- Main blue activity log cover -->
+  <path d="M14 20            Q14 18 17 18            L99 18            Q103 18 103 22            L103 122            Q103 126 99 126            L17 126            Q14 126 14 122            Z" fill="#329BDF" stroke="#243447" stroke-width="3.5"/>
+
+  <!-- Single blank white label -->
+  <path d="M34 47            Q34 45 37 45            L78 45            Q81 45 81 48            L81 59            Q81 62 78 62            L37 62            Q34 62 34 59            Z" fill="#FFFFFF" stroke="#243447" stroke-width="2.4"/>
+
+</svg>
