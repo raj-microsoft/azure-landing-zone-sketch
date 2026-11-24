@@ -1,7 +1,10 @@
 ﻿import React, { useCallback, useEffect, useRef, useState } from "react";
 import { CaptureUpdateAction, Excalidraw, exportToBlob, exportToSvg, serializeAsJSON } from "@excalidraw/excalidraw";
 import "@excalidraw/excalidraw/index.css";
-import { LineMotion, isLinear } from "./line-motion.js";
+import { LineMotion, PRESETS, isLinear } from "./line-motion.js";
+import { LOOKS, getLook, themeElements, untheme } from "./looks.js";
+
+const LOOK = LOOKS.a; // Raj chose A (Pencil) on 2026-11-24
 
 const BASE = import.meta.env.BASE_URL;
 const reducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
@@ -34,6 +37,9 @@ export default function Viewer({ slug }) {
   const overlay = useRef(null);
   const motion = useRef(null);
   const real = useRef(null); // the scene's own elements while the canvas shows hidden-line copies
+  const tmap = useRef(new Map()); // look colours -> scene colours, so exports and saved edits stay untouched
+  const show = (els) => themeElements(els, LOOK, tmap.current).elements;
+  useEffect(() => { document.body.dataset.look = LOOK.id; }, []);
 
   useEffect(() => {
     fetch(BASE + "scenes/index.json").then((r) => r.json()).then((idx) => {
@@ -53,8 +59,9 @@ export default function Viewer({ slug }) {
       } catch {}
       setDirected(elements.some((e) => e.type === "arrow" && !e.isDeleted && (e.startArrowhead || e.endArrowhead)));
       const animate = !reducedMotion();
-      real.current = animate ? elements : null;
-      setInitial({ elements: animate ? withLinesHidden(elements) : elements, files: scene.files, appState: { ...scene.appState, viewModeEnabled: true }, scrollToContent: true, animate });
+      const shown = show(elements);
+      real.current = animate ? shown : null;
+      setInitial({ elements: animate ? withLinesHidden(shown) : shown, files: scene.files, appState: { ...scene.appState, viewBackgroundColor: LOOK.paper, viewModeEnabled: true }, scrollToContent: true, animate });
     }).catch((err) => setError(err.message === "unknown" ? "unknown" : "load"));
   }, [slug]);
 
@@ -65,8 +72,9 @@ export default function Viewer({ slug }) {
     const s = a.getAppState();
     let x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
     for (const e of els) { x1 = Math.min(x1, e.x); y1 = Math.min(y1, e.y); x2 = Math.max(x2, e.x + e.width); y2 = Math.max(y2, e.y + e.height); }
-    const pad = 24;
-    const z = Math.max(0.1, Math.min(1, (s.width - pad) / (x2 - x1), (s.height - pad) / (y2 - y1)));
+    // Leave room for Excalidraw's own corner controls (menu top-left, zoom bottom-left) so the title and footer are never covered.
+    const padX = 24, padY = s.width < 640 ? 96 : 80;
+    const z = Math.max(0.1, Math.min(1, (s.width - padX) / (x2 - x1), (s.height - padY) / (y2 - y1)));
     a.updateScene({ appState: { zoom: { value: z }, scrollX: s.width / 2 / z - (x1 + x2) / 2, scrollY: s.height / 2 / z - (y1 + y2) / 2 } });
   }, []);
 
@@ -109,7 +117,8 @@ export default function Viewer({ slug }) {
 
   useEffect(() => {
     if (!initial || !overlay.current) return;
-    const m = new LineMotion(overlay.current, { background: initial.appState?.viewBackgroundColor ?? "#fdfdfb" });
+    const m = new LineMotion(overlay.current, { background: LOOK.paper, accent: LOOK.accent, preset: PRESETS[LOOK.id], reduced: reducedMotion() });
+    if (reducedMotion()) overlay.current.dataset.reduced = "on";
     motion.current = m;
     return () => { m.destroy(); motion.current = null; };
   }, [initial]);
@@ -139,7 +148,7 @@ export default function Viewer({ slug }) {
 
   const onChange = useCallback((elements) => {
     if (!ready.current || !editing) return;
-    try { localStorage.setItem(KEY, JSON.stringify({ elements })); setEdited(true); } catch {}
+    try { localStorage.setItem(KEY, JSON.stringify({ elements: untheme(elements, tmap.current) })); setEdited(true); } catch {}
   }, [editing, KEY]);
 
   const settle = () => {
@@ -152,7 +161,7 @@ export default function Viewer({ slug }) {
     localStorage.removeItem(KEY);
     setEdited(false);
     setEditing(false);
-    api.current?.updateScene({ elements: original.elements, appState: { viewModeEnabled: true } });
+    api.current?.updateScene({ elements: show(original.elements), appState: { viewModeEnabled: true } });
     requestAnimationFrame(fit);
   };
   const toggleEdit = () => {
@@ -162,7 +171,7 @@ export default function Viewer({ slug }) {
     api.current?.updateScene({ appState: { viewModeEnabled: !next } });
   };
   const current = () => (motion.current?.finishDraw(), {
-    elements: api.current.getSceneElements(),
+    elements: untheme(api.current.getSceneElements(), tmap.current),
     appState: { ...api.current.getAppState(), exportBackground: true, exportWithDarkMode: false, viewBackgroundColor: "#fdfdfb" },
     files: api.current.getFiles(),
   });
@@ -213,7 +222,7 @@ export default function Viewer({ slug }) {
             UIOptions={{ canvasActions: { loadScene: false, saveToActiveFile: false, export: false, saveAsImage: false, toggleTheme: false, changeViewBackgroundColor: false } }}
           />
         )}
-        {initial && <svg ref={overlay} className="line-motion" aria-hidden="true" data-motion={initial.animate ? "draw" : "still"} data-flow="off" data-editing={editing ? "on" : "off"} />}
+        {initial && <svg ref={overlay} className="line-motion" data-look={LOOK.id} aria-hidden="true" data-motion={initial.animate ? "draw" : "still"} data-flow="off" data-editing={editing ? "on" : "off"} />}
       </main>
     </div>
   );
