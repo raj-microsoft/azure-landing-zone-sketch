@@ -184,12 +184,8 @@ export class LineMotion {
     const z = this.zoom || 1;
     // Keep motion readable when a big diagram is fitted small (phones zoom to ~0.15):
     // the overlay pencil stroke is at least ~2.5 screen px and dots at least ~5 screen px.
-    const r = Math.max(3.5, 5 / z);
-    for (const l of this.lines) {
-      l.dot?.setAttribute("r", r);
-      if (l.g) l.g.setAttribute("stroke-width", Math.max(l.e.strokeWidth, 2.5 / z));
-      if (l.reveal) l.reveal.setAttribute("stroke-width", Math.max(l.e.strokeWidth, 2.5 / z) + 4 / z);
-    }
+    const r = Math.max(3.5, 3 / z);
+    for (const l of this.lines) l.dot?.setAttribute("r", r);
   }
 
   // Draw every line in reading order over ~2.4 s. onReveal: canvas arrows should come back now.
