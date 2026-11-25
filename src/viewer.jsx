@@ -97,8 +97,16 @@ const CloseIcon = () => (
 
 // The explainer video in a calm modal: muted, inline, never autoplays with sound.
 // Native <dialog> makes the page behind it inert; Tab still cycles inside, Escape closes.
+// Sketch / Official: the same explainer, drawn in the sketch style or with the official Azure icons.
+// Default Sketch; the last choice is remembered. Official files are served from a separate Pages site.
+const VSTYLE_KEY = "aac-sketch:video-style";
+const readVStyle = () => { try { return localStorage.getItem(VSTYLE_KEY) === "official" ? "official" : "sketch"; } catch { return "sketch"; } };
 function VideoPanel({ video, title, onClose }) {
   const dlg = useRef(null);
+  const [vstyle, setVStyle] = useState(() => (video.officialUrl ? readVStyle() : "sketch"));
+  const pick = (s) => { setVStyle(s); try { localStorage.setItem(VSTYLE_KEY, s); } catch {} };
+  const official = vstyle === "official" && video.officialUrl;
+  const src = official ? video.officialUrl : BASE + video.url;
   const opener = useRef(document.activeElement);
   useEffect(() => {
     const d = dlg.current;
@@ -109,7 +117,7 @@ function VideoPanel({ video, title, onClose }) {
   }, []);
   const onKey = (e) => {
     if (e.key !== "Tab") return;
-    const f = [...dlg.current.querySelectorAll("button, video[controls]")];
+    const f = [...dlg.current.querySelectorAll("button:not([tabindex='-1']), video[controls]")];
     const i = f.indexOf(document.activeElement);
     if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
     else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
@@ -122,8 +130,16 @@ function VideoPanel({ video, title, onClose }) {
         <h2 id="video-title">{title}</h2>
         <p className="video-meta">{secs} s, {video.steps} steps, no sound</p>
         <button type="button" className="act video-close" onClick={onClose} aria-label="Close video" title="Close (Esc)"><CloseIcon /></button>
+        {video.officialUrl && (
+          <div className="vstyle" role="group" aria-label="Video style">
+            {[["sketch", "Sketch", "Pencil-sketch drawing"], ["official", "Official", "Official Azure icons, clean lines"]].map(([id, label, tip]) => (
+              <button key={id} type="button" data-vstyle={id} aria-pressed={vstyle === id} onClick={() => pick(id)} title={tip}>{label}</button>
+            ))}
+          </div>
+        )}
       </div>
-      <video src={BASE + video.url} controls muted playsInline preload="metadata" poster={`${BASE}thumbs/${video.url.split("/").pop().replace(".mp4", ".png")}`} />
+      <video key={src} src={src} data-vstyle={official ? "official" : "sketch"} controls muted playsInline preload="metadata"
+        poster={official ? undefined : `${BASE}thumbs/${video.url.split("/").pop().replace(".mp4", ".png")}`} />
     </dialog>
   );
 }

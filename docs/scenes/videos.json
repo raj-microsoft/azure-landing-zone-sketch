@@ -2,721 +2,865 @@
  "access-multitenant-web-app-from-on-premises": {
   "url": "videos/access-multitenant-web-app-from-on-premises.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/access-multitenant-web-app-from-on-premises.mp4"
  },
  "adds-extend-domain": {
   "url": "videos/adds-extend-domain.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/adds-extend-domain.mp4"
  },
  "ai-inferencing-on-azure-iaas": {
   "url": "videos/ai-inferencing-on-azure-iaas.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/ai-inferencing-on-azure-iaas.mp4"
  },
  "aks-agc": {
   "url": "videos/aks-agc.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aks-agc.mp4"
  },
  "aks-baseline": {
   "url": "videos/aks-baseline.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aks-baseline.mp4"
  },
  "aks-front-door": {
   "url": "videos/aks-front-door.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aks-front-door.mp4"
  },
  "aks-hybrid-azure-local": {
   "url": "videos/aks-hybrid-azure-local.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aks-hybrid-azure-local.mp4"
  },
  "aks-microservices": {
   "url": "videos/aks-microservices.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aks-microservices.mp4"
  },
  "aks-microservices-advanced": {
   "url": "videos/aks-microservices-advanced.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aks-microservices-advanced.mp4"
  },
  "aks-multi-cluster": {
   "url": "videos/aks-multi-cluster.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aks-multi-cluster.mp4"
  },
  "analyze-video-computer-vision-machine-learning": {
   "url": "videos/analyze-video-computer-vision-machine-learning.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/analyze-video-computer-vision-machine-learning.mp4"
  },
  "apache-kafka-migration": {
   "url": "videos/apache-kafka-migration.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/apache-kafka-migration.mp4"
  },
  "apim-api-scenario": {
   "url": "videos/apim-api-scenario.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/apim-api-scenario.mp4"
  },
  "app-gateway-internal-api-management-function": {
   "url": "videos/app-gateway-internal-api-management-function.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/app-gateway-internal-api-management-function.mp4"
  },
  "app-service-environment-high-availability-deployment": {
   "url": "videos/app-service-environment-high-availability-deployment.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/app-service-environment-high-availability-deployment.mp4"
  },
  "app-service-environment-standard-deployment": {
   "url": "videos/app-service-environment-standard-deployment.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/app-service-environment-standard-deployment.mp4"
  },
  "arc-hybrid-kubernetes": {
   "url": "videos/arc-hybrid-kubernetes.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/arc-hybrid-kubernetes.mp4"
  },
  "arc-sql-managed-instance-disaster-recovery": {
   "url": "videos/arc-sql-managed-instance-disaster-recovery.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/arc-sql-managed-instance-disaster-recovery.mp4"
  },
  "automate-document-classification-durable-functions": {
   "url": "videos/automate-document-classification-durable-functions.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/automate-document-classification-durable-functions.mp4"
  },
  "automate-pdf-forms-processing": {
   "url": "videos/automate-pdf-forms-processing.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/automate-pdf-forms-processing.mp4"
  },
  "automated-api-deployments-apiops": {
   "url": "videos/automated-api-deployments-apiops.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/automated-api-deployments-apiops.mp4"
  },
  "aws-azure-ad-security": {
   "url": "videos/aws-azure-ad-security.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/aws-azure-ad-security.mp4"
  },
  "azure-arc-sql-server": {
   "url": "videos/azure-arc-sql-server.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-arc-sql-server.mp4"
  },
  "azure-data-factory-enterprise-hardened": {
   "url": "videos/azure-data-factory-enterprise-hardened.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-data-factory-enterprise-hardened.mp4"
  },
  "azure-data-factory-mission-critical": {
   "url": "videos/azure-data-factory-mission-critical.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-data-factory-mission-critical.mp4"
  },
  "azure-data-factory-on-azure-landing-zones-baseline": {
   "url": "videos/azure-data-factory-on-azure-landing-zones-baseline.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-data-factory-on-azure-landing-zones-baseline.mp4"
  },
  "azure-dns-private-resolver": {
   "url": "videos/azure-dns-private-resolver.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-dns-private-resolver.mp4"
  },
  "azure-file-share": {
   "url": "videos/azure-file-share.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-file-share.mp4"
  },
  "azure-files-on-premises-authentication": {
   "url": "videos/azure-files-on-premises-authentication.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-files-on-premises-authentication.mp4"
  },
  "azure-files-private": {
   "url": "videos/azure-files-private.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-files-private.mp4"
  },
  "azure-landing-zone": {
   "url": "videos/azure-landing-zone.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-landing-zone.mp4"
  },
  "azure-local-baseline": {
   "url": "videos/azure-local-baseline.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-local-baseline.mp4"
  },
  "azure-local-switchless": {
   "url": "videos/azure-local-switchless.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-local-switchless.mp4"
  },
  "azure-local-workload-virtual-desktop": {
   "url": "videos/azure-local-workload-virtual-desktop.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-local-workload-virtual-desktop.mp4"
  },
  "azure-redhat-openshift-financial-services-workloads": {
   "url": "videos/azure-redhat-openshift-financial-services-workloads.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/azure-redhat-openshift-financial-services-workloads.mp4"
  },
  "baseline": {
   "url": "videos/baseline.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/baseline.mp4"
  },
  "baseline-aks": {
   "url": "videos/baseline-aks.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/baseline-aks.mp4"
  },
  "baseline-azure-machine-learning-inference": {
   "url": "videos/baseline-azure-machine-learning-inference.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/baseline-azure-machine-learning-inference.mp4"
  },
  "baseline-landing-zone": {
   "url": "videos/baseline-landing-zone.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/baseline-landing-zone.mp4"
  },
  "baseline-microsoft-foundry-landing-zone": {
   "url": "videos/baseline-microsoft-foundry-landing-zone.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/baseline-microsoft-foundry-landing-zone.mp4"
  },
  "baseline-zone-redundant": {
   "url": "videos/baseline-zone-redundant.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/baseline-zone-redundant.mp4"
  },
  "basic-enterprise-integration": {
   "url": "videos/basic-enterprise-integration.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/basic-enterprise-integration.mp4"
  },
  "basic-microsoft-foundry-chat": {
   "url": "videos/basic-microsoft-foundry-chat.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/basic-microsoft-foundry-chat.mp4"
  },
  "basic-web-app": {
   "url": "videos/basic-web-app.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/basic-web-app.mp4"
  },
  "blue-green-deployment-for-aks": {
   "url": "videos/blue-green-deployment-for-aks.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/blue-green-deployment-for-aks.mp4"
  },
  "build-deploy-custom-models": {
   "url": "videos/build-deploy-custom-models.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/build-deploy-custom-models.mp4"
  },
  "cache-aside": {
   "url": "videos/cache-aside.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/cache-aside.mp4"
  },
  "cache-aside-azure-managed-redis-postgresql": {
   "url": "videos/cache-aside-azure-managed-redis-postgresql.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/cache-aside-azure-managed-redis-postgresql.mp4"
  },
  "call-center-openai-analytics": {
   "url": "videos/call-center-openai-analytics.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/call-center-openai-analytics.mp4"
  },
  "cdn": {
   "url": "videos/cdn.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/cdn.mp4"
  },
  "certificate-lifecycle": {
   "url": "videos/certificate-lifecycle.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/certificate-lifecycle.mp4"
  },
  "data-platform-end-to-end": {
   "url": "videos/data-platform-end-to-end.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/data-platform-end-to-end.mp4"
  },
  "data-warehouse": {
   "url": "videos/data-warehouse.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/data-warehouse.mp4"
  },
  "dataops-mdw": {
   "url": "videos/dataops-mdw.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/dataops-mdw.mp4"
  },
  "deploy-ibm-maximo-application-suite": {
   "url": "videos/deploy-ibm-maximo-application-suite.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/deploy-ibm-maximo-application-suite.mp4"
  },
  "enterprise-bi-microsoft-fabric": {
   "url": "videos/enterprise-bi-microsoft-fabric.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/enterprise-bi-microsoft-fabric.mp4"
  },
  "enterprise-file-shares-disaster-recovery": {
   "url": "videos/enterprise-file-shares-disaster-recovery.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/enterprise-file-shares-disaster-recovery.mp4"
  },
  "esri-arcgis-azure-virtual-desktop": {
   "url": "videos/esri-arcgis-azure-virtual-desktop.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/esri-arcgis-azure-virtual-desktop.mp4"
  },
  "etl": {
   "url": "videos/etl.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/etl.mp4"
  },
  "event-driven-cache-updates-azure-managed-redis-cosmos-db": {
   "url": "videos/event-driven-cache-updates-azure-managed-redis-cosmos-db.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/event-driven-cache-updates-azure-managed-redis-cosmos-db.mp4"
  },
  "extract-object-text": {
   "url": "videos/extract-object-text.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/extract-object-text.mp4"
  },
  "forensics": {
   "url": "videos/forensics.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/forensics.mp4"
  },
  "fully-managed-secure-apps": {
   "url": "videos/fully-managed-secure-apps.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/fully-managed-secure-apps.mp4"
  },
  "gateway": {
   "url": "videos/gateway.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/gateway.mp4"
  },
  "gateway-routing": {
   "url": "videos/gateway-routing.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/gateway-routing.mp4"
  },
  "general-mainframe-refactor": {
   "url": "videos/general-mainframe-refactor.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/general-mainframe-refactor.mp4"
  },
  "generative-ai-gateway-custom-authentication": {
   "url": "videos/generative-ai-gateway-custom-authentication.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/generative-ai-gateway-custom-authentication.mp4"
  },
  "gitops-blueprint-aks": {
   "url": "videos/gitops-blueprint-aks.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/gitops-blueprint-aks.mp4"
  },
  "greenfield-lakehouse-fabric": {
   "url": "videos/greenfield-lakehouse-fabric.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/greenfield-lakehouse-fabric.mp4"
  },
  "hub-spoke": {
   "url": "videos/hub-spoke.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/hub-spoke.mp4"
  },
  "hub-spoke-virtual-wan-architecture": {
   "url": "videos/hub-spoke-virtual-wan-architecture.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/hub-spoke-virtual-wan-architecture.mp4"
  },
  "hybrid-considerations": {
   "url": "videos/hybrid-considerations.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/hybrid-considerations.mp4"
  },
  "hybrid-dns-infra": {
   "url": "videos/hybrid-dns-infra.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/hybrid-dns-infra.mp4"
  },
  "hybrid-file-services": {
   "url": "videos/hybrid-file-services.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/hybrid-file-services.mp4"
  },
  "hybrid-perf-monitoring": {
   "url": "videos/hybrid-perf-monitoring.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/hybrid-perf-monitoring.mp4"
  },
  "interservice-communication": {
   "url": "videos/interservice-communication.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/interservice-communication.mp4"
  },
  "linux-vm": {
   "url": "videos/linux-vm.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/linux-vm.mp4"
  },
  "machine-learning-inference-iot-edge": {
   "url": "videos/machine-learning-inference-iot-edge.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/machine-learning-inference-iot-edge.mp4"
  },
  "mainframe-data-replication-azure-data-platform": {
   "url": "videos/mainframe-data-replication-azure-data-platform.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/mainframe-data-replication-azure-data-platform.mp4"
  },
  "mainframe-data-replication-azure-rdrs": {
   "url": "videos/mainframe-data-replication-azure-rdrs.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/mainframe-data-replication-azure-rdrs.mp4"
  },
  "mainframe-midrange-data-replication-azure-qlik": {
   "url": "videos/mainframe-midrange-data-replication-azure-qlik.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/mainframe-midrange-data-replication-azure-qlik.mp4"
  },
  "mainframe-replication-precisely-connect": {
   "url": "videos/mainframe-replication-precisely-connect.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/mainframe-replication-precisely-connect.mp4"
  },
  "manage-microsoft-365-tenant-configuration-microsoft365dsc-devops": {
   "url": "videos/manage-microsoft-365-tenant-configuration-microsoft365dsc-devops.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/manage-microsoft-365-tenant-configuration-microsoft365dsc-devops.mp4"
  },
  "many-models-machine-learning-azure-machine-learning": {
   "url": "videos/many-models-machine-learning-azure-machine-learning.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/many-models-machine-learning-azure-machine-learning.mp4"
  },
  "map-requests": {
   "url": "videos/map-requests.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/map-requests.mp4"
  },
  "massive-scale-azure-architecture": {
   "url": "videos/massive-scale-azure-architecture.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/massive-scale-azure-architecture.mp4"
  },
  "measure-azure-app-sustainability-sci-score": {
   "url": "videos/measure-azure-app-sustainability-sci-score.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/measure-azure-app-sustainability-sci-score.mp4"
  },
  "messaging-bridge": {
   "url": "videos/messaging-bridge.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/messaging-bridge.mp4"
  },
  "microservice-boundaries": {
   "url": "videos/microservice-boundaries.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/microservice-boundaries.mp4"
  },
  "microservices-with-container-apps": {
   "url": "videos/microservices-with-container-apps.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/microservices-with-container-apps.mp4"
  },
  "microservices-with-container-apps-dapr": {
   "url": "videos/microservices-with-container-apps-dapr.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/microservices-with-container-apps-dapr.mp4"
  },
  "migrate-aix-azure-linux": {
   "url": "videos/migrate-aix-azure-linux.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/migrate-aix-azure-linux.mp4"
  },
  "migrate-aix-workloads-to-azure-with-skytap": {
   "url": "videos/migrate-aix-workloads-to-azure-with-skytap.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/migrate-aix-workloads-to-azure-with-skytap.mp4"
  },
  "migrate-ibm-i-series-to-azure-with-skytap": {
   "url": "videos/migrate-ibm-i-series-to-azure-with-skytap.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/migrate-ibm-i-series-to-azure-with-skytap.mp4"
  },
  "migrate-oracle-azure-iaas": {
   "url": "videos/migrate-oracle-azure-iaas.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/migrate-oracle-azure-iaas.mp4"
  },
  "migrate-oracle-odaa-exadata": {
   "url": "videos/migrate-oracle-odaa-exadata.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/migrate-oracle-odaa-exadata.mp4"
  },
  "minimize-coordination": {
   "url": "videos/minimize-coordination.mp4",
   "duration": 16.7,
-  "steps": 2
+  "steps": 2,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/minimize-coordination.mp4"
  },
  "monitoring-observable-systems-media": {
   "url": "videos/monitoring-observable-systems-media.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/monitoring-observable-systems-media.mp4"
  },
  "moodle-azure-netapp-files": {
   "url": "videos/moodle-azure-netapp-files.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/moodle-azure-netapp-files.mp4"
  },
  "move-archive-data-mainframes": {
   "url": "videos/move-archive-data-mainframes.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/move-archive-data-mainframes.mp4"
  },
  "multi-tier-app-disaster-recovery": {
   "url": "videos/multi-tier-app-disaster-recovery.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/multi-tier-app-disaster-recovery.mp4"
  },
  "noisy-neighbor": {
   "url": "videos/noisy-neighbor.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/noisy-neighbor.mp4"
  },
  "oracle-azure-netapp-files": {
   "url": "videos/oracle-azure-netapp-files.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/oracle-azure-netapp-files.mp4"
  },
  "orchestration": {
   "url": "videos/orchestration.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/orchestration.mp4"
  },
  "performance-security-optimized-vwan": {
   "url": "videos/performance-security-optimized-vwan.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/performance-security-optimized-vwan.mp4"
  },
  "private-link-virtual-wan-dns-guide": {
   "url": "videos/private-link-virtual-wan-dns-guide.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/private-link-virtual-wan-dns-guide.mp4"
  },
  "private-link-virtual-wan-dns-single-region-workload": {
   "url": "videos/private-link-virtual-wan-dns-single-region-workload.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/private-link-virtual-wan-dns-single-region-workload.mp4"
  },
  "private-link-virtual-wan-dns-virtual-hub-extension-pattern": {
   "url": "videos/private-link-virtual-wan-dns-virtual-hub-extension-pattern.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/private-link-virtual-wan-dns-virtual-hub-extension-pattern.mp4"
  },
  "process-batch-transactions": {
   "url": "videos/process-batch-transactions.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/process-batch-transactions.mp4"
  },
  "protect-apis": {
   "url": "videos/protect-apis.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/protect-apis.mp4"
  },
  "quantum-computing-integration-with-classical-apps": {
   "url": "videos/quantum-computing-integration-with-classical-apps.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/quantum-computing-integration-with-classical-apps.mp4"
  },
  "queues-events": {
   "url": "videos/queues-events.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/queues-events.mp4"
  },
  "raincode-reference-architecture": {
   "url": "videos/raincode-reference-architecture.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/raincode-reference-architecture.mp4"
  },
  "real-time-lakehouse-data-processing": {
   "url": "videos/real-time-lakehouse-data-processing.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/real-time-lakehouse-data-processing.mp4"
  },
  "retry": {
   "url": "videos/retry.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/retry.mp4"
  },
  "run-sap-bw4hana-with-linux-virtual-machines": {
   "url": "videos/run-sap-bw4hana-with-linux-virtual-machines.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/run-sap-bw4hana-with-linux-virtual-machines.mp4"
  },
  "run-sap-hana-for-linux-virtual-machines": {
   "url": "videos/run-sap-hana-for-linux-virtual-machines.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/run-sap-hana-for-linux-virtual-machines.mp4"
  },
  "sap-production": {
   "url": "videos/sap-production.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/sap-production.mp4"
  },
  "sas-overview": {
   "url": "videos/sas-overview.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/sas-overview.mp4"
  },
  "scalable-apps-performance-modeling-site-reliability": {
   "url": "videos/scalable-apps-performance-modeling-site-reliability.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/scalable-apps-performance-modeling-site-reliability.mp4"
  },
  "search-blob-metadata": {
   "url": "videos/search-blob-metadata.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/search-blob-metadata.mp4"
  },
  "secure-compute-for-research": {
   "url": "videos/secure-compute-for-research.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/secure-compute-for-research.mp4"
  },
  "secure-hybrid-messaging-client": {
   "url": "videos/secure-hybrid-messaging-client.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/secure-hybrid-messaging-client.mp4"
  },
  "secure-hybrid-messaging-mobile": {
   "url": "videos/secure-hybrid-messaging-mobile.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/secure-hybrid-messaging-mobile.mp4"
  },
  "secure-hybrid-messaging-web": {
   "url": "videos/secure-hybrid-messaging-web.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/secure-hybrid-messaging-web.mp4"
  },
  "secure-vnet-dmz": {
   "url": "videos/secure-vnet-dmz.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/secure-vnet-dmz.mp4"
  },
  "small-medium-data-warehouse": {
   "url": "videos/small-medium-data-warehouse.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/small-medium-data-warehouse.mp4"
  },
  "split-brain-dns": {
   "url": "videos/split-brain-dns.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/split-brain-dns.mp4"
  },
  "spot-eviction": {
   "url": "videos/spot-eviction.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/spot-eviction.mp4"
  },
  "sql-server-azure-netapp-files": {
   "url": "videos/sql-server-azure-netapp-files.mp4",
   "duration": 16.7,
-  "steps": 2
+  "steps": 2,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/sql-server-azure-netapp-files.mp4"
  },
  "stream-processing-databricks": {
   "url": "videos/stream-processing-databricks.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/stream-processing-databricks.mp4"
  },
  "stream-processing-stream-analytics": {
   "url": "videos/stream-processing-stream-analytics.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/stream-processing-stream-analytics.mp4"
  },
  "sync-mongodb-atlas-fabric-analytics": {
   "url": "videos/sync-mongodb-atlas-fabric-analytics.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/sync-mongodb-atlas-fabric-analytics.mp4"
  },
  "teamcenter-baseline": {
   "url": "videos/teamcenter-baseline.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/teamcenter-baseline.mp4"
  },
  "teamcenter-plm-netapp-files": {
   "url": "videos/teamcenter-plm-netapp-files.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/teamcenter-plm-netapp-files.mp4"
  },
  "trusted-internet-connections": {
   "url": "videos/trusted-internet-connections.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/trusted-internet-connections.mp4"
  },
  "valet-key": {
   "url": "videos/valet-key.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/valet-key.mp4"
  },
  "virtual-machine-compliance": {
   "url": "videos/virtual-machine-compliance.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/virtual-machine-compliance.mp4"
  },
  "virtual-network-peering": {
   "url": "videos/virtual-network-peering.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/virtual-network-peering.mp4"
  },
  "windows-vm": {
   "url": "videos/windows-vm.mp4",
   "duration": 23.3,
-  "steps": 4
+  "steps": 4,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/windows-vm.mp4"
  },
  "wordpress-app-service": {
   "url": "videos/wordpress-app-service.mp4",
   "duration": 23.3,
-  "steps": 5
+  "steps": 5,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/wordpress-app-service.mp4"
  },
  "wordpress-container": {
   "url": "videos/wordpress-container.mp4",
   "duration": 23.3,
-  "steps": 6
+  "steps": 6,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/wordpress-container.mp4"
  },
  "wordpress-overview": {
   "url": "videos/wordpress-overview.mp4",
   "duration": 21.9,
-  "steps": 3
+  "steps": 3,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/wordpress-overview.mp4"
  },
  "write-through-caching-azure-sql-managed-redis": {
   "url": "videos/write-through-caching-azure-sql-managed-redis.mp4",
   "duration": 25.9,
-  "steps": 7
+  "steps": 7,
+  "officialUrl": "https://raj-microsoft.github.io/azure-architecture-videos/official/write-through-caching-azure-sql-managed-redis.mp4"
  }
 }
