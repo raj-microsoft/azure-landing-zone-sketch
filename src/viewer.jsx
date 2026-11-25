@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { CaptureUpdateAction, Excalidraw, exportToBlob, exportToSvg, serializeAsJSON } from "@excalidraw/excalidraw";
 import "@excalidraw/excalidraw/index.css";
 import { LineMotion, PRESETS, isLinear } from "./line-motion.js";
@@ -10,6 +10,11 @@ const BASE = import.meta.env.BASE_URL;
 const reducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 // Display-only copies with the lines hidden, so the overlay can draw them in. Never saved or exported.
 const withLinesHidden = (els) => els.map((e) => (isLinear(e) ? { ...e, opacity: 0 } : e));
+// Flow is a "show me" aid, never ambient motion: it switches itself off after one calm stretch.
+const FLOW_MS = 12000;
+// Excalidraw clamps wheel/pinch zoom at 0.1, but a programmatic fit may go lower so wide scenes
+// (the landing zone is 4160 px) fit a phone instead of being cropped.
+const FIT_MIN_ZOOM = 0.02;
 
 function save(name, blob) {
   const a = document.createElement("a");
@@ -19,6 +24,55 @@ function save(name, blob) {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+const BackIcon = () => (
+  <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false">
+    <path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+const Caret = () => (
+  <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false">
+    <path d="M3 4.5 6 7.5l3-3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+// One "Download" button with a small menu. Closes on Escape, outside click or after a choice.
+function DownloadMenu({ items, disabled }) {
+  const [open, setOpen] = useState(false);
+  const wrap = useRef(null);
+  useEffect(() => {
+    if (!open) return;
+    const away = (e) => { if (!wrap.current?.contains(e.target)) setOpen(false); };
+    const esc = (e) => { if (e.key === "Escape") { setOpen(false); wrap.current?.querySelector("button")?.focus(); } };
+    document.addEventListener("pointerdown", away);
+    document.addEventListener("keydown", esc);
+    wrap.current?.querySelector("[role=menuitem]")?.focus();
+    return () => { document.removeEventListener("pointerdown", away); document.removeEventListener("keydown", esc); };
+  }, [open]);
+  const onKey = (e) => {
+    if (!["ArrowDown", "ArrowUp"].includes(e.key)) return;
+    e.preventDefault();
+    const list = [...wrap.current.querySelectorAll("[role=menuitem]")];
+    const i = list.indexOf(document.activeElement);
+    list[(i + (e.key === "ArrowDown" ? 1 : list.length - 1)) % list.length]?.focus();
+  };
+  return (
+    <div className="menu-wrap" ref={wrap}>
+      <button type="button" className="act" aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((o) => !o)} disabled={disabled}>
+        Download <Caret />
+      </button>
+      {open && (
+        <div className="menu" role="menu" aria-label="Download as" onKeyDown={onKey}>
+          {items.map(([label, hint, run]) => (
+            <button key={label} type="button" role="menuitem" data-format={label} onClick={() => { setOpen(false); run(); }}>
+              <span>{label}</span><span className="hint">{hint}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function Viewer({ slug }) {
@@ -36,6 +90,7 @@ export default function Viewer({ slug }) {
   const ready = useRef(false);
   const overlay = useRef(null);
   const motion = useRef(null);
+  const flowTimer = useRef(0);
   const real = useRef(null); // the scene's own elements while the canvas shows hidden-line copies
   const tmap = useRef(new Map()); // look colours -> scene colours, so exports and saved edits stay untouched
   const show = (els) => themeElements(els, LOOK, tmap.current).elements;
@@ -65,17 +120,26 @@ export default function Viewer({ slug }) {
     }).catch((err) => setError(err.message === "unknown" ? "unknown" : "load"));
   }, [slug]);
 
+  // Contained fit inside the canvas area below the toolbar. Padding keeps the scene clear of
+  // Excalidraw's own corner controls (zoom/help bottom-left on desktop, menu bottom-left on phone),
+  // so the bottom caption never sits under them. Phones align to the top: no dead band above.
   const fit = useCallback(() => {
     const a = api.current;
     if (!a) return;
-    const els = a.getSceneElements();
+    const els = a.getSceneElements().filter((e) => !e.isDeleted);
+    if (!els.length) return;
     const s = a.getAppState();
     let x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
     for (const e of els) { x1 = Math.min(x1, e.x); y1 = Math.min(y1, e.y); x2 = Math.max(x2, e.x + e.width); y2 = Math.max(y2, e.y + e.height); }
-    // Leave room for Excalidraw's own corner controls (menu top-left, zoom bottom-left) so the title and footer are never covered.
-    const padX = 24, padY = s.width < 640 ? 96 : 80;
-    const z = Math.max(0.1, Math.min(1, (s.width - padX) / (x2 - x1), (s.height - padY) / (y2 - y1)));
-    a.updateScene({ appState: { zoom: { value: z }, scrollX: s.width / 2 / z - (x1 + x2) / 2, scrollY: s.height / 2 / z - (y1 + y2) / 2 } });
+    const phone = s.width < 640;
+    const pad = phone ? { t: 16, r: 10, b: 76, l: 10 } : { t: 28, r: 32, b: 76, l: 32 };
+    const availW = s.width - pad.l - pad.r, availH = s.height - pad.t - pad.b;
+    const z = Math.max(FIT_MIN_ZOOM, Math.min(1, availW / (x2 - x1), availH / (y2 - y1)));
+    const left = pad.l + (availW - (x2 - x1) * z) / 2;
+    const top = phone ? pad.t : pad.t + (availH - (y2 - y1) * z) / 2;
+    a.updateScene({ appState: { zoom: { value: z }, scrollX: left / z - x1, scrollY: top / z - y1 } });
+    const n = a.getAppState();
+    motion.current?.setView(n.scrollX, n.scrollY, n.zoom.value);
   }, []);
 
   // Put the scene's own lines back on the canvas (no history entry, nothing persisted).
@@ -127,13 +191,23 @@ export default function Viewer({ slug }) {
     motion.current?.setView(scrollX, scrollY, zoom.value);
   }, []);
 
+  const stopFlow = useCallback(() => {
+    clearTimeout(flowTimer.current);
+    motion.current?.setFlow(false);
+    setFlow(false);
+  }, []);
+  useEffect(() => () => clearTimeout(flowTimer.current), []);
+
   const toggleFlow = () => {
-    const next = !flow;
     const m = motion.current;
     if (!m || editing) return;
-    if (next) { if (!m.draw) m.build(real.current ?? api.current.getSceneElements()); syncView(); }
-    m.setFlow(next);
-    setFlow(next);
+    if (flow) return stopFlow();
+    if (!m.draw) m.build(real.current ?? api.current.getSceneElements());
+    syncView();
+    m.setFlow(true);
+    setFlow(true);
+    clearTimeout(flowTimer.current);
+    flowTimer.current = setTimeout(stopFlow, FLOW_MS);
   };
 
   useEffect(() => {
@@ -153,8 +227,7 @@ export default function Viewer({ slug }) {
 
   const settle = () => {
     motion.current?.finishDraw();
-    motion.current?.setFlow(false);
-    setFlow(false);
+    stopFlow();
   };
   const reset = () => {
     settle();
@@ -185,30 +258,39 @@ export default function Viewer({ slug }) {
     save(`${slug}-sketch.svg`, new Blob([el.outerHTML], { type: "image/svg+xml" }));
   };
 
+  // Action groups, left to right: View (watch the sketch), Edit, Download, Source.
+  // To add another way of viewing (for example a "Video" button), append it to viewActions.
+  const viewActions = [
+    { id: "replay", label: "Replay", onClick: drawIn, disabled: !initial || editing, title: "Draw the lines in again" },
+    { id: "flow", label: "Flow", onClick: toggleFlow, pressed: flow, disabled: !initial || editing || !directed, title: directed ? "Show the direction of flow along the arrows" : "This sketch has no directed arrows" },
+    { id: "fit", label: "Fit", onClick: fit, disabled: !initial, title: "Fit the whole sketch on screen" },
+  ];
+
   const title = entry?.title ?? "Sketch";
   return (
     <div className="shell">
       <header className="bar">
         <div className="crumb">
-          <a className="back" href={BASE}>All architectures</a>
+          <a className="back" href={BASE} aria-label="All architectures" title="All architectures"><BackIcon /><span className="back-text">All architectures</span></a>
           <h1>{title}</h1>
         </div>
-        <nav aria-label="Diagram actions">
-          <button type="button" aria-pressed={editing} onClick={toggleEdit} disabled={!initial}>{editing ? "Done editing" : "Edit"}</button>
-          <button type="button" onClick={reset} disabled={!initial || (!edited && !editing)}>Reset</button>
-          <span className="sep" aria-hidden="true" />
-          <button type="button" onClick={drawIn} disabled={!initial || editing} title="Draw the lines in again">Replay</button>
-          <button type="button" aria-pressed={flow} onClick={toggleFlow} disabled={!initial || editing || !directed} title={directed ? "Show direction of flow along the arrows" : "This sketch has no directed arrows"}>Flow</button>
-          <span className="sep" aria-hidden="true" />
-          <button type="button" onClick={download} disabled={!initial}>Download .excalidraw</button>
-          <button type="button" onClick={png} disabled={!initial}>PNG</button>
-          <button type="button" onClick={svg} disabled={!initial}>SVG</button>
-          {entry && <a href={entry.url} target="_blank" rel="noopener">Source: Microsoft Learn</a>}
+        <nav className="actions" aria-label="Diagram actions">
+          <div className="group" role="group" aria-label="View">
+            {viewActions.map((a) => (
+              <button key={a.id} type="button" className="act" data-action={a.id} aria-pressed={a.pressed} onClick={a.onClick} disabled={a.disabled} title={a.title}>{a.label}</button>
+            ))}
+          </div>
+          <div className="group" role="group" aria-label="Edit">
+            <button type="button" className={`act${editing ? " primary" : ""}`} data-action="edit" aria-pressed={editing} onClick={toggleEdit} disabled={!initial}>{editing ? "Done" : "Edit"}</button>
+            {(edited || editing) && <button type="button" className="act quiet" data-action="reset" onClick={reset} disabled={!initial} title="Throw away your edits and show the original sketch">Reset</button>}
+          </div>
+          <DownloadMenu disabled={!initial} items={[["PNG", "image", png], ["SVG", "vector", svg], [".excalidraw", "editable", download]]} />
+          {entry && <a className="source" href={entry.url} target="_blank" rel="noopener">Source<span className="source-long">&nbsp;on Learn</span><span className="vh"> (opens in a new tab)</span></a>}
         </nav>
       </header>
       {editing && <p className="note" role="status">Editing. Changes stay in this browser only.</p>}
       {error === "no-diagram" && <p className="note" role="status">No architecture diagram in this article. <a href={entry?.url} target="_blank" rel="noopener">Read the Learn article</a> or <a href={BASE}>go back to the gallery</a>.</p>}
-        {error === "pending" && <p className="note" role="status">This sketch is not drawn yet. <a href={entry?.url} target="_blank" rel="noopener">Read the Learn article</a> or <a href={BASE}>go back to the gallery</a>.</p>}
+      {error === "pending" && <p className="note" role="status">This sketch is not drawn yet. <a href={entry?.url} target="_blank" rel="noopener">Read the Learn article</a> or <a href={BASE}>go back to the gallery</a>.</p>}
       {error === "unknown" && <p className="note err" role="alert">There is no architecture called &ldquo;{slug}&rdquo;. <a href={BASE}>Go back to the gallery</a>.</p>}
       {error === "load" && <p className="note err" role="alert">The diagram could not be loaded. Reload the page to try again.</p>}
       <main className="canvas">
