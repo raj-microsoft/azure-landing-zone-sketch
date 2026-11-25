@@ -75,6 +75,45 @@ function DownloadMenu({ items, disabled }) {
   );
 }
 
+const CloseIcon = () => (
+  <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false">
+    <path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+  </svg>
+);
+
+// The explainer video in a calm modal: muted, inline, never autoplays with sound.
+// Native <dialog> makes the page behind it inert; Tab still cycles inside, Escape closes.
+function VideoPanel({ video, title, onClose }) {
+  const dlg = useRef(null);
+  const opener = useRef(document.activeElement);
+  useEffect(() => {
+    const d = dlg.current;
+    d.showModal();
+    d.querySelector(".video-close")?.focus();
+    const back = opener.current;
+    return () => { d.querySelector("video")?.pause(); back?.focus?.(); };
+  }, []);
+  const onKey = (e) => {
+    if (e.key !== "Tab") return;
+    const f = [...dlg.current.querySelectorAll("button, video[controls]")];
+    const i = f.indexOf(document.activeElement);
+    if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+  };
+  const secs = Math.round(video.duration);
+  return (
+    <dialog ref={dlg} className="video-panel" aria-labelledby="video-title" onCancel={(e) => { e.preventDefault(); onClose(); }} onKeyDown={onKey}
+      onClick={(e) => { if (e.target === dlg.current) onClose(); }}>
+      <div className="video-head">
+        <h2 id="video-title">{title}</h2>
+        <p className="video-meta">{secs} s, {video.steps} steps, no sound</p>
+        <button type="button" className="act video-close" onClick={onClose} aria-label="Close video" title="Close (Esc)"><CloseIcon /></button>
+      </div>
+      <video src={BASE + video.url} controls muted playsInline preload="metadata" poster={`${BASE}thumbs/${video.url.split("/").pop().replace(".mp4", ".png")}`} />
+    </dialog>
+  );
+}
+
 export default function Viewer({ slug }) {
   // The landing zone keeps its original key so edits saved before the gallery existed still load.
   const KEY = slug === "azure-landing-zone" ? "alz-sketch:edits:v1" : `aac-sketch:edits:v1:${slug}`;
@@ -86,6 +125,8 @@ export default function Viewer({ slug }) {
   const [error, setError] = useState(null);
   const [flow, setFlow] = useState(false);
   const [directed, setDirected] = useState(true); // Flow only means something when some arrow has a head
+  const [video, setVideo] = useState(null);
+  const [watching, setWatching] = useState(false);
   const api = useRef(null);
   const ready = useRef(false);
   const overlay = useRef(null);
@@ -95,6 +136,9 @@ export default function Viewer({ slug }) {
   const tmap = useRef(new Map()); // look colours -> scene colours, so exports and saved edits stay untouched
   const show = (els) => themeElements(els, LOOK, tmap.current).elements;
   useEffect(() => { document.body.dataset.look = LOOK.id; }, []);
+  useEffect(() => {
+    fetch(BASE + "scenes/videos.json").then((r) => (r.ok ? r.json() : {})).then((v) => setVideo(v[slug] ?? null)).catch(() => {});
+  }, [slug]);
 
   useEffect(() => {
     fetch(BASE + "scenes/index.json").then((r) => r.json()).then((idx) => {
@@ -264,6 +308,7 @@ export default function Viewer({ slug }) {
     { id: "replay", label: "Replay", onClick: drawIn, disabled: !initial || editing, title: "Draw the lines in again" },
     { id: "flow", label: "Flow", onClick: toggleFlow, pressed: flow, disabled: !initial || editing || !directed, title: directed ? "Show the direction of flow along the arrows" : "This sketch has no directed arrows" },
     { id: "fit", label: "Fit", onClick: fit, disabled: !initial, title: "Fit the whole sketch on screen" },
+    ...(video ? [{ id: "video", label: "Video", onClick: () => { settle(); setWatching(true); }, disabled: editing, title: `Watch a ${Math.round(video.duration)} s explainer video` }] : []),
   ];
 
   const title = entry?.title ?? "Sketch";
@@ -306,6 +351,7 @@ export default function Viewer({ slug }) {
         )}
         {initial && <svg ref={overlay} className="line-motion" data-look={LOOK.id} aria-hidden="true" data-motion={initial.animate ? "draw" : "still"} data-flow="off" data-editing={editing ? "on" : "off"} />}
       </main>
+      {watching && video && <VideoPanel video={video} title={title} onClose={() => setWatching(false)} />}
     </div>
   );
 }

@@ -79,6 +79,18 @@ function useIndex() {
   return { idx, error };
 }
 
+function useVideos() {
+  const [v, setV] = useState(() => new Set());
+  useEffect(() => {
+    fetch(BASE + "scenes/videos.json").then((r) => (r.ok ? r.json() : {})).then((j) => setV(new Set(Object.keys(j)))).catch(() => {});
+  }, []);
+  return v;
+}
+
+const PlayIcon = () => (
+  <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true" focusable="false"><path d="M3.5 2.2v7.6L9.6 6z" fill="currentColor" /></svg>
+);
+
 const viewerHref = (slug) => `${BASE}?a=${encodeURIComponent(slug)}`;
 
 function LearnLink({ url }) {
@@ -89,7 +101,7 @@ function LearnLink({ url }) {
   );
 }
 
-function Card({ s, featured }) {
+function Card({ s, featured, hasVideo }) {
   const done = s.status === "done";
   const none = s.status === "no-diagram";
   const placeholder = none ? "No architecture diagram in this article" : "Sketch coming";
@@ -100,10 +112,11 @@ function Card({ s, featured }) {
         {done
           ? <img src={`${BASE}thumbs/${s.slug}.png`} alt="" width="560" height="350" loading={featured ? "eager" : "lazy"} fetchpriority={featured ? "high" : "auto"} decoding="async" />
           : <span>{placeholder}</span>}
+        {done && hasVideo && <span className="vbadge"><PlayIcon />Video</span>}
       </div>
       <div className="meta">
         <p className="cat">{groupOf(s.category)}</p>
-        <h2>{done ? <a className="stretch" href={viewerHref(s.slug)}>{s.title}</a> : s.title}</h2>
+        <h2>{done ? <a className="stretch" href={viewerHref(s.slug)}>{s.title}{hasVideo && <span className="vh">, with video</span>}</a> : s.title}</h2>
         {notes && (
           <>
             <p className="blurb">{notes.lede}</p>
@@ -134,6 +147,7 @@ function Skeleton() {
 
 function Gallery() {
   const { idx, error } = useIndex();
+  const videos = useVideos();
   const [q, setQ] = useState(() => new URLSearchParams(location.search).get("q") ?? "");
   const [cat, setCat] = useState("All");
   const [onlyDone, setOnlyDone] = useState(false);
@@ -214,7 +228,7 @@ function Gallery() {
         <>
           <p className="status" role="status">{list.length === total ? `${total} architectures` : `${list.length} of ${total} architectures`}</p>
           {list.length ? (
-            <ul className="grid">{list.map((s) => <Card key={s.slug} s={s} featured={s.slug === featuredSlug} />)}</ul>
+            <ul className="grid">{list.map((s) => <Card key={s.slug} s={s} featured={s.slug === featuredSlug} hasVideo={videos.has(s.slug)} />)}</ul>
           ) : (
             <div className="empty-state">
               <p className="empty-title">Nothing matches {q.trim() ? <>&ldquo;{q.trim()}&rdquo;</> : "these filters"}{cat !== "All" ? ` in ${cat}` : ""}.</p>

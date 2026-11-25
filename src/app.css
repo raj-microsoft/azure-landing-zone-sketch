@@ -216,3 +216,32 @@ body[data-look] .bar :focus-visible { outline: 2px solid var(--accent); outline-
 .looks a { border: 0 !important; padding: 4px 8px !important; min-height: 28px !important; text-decoration: none !important; color: var(--muted) !important; border-radius: 6px; font-size: 13px !important; }
 .looks a[aria-current="true"] { background: color-mix(in oklab, var(--accent) 12%, transparent); color: var(--ink) !important; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { body[data-look] .bar button { transition: none; } }
+
+/* ---------- explainer video ---------- */
+.thumb { position: relative; }
+.vbadge {
+  position: absolute; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 600; line-height: 1; color: #0b4a85; background: #e7f5ff;
+  border: 1px solid #a5d8ff; border-radius: 999px; padding: 4px 9px 4px 8px;
+}
+.video-panel {
+  width: min(960px, calc(100vw - 48px)); max-width: none; max-height: calc(100dvh - 48px); padding: 0;
+  border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink);
+  box-shadow: 0 18px 48px rgb(30 30 30 / 0.18); overflow: auto;
+}
+.video-panel::backdrop { background: rgb(30 30 30 / 0.42); }
+.video-panel[open] { animation: video-in 220ms cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes video-in { from { opacity: 0; transform: translateY(8px); } }
+.video-head { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; padding: 12px 12px 12px 20px; border-bottom: 1px solid var(--line); }
+.video-head h2 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.3; text-wrap: balance; }
+.video-meta { margin: 0; grid-row: 2; font-size: 13px; color: var(--soft); }
+.video-close { grid-row: 1 / span 2; grid-column: 2; width: 44px; min-height: 44px; justify-content: center; padding: 0; }
+.video-panel video { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; background: var(--paper); }
+.video-panel :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 640px) { .actions .group { gap: 3px; } .actions { gap: 6px 8px; } .act { padding: 0 8px; } .menu-wrap .act svg { display: none; } }
+@media (max-width: 640px) {
+  .video-panel { width: 100vw; max-height: 100dvh; margin: auto 0; border-radius: 0; border-left: 0; border-right: 0; }
+  .video-head { padding: 8px 8px 8px 14px; }
+  .video-head h2 { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { .video-panel[open] { animation: none; } }
