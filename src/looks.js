@@ -72,6 +72,18 @@ export const LOOKS = {
     },
     motion: { order: "sweep", wash: "right", flow: "wave", speed: 1.2 },
   },
+  d: {
+    id: "d",
+    name: "Regular",
+    note: "Official Azure icons with even, calm line motion: the standard Azure look.",
+    paper: "#ffffff",
+    ink: "#1b1b1f", muted: "#4a4f57", line: "#3a3f47", zoneInk: "#4a6b8a",
+    accent: "#0078d4",
+    fill: null, // keep the scene's own fills
+    stroke: null,
+    iconSet: "regular", // swap sketch icons for the official Azure icons (public/icons-regular)
+    motion: { order: "graph", wash: null, flow: "dots", speed: null },
+  },
 };
 
 export function getLook() {
@@ -82,7 +94,7 @@ export function getLook() {
 const lc = (c) => (typeof c === "string" ? c.toLowerCase() : c);
 
 function themeOne(e, look) {
-  if (look.id === "a") return null;
+  if (look.id === "a" || look.id === "d") return null; // Pencil and Regular keep the scene's own colours
   const bg = lc(e.backgroundColor), sc = lc(e.strokeColor);
   let strokeColor = e.strokeColor, backgroundColor = e.backgroundColor;
   const fam = FAMILY_BY_BG[bg];

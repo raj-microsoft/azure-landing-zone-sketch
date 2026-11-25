@@ -4,7 +4,7 @@ import "@excalidraw/excalidraw/index.css";
 import { LineMotion, PRESETS, isLinear } from "./line-motion.js";
 import { LOOKS, getLook, themeElements, untheme } from "./looks.js";
 
-const LOOK = LOOKS.a; // Raj chose A (Pencil) on 2026-11-24
+const LOOK = getLook(); // ?look=a|c|d. Default Pencil (chosen by Raj on 2026-11-24)
 
 const BASE = import.meta.env.BASE_URL;
 const reducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
@@ -15,6 +15,20 @@ const FLOW_MS = 12000;
 // Excalidraw clamps wheel/pinch zoom at 0.1, but a programmatic fit may go lower so wide scenes
 // (the landing zone is 4160 px) fit a phone instead of being cropped.
 const FIT_MIN_ZOOM = 0.02;
+
+// Regular look: swap each sketch icon for the official Azure icon with the same name. Ids and positions stay the same.
+async function iconFiles(files) {
+  if (LOOK.iconSet !== "regular") return files;
+  const out = { ...files };
+  await Promise.all(Object.entries(files).filter(([id, f]) => id.startsWith("icon-") && f.mimeType === "image/svg+xml").map(async ([id, f]) => {
+    const r = await fetch(`${BASE}icons-regular/${id.slice(5)}.svg`);
+    if (!r.ok) return; // keep the sketch icon if the official one is missing
+    let bin = "";
+    for (const b of new Uint8Array(await r.arrayBuffer())) bin += String.fromCharCode(b);
+    out[id] = { ...f, dataURL: `data:image/svg+xml;base64,${btoa(bin)}` };
+  }));
+  return out;
+}
 
 function save(name, blob) {
   const a = document.createElement("a");
@@ -148,7 +162,7 @@ export default function Viewer({ slug }) {
       document.title = `${e.title}, sketched`;
       if (e.status !== "done" && !new URLSearchParams(location.search).has("draft")) { setError(e.status === "no-diagram" ? "no-diagram" : "pending"); return null; }
       return fetch(`${BASE}scenes/${slug}.excalidraw`).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
-    }).then((scene) => {
+    }).then(async (scene) => {
       if (!scene) return;
       setOriginal(scene);
       let elements = scene.elements;
@@ -160,7 +174,7 @@ export default function Viewer({ slug }) {
       const animate = !reducedMotion();
       const shown = show(elements);
       real.current = animate ? shown : null;
-      setInitial({ elements: animate ? withLinesHidden(shown) : shown, files: scene.files, appState: { ...scene.appState, viewBackgroundColor: LOOK.paper, viewModeEnabled: true }, scrollToContent: true, animate });
+      setInitial({ elements: animate ? withLinesHidden(shown) : shown, files: await iconFiles(scene.files), appState: { ...scene.appState, viewBackgroundColor: LOOK.paper, viewModeEnabled: true }, scrollToContent: true, animate });
     }).catch((err) => setError(err.message === "unknown" ? "unknown" : "load"));
   }, [slug]);
 
@@ -290,7 +304,7 @@ export default function Viewer({ slug }) {
   const current = () => (motion.current?.finishDraw(), {
     elements: untheme(api.current.getSceneElements(), tmap.current),
     appState: { ...api.current.getAppState(), exportBackground: true, exportWithDarkMode: false, viewBackgroundColor: "#fdfdfb" },
-    files: api.current.getFiles(),
+    files: { ...api.current.getFiles(), ...(original?.files ?? {}) }, // exports keep the scene's own icons
   });
   const download = () => {
     const c = current();
@@ -319,6 +333,11 @@ export default function Viewer({ slug }) {
           <a className="back" href={BASE} aria-label="All architectures" title="All architectures"><BackIcon /><span className="back-text">All architectures</span></a>
           <h1>{title}</h1>
         </div>
+        <nav className="looks" aria-label="Look">
+          {["a", "c", "d"].map((id) => (
+            <a key={id} href={`${BASE}?a=${encodeURIComponent(slug)}&look=${id}`} aria-current={LOOK.id === id ? "true" : undefined}>{LOOKS[id].name}</a>
+          ))}
+        </nav>
         <nav className="actions" aria-label="Diagram actions">
           <div className="group" role="group" aria-label="View">
             {viewActions.map((a) => (

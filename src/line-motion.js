@@ -142,6 +142,8 @@ export const PRESETS = {
   b: { order: "graph", ease: "quint", delay: 500, span: 2300, hop: 420, step: 50, dur: [700, 1150], perPx: 0.5, dry: 650, tip: false, flow: "relay" },
   // C: sketchnote. The hand sweeps left to right with a small marker tip leading each stroke.
   c: { order: "sweep", ease: "inOut", delay: 400, span: 2400, step: 90, dur: [600, 1100], perPx: 0.6, dry: 450, tip: true, flow: "wave" },
+  // D: regular. Official look: the path follows the request order at an even pace, no marker tip, dots for flow.
+  d: { order: "graph", ease: "cubic", delay: 450, span: 2200, hop: 380, step: 70, dur: [600, 1000], perPx: 0.5, dry: 300, tip: false, flow: "dots" },
 };
 
 export class LineMotion {
